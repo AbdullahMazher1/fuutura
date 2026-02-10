@@ -10,11 +10,9 @@ function KycAml() {
         {/* Top row: two cards */}
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Card 1 - Your Assets, Your Control */}
-          <div className="relative h-[380px] w-full rounded-[32px] border border-[#1f2937] bg-gradient-to-br from-[#07111f] via-[#050b18] to-[#02040a] shadow-[0_0_40px_rgba(15,23,42,0.9)] overflow-hidden">
-            {/* Top glow */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#0A7CFF] via-[#00C2FF] to-transparent opacity-70" />
-
-            <div className="flex h-full flex-col justify-between px-10 py-10">
+          <div className="bg-animated-border h-[380px] w-full rounded-[32px] overflow-hidden">
+            <div className="relative h-full w-full rounded-[30px] bg-[#191B21] overflow-hidden">
+              <div className="flex h-full flex-col justify-between px-10 py-10">
               <div>
                 <h2 className="mb-3 text-[34px] font-bold leading-none">
                   <span>Your Assets, </span>
@@ -51,14 +49,13 @@ function KycAml() {
                 </div>
               </div>
             </div>
+            </div>
           </div>
 
           {/* Card 2 - Trust, Oversight & Responsibility */}
-          <div className="relative h-[380px] w-full rounded-[32px] border border-[#1f2937] bg-gradient-to-br from-[#07111f] via-[#050b18] to-[#02040a] shadow-[0_0_40px_rgba(15,23,42,0.9)] overflow-hidden">
-            {/* Top glow */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#00C2FF] to-[#0A7CFF] opacity-70" />
-
-            <div className="flex h-full flex-row items-start justify-between px-10 py-10">
+          <div className="bg-animated-border-reverse h-[380px] w-full rounded-[32px] overflow-hidden">
+            <div className="relative h-full w-full rounded-[30px] bg-[#191B21] overflow-hidden">
+              <div className="flex h-full flex-row items-start justify-between px-10 py-10">
               <div className="flex-1 pr-6">
                 <h2 className="mb-3 text-[34px] font-bold leading-none">
                   <span>Trust, Oversight &amp; </span>
@@ -99,16 +96,14 @@ function KycAml() {
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom full-width card */}
-        <div className="relative h-[380px] w-full rounded-[32px] border border-[#1f2937] bg-gradient-to-br from-[#050b18] via-[#02040a] to-[#01020a] shadow-[0_0_50px_rgba(15,23,42,1)] overflow-hidden">
-          {/* Edge glows */}
-          <div className="pointer-events-none absolute left-0 top-0 h-1 w-40 bg-gradient-to-r from-[#0A7CFF] to-transparent opacity-80" />
-          <div className="pointer-events-none absolute right-0 top-0 h-1 w-40 bg-gradient-to-l from-[#0A7CFF] to-transparent opacity-80" />
-
-          <div className="flex h-full flex-col justify-between px-10 py-10 lg:flex-row lg:items-center">
+        <div className="bg-animated-border h-[380px] w-full rounded-[32px] overflow-hidden">
+          <div className="relative h-full w-full rounded-[30px] bg-[#191B21] overflow-hidden">
+            <div className="flex h-full flex-col justify-between px-10 py-10 lg:flex-row lg:items-center">
             {/* Text content */}
             <div className="max-w-xl">
               <h2 className="mb-4 font-futura font-bold text-[48px] leading-none tracking-normal">
@@ -151,6 +146,7 @@ function KycAml() {
                   }`}
                 />
               </div>
+            </div>
             </div>
           </div>
         </div>
