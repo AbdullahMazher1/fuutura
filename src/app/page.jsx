@@ -8,12 +8,12 @@ import Ecosystem from "@/components/Ecosystem";
 export default function Home() {
   return (
     <main className="">
-      <Capabilities/>
-      <FutuuraMatters/>
-      <Ecosystem/>
-      <KycAml/>
-      <Assets/>
-      <Operate/>
+      <Capabilities />
+      <FutuuraMatters />
+      <KycAml />
+      <Assets />
+      <Operate />
+      <Ecosystem />
     </main>
   );
 }

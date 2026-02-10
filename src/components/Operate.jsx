@@ -37,7 +37,7 @@ function Operate() {
           <div className="inline-flex w-fit items-center justify-center rounded-[32px] border border-[#3A7BFF] px-[24px] py-[8px] bg-white/5 backdrop-blur-sm">
             <div className="flex flex-row items-center gap-3">
               <GimIcon className="w-4 h-4" />
-              <span className="text-white font-futura text-sm font-medium uppercase tracking-widest">
+              <span className="text-white font-futura text-sm font-medium tracking-widest">
                 A Market Shift
               </span>
             </div>
