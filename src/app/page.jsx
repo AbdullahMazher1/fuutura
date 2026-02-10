@@ -1,12 +1,14 @@
 import Assets from "@/components/Assets";
 import Operate from "@/components/Operate";
-import Image from "next/image";
 import Exchange from "@/components/Exchange";
+import FutuuraMatters from "@/components/FutuuraMatters";
 import KycAml from "@/components/KycAml";
 
 export default function Home() {
   return (
     <main className="space-y-14">
+      <Exchange/>
+      <FutuuraMatters/>
       <KycAml/>
       <Assets/>
       <Operate/>
