@@ -74,7 +74,7 @@ function Capabilities() {
                     <div className="flex flex-row items-center gap-3">
                         <GimIcon className="w-4 h-4" />
                         <span className="text-white font-futura text-sm font-medium uppercase tracking-widest">
-                            Platform — {current.tag}
+                            Platform — Core Capabilities
                         </span>
                     </div>
                 </div>
@@ -91,8 +91,6 @@ function Capabilities() {
                 <p className="text-[#FFF] font-futura text-[20px] md:text-[24px] font-normal leading-[140%] opacity-80">
                     {current.description}
                 </p>
-
-                <span className="text-white/30 text-xs mt-4 uppercase tracking-tighter">Click anywhere to switch module</span>
             </div>
 
             {/* Right Column: Featured Card */}
