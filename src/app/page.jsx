@@ -3,12 +3,14 @@ import Operate from "@/components/Operate";
 import Exchange from "@/components/Exchange";
 import FutuuraMatters from "@/components/FutuuraMatters";
 import KycAml from "@/components/KycAml";
+import Ecosystem from "@/components/Ecosystem";
 
 export default function Home() {
   return (
-    <main className="space-y-14">
+    <main className="">
       <Exchange/>
       <FutuuraMatters/>
+      <Ecosystem/>
       <KycAml/>
       <Assets/>
       <Operate/>

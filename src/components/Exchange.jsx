@@ -45,7 +45,7 @@ function Exchange() {
             </div>
 
             {/* Right Column: Featured Card */}
-            <div className='relative z-10 w-full max-w-[500px] mx-auto lg:mx-0'>
+            <div className='relative z-10 w-full max-w-[530px] mx-auto lg:mx-0'>
                 <div className='relative w-full aspect-[16/10] md:aspect-[4/3] rounded-[32px] border border-blue-500/30 overflow-hidden shadow-[0_0_50px_rgba(58,123,255,0.2)] flex flex-col items-center p-8 md:p-12'>
 
                     {/* The "Glass" Overlays */}
