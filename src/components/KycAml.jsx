@@ -40,7 +40,7 @@ function KycAml() {
             {/* Top glow */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#00C2FF] to-[#0A7CFF] opacity-70" />
 
-            <div className="flex h-full flex-row items-center justify-between px-10 py-10">
+            <div className="flex h-full flex-row items-start justify-between px-10 py-10">
               <div className="flex-1 pr-6">
                 <h2 className="mb-3 text-[34px] font-bold leading-none">
                   <span>Trust, Oversight &amp; </span>
@@ -57,8 +57,8 @@ function KycAml() {
                 </p>
               </div>
 
-              {/* Protect/Shield icon */}
-              <div className="flex-shrink-0">
+              {/* Protect/Shield icon - aligned with top of paragraph */}
+              <div className="flex-shrink-0 pt-[calc(34px+12px)]">
                 <img 
                   src="/images/protect.png" 
                   alt="Protect shield icon" 
