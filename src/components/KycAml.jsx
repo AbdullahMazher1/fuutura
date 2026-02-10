@@ -1,6 +1,9 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 
 function KycAml() {
+  const [hoveredImage, setHoveredImage] = useState(null)
+
   return (
     <section className="w-full bg-kyc-bg py-16 text-white font-futura">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 lg:px-0">
@@ -25,12 +28,27 @@ function KycAml() {
               </div>
 
               {/* Lock icon */}
-              <div className="relative mt-6 flex justify-center">
-                <img 
-                  src="/images/lock.png" 
-                  alt="Lock icon" 
-                  className="h-[247px] w-[256px] object-contain"
-                />
+              <div 
+                className="relative mt-6 flex justify-center cursor-pointer"
+                onMouseEnter={() => setHoveredImage('lock')}
+                onMouseLeave={() => setHoveredImage(null)}
+              >
+                <div className="relative h-[247px] w-[256px]">
+                  <img 
+                    src="/images/lock.png" 
+                    alt="Lock icon" 
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                      hoveredImage === 'lock' ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  />
+                  <img 
+                    src="/images/lockHover.png" 
+                    alt="Lock icon hover" 
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                      hoveredImage === 'lock' ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -58,12 +76,27 @@ function KycAml() {
               </div>
 
               {/* Protect/Shield icon - aligned with top of paragraph */}
-              <div className="flex-shrink-0 pt-[calc(34px+12px)]">
-                <img 
-                  src="/images/protect.png" 
-                  alt="Protect shield icon" 
-                  className="h-[300px] w-[350px] object-contain"
-                />
+              <div 
+                className="flex-shrink-0 pt-[calc(34px+12px)] cursor-pointer"
+                onMouseEnter={() => setHoveredImage('protect')}
+                onMouseLeave={() => setHoveredImage(null)}
+              >
+                <div className="relative h-[300px] w-[350px]">
+                  <img 
+                    src="/images/protect.png" 
+                    alt="Protect shield icon" 
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                      hoveredImage === 'protect' ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  />
+                  <img 
+                    src="/images/protecthover.png" 
+                    alt="Protect shield icon hover" 
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                      hoveredImage === 'protect' ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -79,9 +112,9 @@ function KycAml() {
             {/* Text content */}
             <div className="max-w-xl">
               <h2 className="mb-4 font-futura font-bold text-[48px] leading-none tracking-normal">
-                <span className="text-white">Markets Today — </span>
-                <br className="block lg:hidden" />
-                <span className="text-kyc-blue">Markets Tomorrow</span>
+                <span className="text-white whitespace-nowrap">Markets Today — Markets</span>
+                <br />
+                <span className="text-kyc-blue">Tomorrow</span>
               </h2>
 
               <p className="mb-3 text-sm leading-relaxed text-kyc-gray">
@@ -97,13 +130,27 @@ function KycAml() {
             </div>
 
             {/* Chart image */}
-            <div className="mt-8 flex w-full justify-center lg:mt-0 lg:w-auto">
-              <img 
-                src="/images/up.png" 
-                alt="Chart showing upward trend" 
-                className="h-[400px] w-[500px] object-contain"
-                style={{ transform: 'rotate(9.95deg)' }}
-              />
+            <div 
+              className="mt-8 flex w-full justify-center lg:mt-0 lg:w-auto cursor-pointer"
+              onMouseEnter={() => setHoveredImage('up')}
+              onMouseLeave={() => setHoveredImage(null)}
+            >
+              <div className="relative h-[400px] w-[500px]" style={{ transform: 'rotate(9.95deg)' }}>
+                <img 
+                  src="/images/up.png" 
+                  alt="Chart showing upward trend" 
+                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                    hoveredImage === 'up' ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                <img 
+                  src="/images/upHover.png" 
+                  alt="Chart showing upward trend hover" 
+                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ease-in-out ${
+                    hoveredImage === 'up' ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              </div>
             </div>
           </div>
         </div>

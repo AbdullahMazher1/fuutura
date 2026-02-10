@@ -10,101 +10,20 @@ const StarburstIcon = () => (
 function Operate() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden font-futura flex flex-col items-center justify-center">
-      {/* Background gradient - dark navy blue */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0d1b2d] to-[#050a15]" />
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/Videos/operate.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
-      {/* Starry sky effect - white pixel dots */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(150)].map((_, i) => {
-          const x = Math.random() * 100
-          const y = Math.random() * 70 // Only in upper 70% for sky
-          const size = Math.random() * 2 + 0.5
-          const opacity = Math.random() * 0.5 + 0.3
-          return (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity: opacity
-              }}
-            />
-          )
-        })}
-      </div>
-      
-      {/* Grid floor - lower third */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/3 overflow-hidden">
-        {/* Bright glow from center-bottom - behind grid */}
-        {/* <div 
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background: 'radial-gradient(circle, rgba(0,217,255,0.8) 0%, rgba(0,217,255,0.4) 25%, rgba(0,217,255,0.2) 50%, transparent 75%)',
-            transform: 'translateY(40%)'
-          }}
-        /> */}
-        
-        {/* Perspective grid */}
-        {/* <svg 
-          className="absolute bottom-0 left-0 w-full h-full"
-          preserveAspectRatio="none"
-          style={{ transform: 'perspective(800px) rotateX(75deg)', transformOrigin: 'center bottom' }}
-        > */}
-          {/* Horizontal grid lines - receding into distance */}
-          {[...Array(15)].map((_, i) => {
-            const yPos = 100 - (i * 6)
-            const opacity = Math.max(0.2, 1 - (i * 0.06))
-            const strokeWidth = i === 0 ? 2.5 : i < 3 ? 2 : 1
-            return (
-              <line
-                key={`h-${i}`}
-                x1="0"
-                y1={`${yPos}%`}
-                x2="100%"
-                y2={`${yPos}%`}
-                stroke="#00d9ff"
-                strokeWidth={strokeWidth}
-                strokeOpacity={opacity}
-                filter="url(#glow)"
-              />
-            )
-          })}
-          
-          {/* Vertical grid lines converging to center-bottom */}
-          {/* {[...Array(20)].map((_, i) => {
-            const xStart = (i * (100 / 21))
-            const opacity = 0.7 - Math.abs(i - 10) * 0.05
-            const strokeWidth = i === 9 || i === 10 ? 2 : 1
-            return (
-              <line
-                key={`v-${i}`}
-                x1={`${xStart}%`}
-                y1="0%"
-                x2="50%"
-                y2="100%"
-                stroke="#00d9ff"
-                strokeWidth={strokeWidth}
-                strokeOpacity={Math.max(0.2, opacity)}
-                filter="url(#glow)"
-              />
-            )
-          })}
-           */}
-          {/* Glow filter definition */}
-          {/* <defs>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs> */}
-        {/* </svg> */}
-      </div>
+      {/* Optional overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20 z-[1]" />
       
       {/* Content container - centered */}
       <div className="relative z-10 flex flex-col items-center justify-center px-6 w-full max-w-4xl mx-auto">

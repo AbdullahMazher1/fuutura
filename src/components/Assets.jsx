@@ -2,21 +2,43 @@ import React from 'react'
 
 function Assets() {
   return (
-    <section className="w-full bg-kyc-bg text-white font-futura">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-10 px-6 py-20 md:flex-row md:gap-16 lg:px-0">
-        {/* Left side - image placeholder */}
+    <section className="relative w-full text-white font-futura overflow-hidden">
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/Videos/assets.mov" type="video/quicktime" />
+        <source src="/Videos/assets.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Optional overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20 z-[1]" />
+      
+      <div className="relative z-10 mx-auto h-[633px] w-[1435px] flex flex-col items-center justify-between gap-10 px-6 py-20 md:flex-row md:gap-16 lg:px-0 opacity-100">
+        {/* Left side - video */}
         <div className="relative flex w-full items-center justify-center md:w-1/2">
-          <div className="relative flex h-72 w-72 items-center justify-center rounded-full border border-cyan-500/40 bg-gradient-to-b from-cyan-500/10 via-cyan-500/5 to-transparent shadow-[0_0_60px_rgba(16,185,255,0.45)] md:h-80 md:w-80">
-            <div className="h-52 w-40 rounded-3xl border border-cyan-400/50 bg-gradient-to-b from-cyan-500/20 via-cyan-500/5 to-transparent backdrop-blur-md md:h-60 md:w-44" />
-           
+          <div className="relative h-[559px] w-[599px] overflow-hidden rounded-2xl ">
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/Videos/KYCAML.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
-          {/* Subtle dotted background */}
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_#111827_0,_#050608_55%,_#050608_100%)]" />
         </div>
 
         {/* Right side - content */}
         <div className="w-full md:w-1/2">
-          <h2 className="mb-4 text-3xl font-bold tracking-wide md:text-4xl">
+          <h2 className="mb-4 font-futura font-bold text-[48px] leading-none tracking-normal align-middle">
             KYC <span className="text-kyc-blue">&amp; AML</span>
           </h2>
 
