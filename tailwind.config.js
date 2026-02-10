@@ -13,6 +13,14 @@ module.exports = {
       fontFamily: {
         futura: ['Futura', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        'border-spin': 'border-spin 7s linear infinite',
+      },
+      keyframes: {
+        'border-spin': {
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+      },
       colors: {
         'kyc-bg': '#050608',
         'kyc-blue': '#10b9ff',

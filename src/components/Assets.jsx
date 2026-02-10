@@ -20,24 +20,19 @@ function Assets() {
       <div className="absolute inset-0 bg-black/20 z-[1]" />
       
       <div className="relative z-10 mx-auto h-[633px] w-[1435px] flex flex-col items-center justify-between gap-10 px-6 py-20 md:flex-row md:gap-16 lg:px-0 opacity-100">
-        {/* Left side - video */}
-        <div className="relative flex w-full items-center justify-center md:w-1/2">
-          <div className="relative h-[559px] w-[599px] overflow-hidden rounded-2xl ">
-            <video
+        {/* Left side - GIF */}
+        <div className="relative flex w-full items-center  justify-center md:w-1/2">
+          <div className="relative h-[559px] w-[599px] bg-transparent overflow-hidden rounded-2xl ">
+            <img
+              src="/Videos/KYCAML.gif"
+              alt="KYC AML animation"
               className="h-full w-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src="/Videos/KYCAML.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
         </div>
 
         {/* Right side - content */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 mr-20">
           <h2 className="mb-4 font-futura font-bold text-[48px] leading-none tracking-normal align-middle">
             KYC <span className="text-kyc-blue">&amp; AML</span>
           </h2>

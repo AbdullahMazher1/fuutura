@@ -6,7 +6,7 @@ import { GimIcon } from '../assets/Svg';
 const platformData = [
     {
         id: 0,
-        tag: "Exchange",
+        tag: "The",
         title: "Exchange",
         description: "Access a range of markets through a single, unified trading platform.",
         gif: "/Videos/Exchange.gif",
@@ -14,25 +14,25 @@ const platformData = [
     },
     {
         id: 1,
-        tag: "Messaging",
-        title: "Secure Chat",
-        description: "Communicate directly with institutional partners in a secure, encrypted environment.",
+        tag: "Markets &",
+        title: "Products",
+        description: "Trade digital assets, market-linked instruments, and -where permitted - products connected to regulated markets",
         gif: "/Videos/Chat.gif",
-        cardTitle: "Encrypted Messaging"
+        cardTitle: "Fuutura Chat"
     },
     {
         id: 2,
-        tag: "Identity",
-        title: "Digital ID",
-        description: "Verified on-chain identity for seamless compliance and instant onboarding.",
+        tag: "Identity &",
+        title: "Safeguards",
+        description: "Verification and controls designed to support oversight, transparency, and market integrity.",
         gif: "/Videos/Id.gif",
-        cardTitle: "Identity Verification"
+        cardTitle: "Future Id"
     },
     {
         id: 3,
-        tag: "Assets",
+        tag: "Payments &",
         title: "Wallet",
-        description: "Manage your digital assets with enterprise-grade security and multi-sig support.",
+        description: "Move money in and out smoothly, supporting everyday participation in markets.",
         gif: "/Videos/Wallet.gif",
         cardTitle: "Fuutura Wallet"
     }
@@ -80,10 +80,10 @@ function Capabilities() {
                 </div>
 
                 <h1 className="flex flex-row flex-wrap items-center gap-3">
-                    <span className="text-[#FFF] font-futura text-[48px] md:text-[64px] font-bold leading-tight">
-                        The
+                    <span className="text-[#FFF] font-futura text-[42px] md:text-[50px] font-bold leading-tight">
+                        {current.tag}
                     </span>
-                    <span className="bg-[linear-gradient(90deg,#3486FF_0%,#14C7FF_87.66%)] font-futura bg-clip-text text-transparent text-[48px] md:text-[64px] font-bold leading-tight">
+                    <span className="bg-[linear-gradient(90deg,#3486FF_0%,#14C7FF_87.66%)] font-futura bg-clip-text text-transparent text-[42px] md:text-[50px] font-bold leading-tight">
                         {current.title}
                     </span>
                 </h1>
