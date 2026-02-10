@@ -3,7 +3,7 @@ import { GimIcon } from '../assets/Svg'
 
 function Exchange() {
     return (
-        <div className='relative font-futura flex flex-col lg:flex-row gap-24 bg-black p-12 md:p-24 min-h-screen items-center overflow-hidden'>
+        <div className='relative z-[10] font-futura flex flex-col lg:flex-row gap-24 bg-black p-12 md:p-24 min-h-screen items-center overflow-hidden'>
 
             {/* --- The Background Glow (Right Column Area) --- */}
             <div

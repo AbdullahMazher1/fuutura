@@ -24,19 +24,23 @@ function FutuuraMatters() {
                 <source src="/Videos/Futurua.mp4" type="video/mp4" />
             </video>
 
-            {/* 2. The Center Notch/Hole (Semi-Circle Style) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30">
-                <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center">
-                    {/* The Cutout Shape: rounded-b-full creates the semi-circle effect */}
-                    <div className="absolute top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10" />
+            {/* 2. The Center Notch/Hole Wrapper */}
+            {/* Increased z-index to 50 and added relative to ensure it stays above siblings */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none">
+                <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center pointer-events-auto">
+
+                    {/* The Cutout Shape (The Black Semi-Circle) */}
+                    <div className="absolute top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" />
 
                     {/* Floating Image */}
-                    <div className="relative z-10 w-full h-full mt-[-10%]">
+                    {/* We use a negative top margin to push it UP, and z-50 to keep it on top */}
+                    <div className="relative w-full h-full -mt-[40%] z-[9999] scale-110">
                         <Image
                             src="/Images/Rectangle.png"
                             alt="Futuura Core"
                             fill
-                            className="object-contain"
+                            className="object-contain drop-shadow-[0_0_15px_rgba(0,194,255,0.3)]"
+                            priority // Ensures it loads immediately as it's at the top
                         />
                     </div>
                 </div>
@@ -96,9 +100,18 @@ function FutuuraMatters() {
                             </div>
 
                             {/* GIF / Empty Space Side */}
-                            <div className="">
+                            {/* GIF / Empty Space Side */}
+                            <div className="relative flex items-center justify-center">
 
-
+                                <div className="relative w-48 h-48 md:w-64 md:h-64">
+                                    <Image
+                                        src="/Videos/loder.gif"
+                                        alt="Loading Ecosystem"
+                                        fill
+                                        className="object-contain"
+                                        unoptimized // Essential for GIFs in Next.js to prevent frame stripping
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
