@@ -12,7 +12,7 @@ const scrollingData = [
 
 function FutuuraMatters() {
     return (
-        <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center p-6 md:p-24">
+        <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center p-6 md:p-24 z-10 relative">
             {/* 1. Background Video */}
             <video
                 autoPlay
@@ -26,7 +26,7 @@ function FutuuraMatters() {
 
             {/* 2. The Center Notch/Hole Wrapper */}
             {/* Increased z-index to 50 and added relative to ensure it stays above siblings */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-[100] pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 !z-[1111111] pointer-events-none">
                 <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center pointer-events-auto">
 
                     {/* The Cutout Shape (The Black Semi-Circle) */}
@@ -34,7 +34,7 @@ function FutuuraMatters() {
 
                     {/* Floating Image */}
                     {/* We use a negative top margin to push it UP, and z-50 to keep it on top */}
-                    <div className="relative w-full h-full -mt-[40%] z-[9999] scale-110">
+                    <div className="relative w-full h-full -mt-[40%] z-[1111111] scale-110">
                         <Image
                             src="/Images/Rectangle.png"
                             alt="Futuura Core"

@@ -51,7 +51,7 @@ function Capabilities() {
     return (
         <section
             onClick={handleNext}
-            className='relative z-[10] font-futura flex flex-col lg:flex-row gap-24 bg-black p-12 md:p-24 min-h-screen items-center overflow-hidden cursor-pointer select-none'
+            className='relative z-[0] font-futura flex flex-col lg:flex-row gap-24 bg-black p-12 md:p-24 min-h-screen items-center overflow-hidden cursor-pointer select-none'
         >
             {/* --- The Background Glow --- */}
             <div
