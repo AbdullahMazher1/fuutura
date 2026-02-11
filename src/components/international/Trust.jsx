@@ -70,7 +70,7 @@ function Trust() {
           
           {/* Left side - Text content - animates from left to right */}
           <div 
-            className="flex-1 max-w-[600px] w-full text-white mb-10 sm:mb-16 lg:mb-80 mt-0 transition-all duration-[1000ms] ease-out text-center lg:text-left"
+            className="flex-1 max-w-[600px] w-full text-white mt-0 transition-all duration-[1000ms] ease-out text-center lg:text-left"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateX(0)' : isMobile ? 'translateX(-30px)' : 'translateX(-100px)',

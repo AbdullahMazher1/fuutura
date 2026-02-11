@@ -97,9 +97,9 @@ function Hero() {
 
         {/* Call-to-action button */}
         <div className="text-center">
-          <button className="px-8 py-4 rounded-lg font-futura text-lg font-medium text-white bg-gradient-to-r from-[#0A7CFF] to-[#00C2FF] hover:from-[#0A7CFF]/90 hover:to-[#00C2FF]/90 transition-all duration-300 shadow-lg shadow-[#00C2FF]/20 hover:shadow-[#00C2FF]/40">
+          <a href="#subscribe" className="px-8 py-4 rounded-lg font-futura text-lg font-medium text-white bg-gradient-to-r from-[#0A7CFF] to-[#00C2FF] hover:from-[#0A7CFF]/90 hover:to-[#00C2FF]/90 transition-all duration-300 shadow-lg shadow-[#00C2FF]/20 hover:shadow-[#00C2FF]/40">
             Subscribe to our Newsletter
-          </button>
+          </a>
         </div>
       </div>
 
