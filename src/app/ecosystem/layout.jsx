@@ -12,7 +12,7 @@ export default function EcosystemLayout({ children }) {
   return (
     <div className="flex h-[100vh] w-full overflow-hidden bg-[#0a0e1a]">
       <EcosystemSidebar />
-      <main className="flex-1 min-w-0 flex flex-col relative overflow-hidden">
+      <main className="flex-1 min-w-0 flex flex-col relative overflow-hidden h-full">
         <div
           className="absolute inset-0"
           style={{
@@ -34,7 +34,7 @@ export default function EcosystemLayout({ children }) {
               'linear-gradient(to top, rgba(30,40,60,0.9) 0%, transparent 40%), radial-gradient(ellipse 80% 50% at 50% 85%, rgba(10,124,255,0.15), transparent 50%)',
           }}
         />
-        <div className="relative z-10 flex-1 overflow-auto">
+        <div className="relative z-10 flex-1 overflow-auto h-full">
           {children}
         </div>
       </main>
