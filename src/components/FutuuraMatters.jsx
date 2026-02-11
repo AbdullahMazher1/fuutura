@@ -25,22 +25,23 @@ function FutuuraMatters() {
         <source src="/Videos/Futurua.mp4" type="video/mp4" />
       </video>
 
-      {/* Floating Top Notch Image */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-        <div className="relative w-[140px] h-[70px] sm:w-[220px] sm:h-[110px] md:w-[320px] md:h-[160px] flex items-center justify-center">
-          <div className="absolute w-full h-full bg-black rounded-b-full border border-white/10" />
+            {/* 2. The Center Notch/Hole (Semi-Circle Style) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-30">
+                <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center">
+                    {/* The Cutout Shape: rounded-b-full creates the semi-circle effect */}
+                    <div className="absolute top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10" />
 
-          <div className="relative w-full h-full -mt-[35%] z-50 scale-110">
-            <Image
-              src="/Images/Rectangle.png"
-              alt="Futuura Core"
-              fill
-              className="object-contain drop-shadow-[0_0_15px_rgba(0,194,255,0.3)]"
-              priority
-            />
-          </div>
-        </div>
-      </div>
+                    {/* Floating Image */}
+                    <div className="relative z-10 w-full h-full mt-[-10%]">
+                        <Image
+                            src="/Images/Rectangle.png"
+                            alt="Futuura Core"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
 
       {/* Main Content */}
       <div className="relative z-20 w-full max-w-[1400px] mt-16 sm:mt-20">
@@ -92,23 +93,15 @@ function FutuuraMatters() {
                 </div>
               </div>
 
-              {/* GIF Side */}
-              <div className="relative flex items-center justify-center p-6">
-                <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64">
-                  <Image
-                    src="/Videos/loder.gif"
-                    alt="Loading Ecosystem"
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-              </div>
+                            {/* GIF / Empty Space Side */}
+                            <div className="">
 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
       {/* Scroll Animation */}
       <style jsx>{`
