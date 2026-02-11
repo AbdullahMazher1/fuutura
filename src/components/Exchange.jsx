@@ -50,10 +50,7 @@ function Capabilities() {
   return (
     <section
       onClick={handleNext}
-      className="relative z-[10] font-futura flex flex-col lg:flex-row 
-      gap-12 lg:gap-24 bg-black pb-12 lg:pb-0 
-      px-4 sm:px-8 md:px-12 lg:px-24 
-      min-h-screen items-center overflow-hidden cursor-pointer select-none"
+      className="relative z-[10] font-futura flex flex-col lg:flex-row gap-12 lg:gap-24 bg-black pb-12 lg:pb-0 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen items-center overflow-hidden cursor-pointer select-none"
     >
       {/* Glow */}
       <div
@@ -97,8 +94,7 @@ function Capabilities() {
 
       {/* Right Card */}
       <div className="relative z-10 w-full max-w-[500px] mx-auto lg:mx-0">
-        <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[24px] sm:rounded-[32px] 
-        border border-blue-500/30 overflow-hidden shadow-[0_0_50px_rgba(58,123,255,0.2)] flex flex-col items-center p-4 sm:p-8">
+        <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[24px] sm:rounded-[32px] border border-blue-500/30 overflow-hidden shadow-[0_0_50px_rgba(58,123,255,0.2)] flex flex-col items-center p-4 sm:p-8">
 
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-black/70" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(58,123,255,0.3)_0%,transparent_70%)]" />
