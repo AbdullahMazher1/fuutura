@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-const Page = () => {
+// Inner component that actually uses search params, wrapped in Suspense by the page
+const EcosystemPageInner = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -228,6 +229,14 @@ const Page = () => {
         </div>
       </section>
     </div>
+  );
+};
+
+const Page = () => {
+  return (
+    <Suspense fallback={<div className="h-screen w-full bg-black" />}>
+      <EcosystemPageInner />
+    </Suspense>
   );
 };
 

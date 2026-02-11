@@ -19,6 +19,12 @@ function Hero() {
       <div className="absolute inset-0 w-full h-full z-20 animate-gradient-slide">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0A7CFF]/30 to-transparent w-[200%] h-full" />
       </div>
+
+          <img
+            src="/Videos/hero.gif"
+            alt="Hero animation"
+            className="absolute left-1/2 -translate-x-1/2 top-[260px] -translate-y-1/2 w-[600px] h-[300px] object-contain"
+          />
       
       {/* Main heading */}
       <div 
