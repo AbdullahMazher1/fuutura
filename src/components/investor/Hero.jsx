@@ -1,27 +1,17 @@
 "use client";
-import React, { useMemo, useEffect, useRef } from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function Hero() {
     const { ref, inView } = useInView({
-        threshold: 0.5,
-        triggerOnce: true, // ensures assets appear once and stay
+        threshold: 0.2,
+        triggerOnce: false,
     });
 
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        if (!videoRef.current) return;
-        if (inView) {
-            videoRef.current.play();
-        } else {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-        }
-    }, [inView]);
-
+    // Generate small random translate values (max 4px)
     const randomOffset = () => Math.floor(Math.random() * 9) - 4;
+
     const iconOffsets = useMemo(() => {
         return [
             { x: randomOffset(), y: randomOffset() },
@@ -29,39 +19,47 @@ function Hero() {
             { x: randomOffset(), y: randomOffset() },
             { x: randomOffset(), y: randomOffset() },
         ];
-    }, []);
+    }, [inView]);
 
     return (
         <div
-            ref={ref} // moved here to track the whole hero
-            className="relative flex flex-col text-center items-center justify-center overflow-hidden h-screen bg-black"
+            ref={ref}
+            className="relative flex flex-col text-center items-center justify-center overflow-hidden h-screen bg-black pt-16"
         >
             {/* Background Video */}
             <video
-                ref={videoRef}
-                src="/Videos/light3.mp4"
+                src="/Videos/light2.mp4"
+                autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
+                className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/10" />
+            <div className="absolute inset-0 bg-black/50 -z-10" />
 
             {/* LEFT ICONS */}
             <motion.img
                 src="/Images/icon (3).png"
                 className="absolute left-[15%] top-[15%] w-14 md:w-40 opacity-50"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 0.5, x: iconOffsets[0].x, y: iconOffsets[0].y } : {}}
+                initial={{ opacity: 0, x: 0, y: 0, rotate: -10 }}
+                animate={
+                    inView
+                        ? { opacity: 0.5, x: iconOffsets[0].x, y: iconOffsets[0].y, rotate: -10 }
+                        : { opacity: 0, x: 0, y: 0, rotate: -10 }
+                }
                 transition={{ duration: 0.8 }}
             />
+
             <motion.img
                 src="/Images/icon (4).png"
                 className="absolute left-[15%] bottom-[30%] w-14 md:w-40 opacity-50"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 0.5, x: iconOffsets[1].x, y: iconOffsets[1].y, rotate: 10 } : {}}
+                initial={{ opacity: 0, x: 0, y: 0, rotate: 10 }}
+                animate={
+                    inView
+                        ? { opacity: 0.5, x: iconOffsets[1].x, y: iconOffsets[1].y, rotate: 10 }
+                        : { opacity: 0, x: 0, y: 0, rotate: 10 }
+                }
                 transition={{ duration: 0.8 }}
             />
 
@@ -69,23 +67,34 @@ function Hero() {
             <motion.img
                 src="/Images/icon (1).png"
                 className="absolute right-[15%] top-[30%] w-20 md:w-40 opacity-50"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 0.5, x: iconOffsets[2].x, y: iconOffsets[2].y } : {}}
-                transition={{ duration: 0.8 }}
-            />
-            <motion.img
-                src="/Images/icon (2).png"
-                className="absolute right-[10%] bottom-[30%] w-14 md:w-40 opacity-50"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 0.5, x: iconOffsets[3].x, y: iconOffsets[3].y } : {}}
+                initial={{ opacity: 0, x: 0, y: 0, rotate: 10 }}
+                animate={
+                    inView
+                        ? { opacity: 0.5, x: iconOffsets[2].x, y: iconOffsets[2].y, rotate: 10 }
+                        : { opacity: 0, x: 0, y: 0, rotate: 10 }
+                }
                 transition={{ duration: 0.8 }}
             />
 
+            <motion.img
+                src="/Images/icon (2).png"
+                className="absolute right-[10%] bottom-[30%] w-14 md:w-40 opacity-50"
+                initial={{ opacity: 0, x: 0, y: 0, rotate: -10 }}
+                animate={
+                    inView
+                        ? { opacity: 0.5, x: iconOffsets[3].x, y: iconOffsets[3].y, rotate: -10 }
+                        : { opacity: 0, x: 0, y: 0, rotate: -10 }
+                }
+                transition={{ duration: 0.8 }}
+            />
+
+
             {/* TITLE */}
-            <h2 className="pt-80 font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
+            <h2 className="pt-20 font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
                 Market <span className="text-[#00A3FF]">infrastructure</span> Build For
                 Scale, <br />
-                Oversight, And <span className="text-[#00A3FF]">Durability</span>.
+                Oversight, And{" "}
+                <span className="text-[#00A3FF]">Durability</span>.
             </h2>
 
             {/* DESCRIPTION */}
@@ -98,7 +107,11 @@ function Hero() {
             <motion.div
                 className="mt-10 z-10 relative"
                 initial={{ opacity: 0, y: 100 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={
+                    inView
+                        ? { opacity: 1, y: 0 }
+                        : { opacity: 0, y: 100 }
+                }
                 transition={{ duration: 1 }}
             >
                 <motion.img
