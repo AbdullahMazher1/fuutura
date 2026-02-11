@@ -10,23 +10,29 @@ function Assetes() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // Trigger animation every time component enters viewport
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
+            // Reset animation when component leaves viewport
             setIsVisible(false);
           }
         });
       },
-      { threshold: 0.2 }
+      { 
+        threshold: 0.2,
+        rootMargin: '0px'
+      }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -64,8 +70,8 @@ function Assetes() {
                 height: '444px',
                 opacity: isVisible ? 1 : 0,
                 top: '74.05px',
-                left: isVisible ? '107.67px' : '-200px',
-                transform: `rotate(16.03deg)`,
+                left: '107.67px',
+                transform: isVisible ? 'translateX(0) rotate(16.03deg)' : 'translateX(-200px) rotate(16.03deg)',
                 transformOrigin: 'center',
                 boxShadow: '-26.68px 121px 123.7px 0px #051E43CC',
               }}
