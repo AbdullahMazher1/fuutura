@@ -94,6 +94,32 @@ function StackCard({
     return `translateX(${(isOpen ? openX : closedX) * scale}px) ${baseTransform}`;
   };
 
+  // Determine if this card should be blurred (back decks when closed)
+  const shouldBlur = !isOpen && !isFirstDeck;
+  
+  // Calculate clip-path to hide content in overlapping area (behind front deck)
+  // Front deck is 299px wide at position 0 (right edge)
+  const getContentClipPath = () => {
+    if (!shouldBlur || isMobile) return 'none';
+    
+    const frontDeckWidth = 299 * scale;
+    const cardWidth = width * scale;
+    const cardOffset = Math.abs(closedX * scale);
+    
+    // Calculate how much of this card overlaps with front deck from right edge
+    const cardRightEdge = cardWidth - cardOffset;
+    if (cardRightEdge <= 0) return 'none';
+    
+    const overlapWidth = Math.min(cardRightEdge, frontDeckWidth);
+    if (overlapWidth <= 0) return 'none';
+    
+    // Clip content: hide the overlapping portion (from right edge)
+    // This keeps only the visible edges showing
+    const clipLeft = cardWidth - overlapWidth;
+    
+    return `inset(0 0 0 ${clipLeft}px)`;
+  };
+
   return (
     <div
       className={`absolute ${isMobile ? 'left-1/2' : 'right-0'} top-1/2 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]`}
@@ -105,7 +131,15 @@ function StackCard({
       }}
     >
       <CardShell className="h-full w-full rounded-3xl" isHovered={isOpen ? true : !isFirstDeck} isFirstDeck={isFirstDeck}>
-        <div className="flex h-full w-full flex-col items-center justify-between px-3 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-10">
+        {/* Content - clipped to hide overlapping portion behind front deck */}
+        <div 
+          className="flex h-full w-full flex-col items-center justify-between px-3 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-10 relative"
+          style={{
+            clipPath: getContentClipPath(),
+            WebkitClipPath: getContentClipPath(),
+            filter: shouldBlur ? 'blur(8px)' : 'none',
+          }}
+        >
           <img
             src={imgSrc}
             alt=""
