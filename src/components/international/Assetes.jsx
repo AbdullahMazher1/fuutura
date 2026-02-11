@@ -55,19 +55,42 @@ function Assetes() {
         >
           <div className="relative w-[440px] h-[440px]">
             {/* Subtle glow around globe */}
-            <div className="absolute inset-0 rounded-full ring-2 ring-[#00C2FF]/30 blur-[1px]" />
-
-            {/* THIN ORBIT */}
-            {/* ORBIT ARC */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="orbit-arc w-full h-full" />
-            </div>
+          
+            {/* ORBIT ARC (SVG SEMI-CIRCLE) - put above globe */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none orbit-arc -top-0 left-0 z-20"
+              viewBox="0 0 100 100"
+            >
+              <defs>
+                <linearGradient
+                  id="orbitGradient"
+                  x1="0%"
+                  y1="50%"
+                  x2="100%"
+                  y2="50%"
+                >
+                  <stop offset="0%" stopColor="rgba(0, 194, 255, 0)" />
+                  <stop offset="25%" stopColor="rgba(0, 194, 255, 0.5)" />
+                  <stop offset="50%" stopColor="rgba(0, 194, 255, 1)" />
+                  <stop offset="75%" stopColor="rgba(0, 194, 255, 0.5)" />
+                  <stop offset="100%" stopColor="rgba(0, 194, 255, 0)" />
+                </linearGradient>
+              </defs>
+              {/* top semi-circle arc (slightly above globe) */}
+              <path
+                d="M 10 50 A 40 40 0 0 1 90 50"
+                fill="none"
+                stroke="url(#orbitGradient)"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
 
             {/* Globe */}
             <img
               src="/Images/assetsglobe.png"
               alt="Globe"
-              className="relative w-full h-full object-contain"
+              className="relative w-full h-full object-contain z-10"
             />
           </div>
         </div>
@@ -109,33 +132,8 @@ function Assetes() {
         }
 
         .orbit-arc {
-          position: absolute;
-          inset: 0;
-          border-radius: 9999px;
-          animation: orbitSpin 18s linear infinite;
-
-          /* This creates only a partial arc */
-          background: conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            transparent 220deg,
-            rgba(0, 194, 255, 0.9) 250deg,
-            rgba(0, 194, 255, 1) 280deg,
-            rgba(0, 194, 255, 0.9) 310deg,
-            transparent 340deg
-          );
-
-          /* Mask to make it thin like a ring */
-          -webkit-mask: radial-gradient(
-            farthest-side,
-            transparent calc(100% - 2px),
-            black calc(100% - 2px)
-          );
-          mask: radial-gradient(
-            farthest-side,
-            transparent calc(100% - 2px),
-            black calc(100% - 2px)
-          );
+          animation: orbitSpin 30s linear infinite;
+          transform-origin: 50% 50%;
         }
       `}</style>
     </section>
