@@ -21,7 +21,7 @@ const Moderan = () => {
           <p className="text-sm font-medium text-white">Markets shouldn’t feel complicated</p>
         </div>
 
-        <div className="flex items-center gap-6 mt-10">
+        <div className="flex items-center flex-col lg:flex-row gap-6 mt-10">
           <div className="flex-1">
             <div className="flex items-center gap-6 text-white text-lg !leading-loose transition-opacity duration-[2000ms] ease-in-out opacity-100 group-hover:opacity-0">
               <h3>
