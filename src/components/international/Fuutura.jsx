@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function CardShell({ className = "", children, isHovered = false, isFirstDeck = false }) {
   const isFirstDeckNotHovered = !isHovered && isFirstDeck;
@@ -72,25 +72,46 @@ function StackCard({
   closedX,
   isOpen,
   isFirstDeck = false,
+  scale = 1,
+  isMobile = false,
 }) {
+  // Calculate transform based on screen size
+  const getTransform = () => {
+    const baseTransform = `translateY(-50%)`;
+    
+    if (isMobile) {
+      // On mobile, use reduced offsets to keep cards visible
+      // Calculate a safe offset that won't overflow
+      const maxOffset = 100; // Maximum offset in pixels for mobile
+      const rawOffset = (isOpen ? openX : closedX) * scale;
+      // Clamp the offset to prevent overflow
+      const safeOffset = Math.max(-maxOffset, Math.min(maxOffset, rawOffset * 0.25));
+      // Center the card stack and apply safe offset
+      return `translateX(calc(-50% + ${safeOffset}px)) ${baseTransform}`;
+    }
+    
+    // Desktop: original positioning from right edge
+    return `translateX(${(isOpen ? openX : closedX) * scale}px) ${baseTransform}`;
+  };
+
   return (
     <div
-      className="absolute right-0 top-1/2 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className={`absolute ${isMobile ? 'left-1/2' : 'right-0'} top-1/2 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]`}
       style={{
-        width,
-        height,
+        width: `${width * scale}px`,
+        height: `${height * scale}px`,
         zIndex,
-        transform: `translateX(${isOpen ? openX : closedX}px) translateY(-50%)`,
+        transform: getTransform(),
       }}
     >
       <CardShell className="h-full w-full rounded-3xl" isHovered={isOpen ? true : !isFirstDeck} isFirstDeck={isFirstDeck}>
-        <div className="flex h-full w-full flex-col items-center justify-between px-6 py-10">
+        <div className="flex h-full w-full flex-col items-center justify-between px-3 sm:px-4 lg:px-6 py-6 sm:py-8 lg:py-10">
           <img
             src={imgSrc}
             alt=""
-            className="h-[110px] w-[110px] object-contain drop-shadow-[0_0_30px_rgba(0,194,255,0.35)]"
+            className="h-16 w-16 sm:h-20 sm:w-20 lg:h-[110px] lg:w-[110px] object-contain drop-shadow-[0_0_30px_rgba(0,194,255,0.35)]"
           />
-          <div className="pb-4 font-futura text-[26px] font-normal text-white/95 text-center">
+          <div className="pb-2 sm:pb-3 lg:pb-4 font-futura text-lg sm:text-xl lg:text-[26px] font-normal text-white/95 text-center">
             {label}
           </div>
         </div>
@@ -102,34 +123,69 @@ function StackCard({
 function Fuutura() {
   const [open, setOpen] = useState(false);
 
+  // Calculate scale factor for responsive card sizing
+  // Desktop (lg): scale = 1 (no scaling)
+  // Tablet (md): scale = 0.7
+  // Mobile (sm): scale = 0.4
+  const getScale = () => {
+    if (typeof window === 'undefined') return 1;
+    const width = window.innerWidth;
+    if (width >= 1024) return 1; // Desktop - exact size
+    if (width >= 768) return 0.7; // Tablet
+    return 0.4; // Mobile - smaller scale for better fit
+  };
+
+  const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setScale(getScale());
+      setIsMobile(width < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="relative w-full bg-[#050608] py-24 overflow-visible">
+    <section className="relative w-full bg-[#050608] py-12 sm:py-16 lg:py-24 overflow-visible">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-0">
-        <div className="grid items-center gap-16 lg:grid-cols-12">
+        <div className="grid items-center gap-8 sm:gap-12 lg:gap-16 lg:grid-cols-12">
 
           {/* Left Text */}
-          <div className="lg:col-span-5">
-            <h2 className="font-futura text-[56px] font-normal leading-[1.05] text-white">
+          <div className="lg:col-span-5 text-center lg:text-left">
+            <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-normal leading-[1.05] text-white">
               What <span className="text-[#00C2FF]">FUUTURA</span> Is
             </h2>
 
-            <p className="mt-3 font-futura text-[18px] font-normal text-white/70">
+            <p className="mt-3 font-futura text-base sm:text-lg lg:text-[18px] font-normal text-white/70">
               Fuutura is an exchange at its core.
             </p>
 
-            <div className="mt-14 space-y-2 font-futura text-[22px] font-normal leading-[1.45] text-white/80">
+            <div className="mt-8 sm:mt-10 lg:mt-14 space-y-2 font-futura text-lg sm:text-xl lg:text-[22px] font-normal leading-[1.45] text-white/80">
               <p>Everything around it exists to make market</p>
               <p>access. No distractions. No unnecessary steps.</p>
               <p>Just execution done right.</p>
             </div>
           </div>
 
-          {/* Right Stack */}
-          <div className="relative lg:col-span-7 flex justify-end">
+          {/* Right Stack - Hidden on mobile, visible on tablet and desktop */}
+          <div className="hidden md:block relative lg:col-span-7 flex justify-center lg:justify-end mt-8 lg:mt-0 w-full lg:w-auto">
             <div
-              className="relative h-[340px] w-[760px] overflow-visible"
-              onMouseEnter={() => setOpen(true)}
-              onMouseLeave={() => setOpen(false)}
+              className="relative overflow-hidden lg:overflow-visible mx-auto lg:mx-0"
+              style={{
+                height: `${340 * scale}px`,
+                width: isMobile ? '100%' : `${760 * scale}px`,
+                maxWidth: isMobile ? '100%' : 'none',
+                minHeight: isMobile ? '200px' : 'auto',
+                position: 'relative',
+              }}
+              onMouseEnter={() => !isMobile && setOpen(true)}
+              onMouseLeave={() => !isMobile && setOpen(false)}
+              onClick={() => isMobile && setOpen(!open)}
             >
 
               {/* CLOSED STATE:
@@ -149,6 +205,8 @@ function Fuutura() {
                 openX={-520}   // leftmost when open
                 closedX={-200}   // small RIGHT edge visible
                 isOpen={open}
+                scale={scale}
+                isMobile={isMobile}
               />
 
               {/* Safer (Middle) */}
@@ -161,6 +219,8 @@ function Fuutura() {
                 openX={-310}
                 closedX={-140}   // slight RIGHT edge
                 isOpen={open}
+                scale={scale}
+                isMobile={isMobile}
               />
 
               {/* More Reliable (Front when closed, Rightmost when open) */}
@@ -174,6 +234,8 @@ function Fuutura() {
                 closedX={0}    // fully visible when closed
                 isOpen={open}
                 isFirstDeck={true}
+                scale={scale}
+                isMobile={isMobile}
               />
 
             </div>

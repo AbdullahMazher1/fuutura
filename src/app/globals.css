@@ -16,7 +16,7 @@
     inset: -2px;
     border-radius: 32px;
     background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, #0A7CFF 280deg, #00C2FF 300deg, #0A7CFF 320deg, transparent 330deg, transparent 360deg);
-    animation: borderTravel 3s linear infinite;
+    animation: borderTravel 10s linear infinite;
     z-index: 0;
   }
   
