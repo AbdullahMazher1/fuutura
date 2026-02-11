@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     expiresIn: "1d",
   });
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://fuutura-eight.vercel.app";
   const verifyLink = `${baseUrl}/ecosystem?token=${encodeURIComponent(token)}`;
 
   const transporter = nodemailer.createTransport({
