@@ -97,47 +97,6 @@ function Assetes() {
         </div>
       </div>
 
-      {/* ================= ORBIT ANIMATION ================= */}
-      <style jsx>{`
-        @keyframes orbitSpin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .orbit-arc {
-          position: absolute;
-          inset: 0;
-          border-radius: 9999px;
-          animation: orbitSpin 18s linear infinite;
-
-          /* This creates only a partial arc */
-          background: conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            transparent 220deg,
-            rgba(0, 194, 255, 0.9) 250deg,
-            rgba(0, 194, 255, 1) 280deg,
-            rgba(0, 194, 255, 0.9) 310deg,
-            transparent 340deg
-          );
-
-          /* Mask to make it thin like a ring */
-          -webkit-mask: radial-gradient(
-            farthest-side,
-            transparent calc(100% - 2px),
-            black calc(100% - 2px)
-          );
-          mask: radial-gradient(
-            farthest-side,
-            transparent calc(100% - 2px),
-            black calc(100% - 2px)
-          );
-        }
-      `}</style>
     </section>
   );
 }
