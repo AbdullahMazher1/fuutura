@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import { GimIcon } from '../assets/Svg';
+import Link from 'next/link';
 
 function Ecosystem() {
     return (
         /* Removed py-20 and replaced with pt-32 to push only the top down */
         <section className="relative w-full flex flex-col items-center justify-start overflow-hidden bg-black text-white pt-32 pb-0">
-            
+
             {/* 1. Background Video */}
             <video
                 autoPlay loop muted playsInline
@@ -42,7 +43,8 @@ function Ecosystem() {
                     Explore how the Exchange Connects with supporting Tools, Services and Infrastructure built around long-term trust.
                 </p>
 
-                <button
+                <Link
+                    href="/ecosystem"
                     className="px-10 py-3 bg-transparent backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={{
                         borderRadius: '12px',
@@ -50,7 +52,7 @@ function Ecosystem() {
                     }}
                 >
                     Explore Ecosystem
-                </button>
+                </Link>
             </div>
 
             {/* 3. The Globe Video - Fixed to the Bottom Edge */}
@@ -63,7 +65,7 @@ function Ecosystem() {
                         <source src="/Videos/globe1.webm" type="video/webm" />
                         <source src="/Videos/globe1.mp4" type="video/mp4" />
                     </video>
-                    
+
                     {/* Subtle Glow concentrated at the bottom edge */}
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-blue-500/20 blur-[120px] -z-10 rounded-full" />
                 </div>
