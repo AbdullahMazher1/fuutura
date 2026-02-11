@@ -7,6 +7,9 @@ export default function EcosystemLayout({ children }) {
   const pathname = usePathname();
   const isDocPage = pathname !== '/ecosystem' && pathname.startsWith('/ecosystem');
 
+  // Alternate animation direction based on path so some pages slide from left, others from right
+  const slideFromLeft = pathname.length % 2 === 0;
+
   if (!isDocPage) return <>{children}</>;
 
   return (
@@ -34,8 +37,13 @@ export default function EcosystemLayout({ children }) {
               'linear-gradient(to top, rgba(30,40,60,0.9) 0%, transparent 40%), radial-gradient(ellipse 80% 50% at 50% 85%, rgba(10,124,255,0.15), transparent 50%)',
           }}
         />
-        <div className="relative z-10 flex-1 overflow-auto h-full">
-          {children}
+        <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden h-full">
+          <div
+            key={pathname}
+            className={`min-h-full ${slideFromLeft ? 'ecosystem-animate-left' : 'ecosystem-animate-right'}`}
+          >
+            {children}
+          </div>
         </div>
       </main>
     </div>

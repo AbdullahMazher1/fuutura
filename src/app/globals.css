@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .bg-animated-border {
     position: relative;
     padding: 2px;
@@ -100,4 +99,35 @@
 
   .animate-gradient-slide > div {
     animation: gradient-slide 12s ease-in-out infinite;
+  }
+
+  /* Ecosystem page slide animations */
+  @keyframes ecosystem-slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes ecosystem-slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(32px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .ecosystem-animate-left {
+    animation: ecosystem-slide-in-left 550ms ease-out;
+  }
+
+  .ecosystem-animate-right {
+    animation: ecosystem-slide-in-right 550ms ease-out;
   }
