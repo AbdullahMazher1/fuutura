@@ -1,4 +1,4 @@
-import { GimIcon } from '@/assets/Svg'
+import { GimIcon } from '../assets/Svg'
 import React from 'react'
 
 // Starburst/Sparkle icon component

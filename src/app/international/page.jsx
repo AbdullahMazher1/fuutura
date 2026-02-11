@@ -8,6 +8,7 @@ import Assetes from "../../components/international/Assetes";
 import Markets from '../../components/international/Markets'
 import Calm from '../../components/international/Calm'
 import Explore from '../../components/international/Explore'
+import Platoform from "../../components/international/Platoform";
 
 const page = () => {
     return (
@@ -15,6 +16,7 @@ const page = () => {
             <Hero />
             <Moderan />
             <Fuutura />
+            <Platoform/>
             <FuuturaUsage />
             <Assetes />
             <Trust />

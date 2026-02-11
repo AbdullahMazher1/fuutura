@@ -1,5 +1,5 @@
 "use client";
-import { GimIcon } from '@/assets/Svg';
+import { GimIcon } from '../assets/Svg';
 import React from 'react';
 
 function Ecosystem() {
