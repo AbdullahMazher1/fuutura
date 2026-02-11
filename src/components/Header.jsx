@@ -19,7 +19,7 @@ const Header = () => {
           <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>RoadMap</div>
           <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>Press Section</div>
           <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>Blogs</div>
-          <Link href='/ecosystem' className='cursor-pointer hover:text-[#569FFF] transition-colors'>About Us</Link>
+          <Link href='#' className='cursor-pointer hover:text-[#569FFF] transition-colors'>About Us</Link>
         </div>
 
         {/* Investors Button */}

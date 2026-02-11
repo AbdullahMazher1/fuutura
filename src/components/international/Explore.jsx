@@ -1,5 +1,6 @@
 "use client";
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 function Explore() {
@@ -57,7 +58,7 @@ function Explore() {
         </p>
 
         {/* Button */}
-        <button
+        <Link href='/ecosystem'
           onClick={handleClick}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -74,7 +75,7 @@ function Explore() {
           }}
         >
           Explore ECOSYSTEM
-        </button>
+        </Link>
       </div>
 
       {/* CSS for twinkle animation */}
