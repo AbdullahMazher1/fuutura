@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
@@ -23,9 +24,9 @@ const Header = () => {
 
         {/* Investors Button */}
         <div className='rounded-full p-[1px] cursor-pointer border border-[#002371] overflow-hidden transition-all hover:bg-[#002371]/30'>
-          <div className='bg-transparent px-8 py-2 flex items-center justify-center text-white font-medium'>
+          <Link href="/investor" className='bg-transparent px-8 py-2 flex items-center justify-center text-white font-medium'>
             Investors
-          </div>
+          </Link>
         </div>
 
       </div>

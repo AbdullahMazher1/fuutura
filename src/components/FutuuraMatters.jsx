@@ -30,7 +30,7 @@ function FutuuraMatters() {
                 <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center pointer-events-auto">
 
                     {/* The Cutout Shape (The Black Semi-Circle) */}
-                    <div className="absolute top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" />
+                    <div className="absolute z-0 top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" />
 
                     {/* Floating Image */}
                     {/* We use a negative top margin to push it UP, and z-50 to keep it on top */}
@@ -39,7 +39,7 @@ function FutuuraMatters() {
                             src="/Images/Rectangle.png"
                             alt="Futuura Core"
                             fill
-                            className="object-contain drop-shadow-[0_0_15px_rgba(0,194,255,0.3)]"
+                            className="object-contain relative !z-50 drop-shadow-[0_0_15px_rgba(0,194,255,0.3)]"
                             priority // Ensures it loads immediately as it's at the top
                         />
                     </div>
