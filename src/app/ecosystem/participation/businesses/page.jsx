@@ -1,7 +1,8 @@
 export default function BusinessesPage() {
   return (
-    <div className="px-8 py-10 md:px-12 md:py-14 w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first5.png')" }}>
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full bg-center bg-no-repeat bg-cover h-full" style={{ backgroundImage: "url('/Images/first5.png')" }}>
+      <div className="bg-[#0000002a] h-full w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
           Businesses
         </h1>
@@ -25,11 +26,12 @@ export default function BusinessesPage() {
           <li>Reduce Exposure To Sensitive Data</li>
         </ul>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Financial Interaction And Payments</h2>
-        <p className="text-white/90 text-base md:text-lg leading-relaxed">
-          Businesses Can Accept And Manage Value Through Non-Custodial Financial Tools Within The FUUTURA Ecosystem,
-          Enabling Global Participation Without Depending Solely On Traditional Banking Channels.
-        </p>
+      <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Financial Interaction And Payments</h2>
+      <p className="text-white/90 text-base md:text-lg leading-relaxed">
+        Businesses Can Accept And Manage Value Through Non-Custodial Financial Tools Within The FUUTURA Ecosystem,
+        Enabling Global Participation Without Depending Solely On Traditional Banking Channels.
+      </p>
+        </div>
       </div>
     </div>
   );

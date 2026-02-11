@@ -1,7 +1,8 @@
 export default function IntroductionPage() {
   return (
-    <div className="px-8 py-10 md:px-12 md:py-14 mx-auto w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first1.png')" }}>
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full bg-center bg-no-repeat bg-cover h-full" style={{ backgroundImage: "url('/Images/first1.png')" }}>
+      <div className="bg-[#00000057] h-full w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
           Welcome To <span className="text-[#0A7CFF]" style={{ textShadow: '0 0 30px rgba(10,124,255,0.6)' }}>FUUTURA</span>
         </h1>
@@ -24,6 +25,7 @@ export default function IntroductionPage() {
         <p className="text-white/90 text-base md:text-lg leading-relaxed">
           Modern Digital Systems Are Fragmented—Identity, Data, And Value Are Locked Inside Silos Controlled By Intermediaries. FUUTURA Provides A Path To Unify These Under User-Controlled Layers, So Individuals And Organizations Can Own Their Digital Presence And Transact Without Central Gatekeepers.
         </p>
+        </div>
       </div>
     </div>
   );

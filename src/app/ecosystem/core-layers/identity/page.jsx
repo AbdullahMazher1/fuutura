@@ -1,7 +1,8 @@
 export default function IdentityPage() {
   return (
-    <div className="px-8 py-10 md:px-12 md:py-14 w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first2.png')" }}>
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full bg-center bg-no-repeat bg-cover h-full" style={{ backgroundImage: "url('/Images/first2.png')" }}>
+      <div className="bg-[#00000057] h-full w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="max-w-4xl mx-auto">
 
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
           Identity
@@ -28,6 +29,7 @@ export default function IdentityPage() {
         <p className="text-white/90 text-base md:text-lg leading-relaxed mt-6">
           Verification Happens Once. Control Stays With The User.
         </p>
+        </div>
       </div>
     </div>
   );

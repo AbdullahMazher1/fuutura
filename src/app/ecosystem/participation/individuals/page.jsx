@@ -1,7 +1,8 @@
 export default function IndividualsPage() {
   return (
-    <div className="px-8 py-10 md:px-12 md:py-14 w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first5.png')" }}>
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full bg-center bg-no-repeat bg-cover h-full" style={{ backgroundImage: "url('/Images/first5.png')" }}>
+      <div className="bg-[#0000002a] h-full w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
           Individuals
         </h1>
@@ -35,6 +36,7 @@ export default function IndividualsPage() {
           <li>Verify Identity Where Required</li>
           <li>Share Only Necessary Information</li>
         </ul>
+        </div>
       </div>
     </div>
   );

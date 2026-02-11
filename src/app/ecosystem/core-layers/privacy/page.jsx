@@ -1,7 +1,8 @@
 export default function PrivacyPage() {
   return (
-    <div className="px-8 py-10 md:px-12 md:py-14 w-full bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first2.png')" }}>
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full bg-center bg-no-repeat bg-cover h-full" style={{ backgroundImage: "url('/Images/first2.png')" }}>
+      <div className="bg-[#00000057] h-full w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
           Privacy
         </h1>
@@ -24,10 +25,11 @@ export default function PrivacyPage() {
           Privacy Is The Default State.
         </p>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Infrastructure-Based Privacy</h2>
-        <p className="text-white/90 text-base md:text-lg leading-relaxed">
-          Privacy Is Supported Through Decentralized Infrastructure Rather Than Centralized Service Providers. This Allows Participation In Communication, Finance, And Identity Usage Without Surrendering Control Over Personal Data Or Activity.
-        </p>
+      <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Infrastructure-Based Privacy</h2>
+      <p className="text-white/90 text-base md:text-lg leading-relaxed">
+        Privacy Is Supported Through Decentralized Infrastructure Rather Than Centralized Service Providers. This Allows Participation In Communication, Finance, And Identity Usage Without Surrendering Control Over Personal Data Or Activity.
+      </p>
+        </div>
       </div>
     </div>
   );
