@@ -23,8 +23,8 @@ const Header = () => {
         {/* Navigation Bar for Desktop */}
         <div className="hidden md:flex font-futura font-semibold text-white px-12 py-3 flex-row gap-10 border bg-black/20 backdrop-blur-md border-[#569FFF]/50 rounded-full">
           <Link href="/" className={pathname === '/' ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Home</Link>
-          <div className={pathname.includes('roadmap') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>RoadMap</div>
-          <div className={pathname.includes('press') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Press Section</div>
+          {/* <div className={pathname.includes('roadmap') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>RoadMap</div>
+          <div className={pathname.includes('press') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Press Section</div> */}
           <Link href="/blogs" className={pathname === '/blogs' ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Blogs</Link>
           <Link href="/about" className={pathname.includes('about') ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>About Us</Link>
         </div>
