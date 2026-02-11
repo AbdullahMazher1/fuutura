@@ -66,3 +66,38 @@
       transform: rotate(0deg);
     }
   }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 4s ease-in-out infinite;
+  }
+
+  @keyframes gradient-slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    25% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    75% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-gradient-slide > div {
+    animation: gradient-slide 12s ease-in-out infinite;
+  }
