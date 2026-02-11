@@ -53,9 +53,9 @@ function Why() {
                         </div>
                         <div className='flex-1 w-full flex justify-center items-center'>
                             <img
-                                src="/x.gif"
+                                src="/Videos/loader.gif"
                                 alt=""
-                                className="w-full h-[600px] object-cover rounded-xl"
+                                className="w-full h-[300px] object-cover rounded-xl"
                             />
                         </div>
 

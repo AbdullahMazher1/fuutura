@@ -1,6 +1,6 @@
 "use client";
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className='w-full h-[67px] absolute top-0 z-50'>
       <div className='flex items-center justify-between max-w-[1300px] mx-auto py-5 px-6 md:px-0'>
-        
+
         {/* Logo Section */}
         <div className='flex items-center gap-2 cursor-pointer'>
           <img className='h-10' src="/logo1.png" alt="Logo Icon" />
@@ -20,11 +20,21 @@ const Header = () => {
 
         {/* Navigation Bar */}
         <div className='font-futura font-semibold text-white px-12 py-3 flex flex-row gap-10 border bg-black/20 backdrop-blur-md border-[#569FFF]/50 rounded-full'>
-          <div className='text-[#569FFF] cursor-pointer'>Home</div>
-          <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>RoadMap</div>
-          <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>Press Section</div>
-          <div className='cursor-pointer hover:text-[#569FFF] transition-colors'>Blogs</div>
-          <Link href="/about" className='cursor-pointer hover:text-[#569FFF] transition-colors'>About Us</Link>
+          <Link
+            href="/"
+            className={pathname === '/' ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}
+          >
+            Home
+          </Link>
+          <div className={pathname.includes('roadmap') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>RoadMap</div>
+          <div className={pathname.includes('press') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Press Section</div>
+          <div className={pathname.includes('blog') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Blogs</div>
+          <Link
+            href="/about"
+            className={pathname.includes('about') ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}
+          >
+            About Us
+          </Link>
         </div>
 
         {/* Investors/Customers Button */}
@@ -36,7 +46,7 @@ const Header = () => {
 
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

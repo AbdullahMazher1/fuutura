@@ -12,8 +12,9 @@ const scrollingData = [
 
 function FutuuraMatters() {
     return (
-        <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center p-6 md:p-24 z-10 relative">
-            {/* 1. Background Video */}
+        <section className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center p-6 md:p-24 z-10">
+            
+            {/* Background Video */}
             <video
                 autoPlay
                 loop
@@ -24,34 +25,31 @@ function FutuuraMatters() {
                 <source src="/Videos/Futurua.mp4" type="video/mp4" />
             </video>
 
-            {/* 2. The Center Notch/Hole Wrapper */}
-            {/* Increased z-index to 50 and added relative to ensure it stays above siblings */}
+            {/* Center Notch/Hole Wrapper */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 !z-[1111111] pointer-events-none">
                 <div className="relative w-[200px] h-[100px] md:w-[320px] md:h-[160px] flex items-center justify-center pointer-events-auto">
 
-                    {/* The Cutout Shape (The Black Semi-Circle) */}
+                    {/* Cutout Shape */}
                     <div className="absolute z-0 top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" />
 
                     {/* Floating Image */}
-                    {/* We use a negative top margin to push it UP, and z-50 to keep it on top */}
                     <div className="relative w-full h-full -mt-[40%] z-[1111111] scale-110">
                         <Image
                             src="/Images/Rectangle.png"
                             alt="Futuura Core"
                             fill
-                            className="object-contain relative !z-50 drop-shadow-[0_0_15px_rgba(0,194,255,0.3)]"
-                            priority // Ensures it loads immediately as it's at the top
+                            className="object-contain drop-shadow-[0_0_15px_rgba(0,194,255,0.3)] relative !z-50"
+                            priority
                         />
                     </div>
                 </div>
             </div>
 
-            {/* 3. Main Content Layout */}
+            {/* Main Content */}
             <div className="relative z-20 flex flex-col gap-16 w-full max-w-[1400px] mt-24">
-
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
 
-                    {/* Left Column: Text (Takes 5/12 of width) */}
+                    {/* Left Column */}
                     <div className="lg:col-span-5 flex flex-col gap-4">
                         <div className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-[#00C2FF] rotate-45" />
@@ -71,7 +69,7 @@ function FutuuraMatters() {
                         </p>
                     </div>
 
-                    {/* Right Column: Wide Rectangular Box (Takes 7/12 of width) */}
+                    {/* Right Column */}
                     <div
                         className="lg:col-span-7 relative h-[300px] w-full overflow-hidden border border-white/10 shadow-2xl"
                         style={{
@@ -80,7 +78,6 @@ function FutuuraMatters() {
                             backdropFilter: 'blur(14px)',
                         }}
                     >
-                        {/* Split inner container: Left for Text, Right for GIF */}
                         <div className="grid grid-cols-2 h-full">
 
                             {/* Scrolling Text Side */}
@@ -91,7 +88,7 @@ function FutuuraMatters() {
                                             <div className="relative w-12 h-12 flex-shrink-0">
                                                 <Image src={item.icon} alt={item.title} fill className="object-contain" />
                                             </div>
-                                            <span className="text-[#FFF] font-futura text-[18.514px] font-medium leading-normal [leading-trim:both] [text-edge:cap]">
+                                            <span className="text-[#FFF] font-futura text-[18.514px] font-medium leading-normal">
                                                 {item.title}
                                             </span>
                                         </div>
@@ -99,17 +96,15 @@ function FutuuraMatters() {
                                 </div>
                             </div>
 
-                            {/* GIF / Empty Space Side */}
-                            {/* GIF / Empty Space Side */}
+                            {/* GIF Side */}
                             <div className="relative flex items-center justify-center">
-
                                 <div className="relative w-48 h-48 md:w-64 md:h-64">
                                     <Image
                                         src="/Videos/loder.gif"
                                         alt="Loading Ecosystem"
                                         fill
                                         className="object-contain"
-                                        unoptimized // Essential for GIFs in Next.js to prevent frame stripping
+                                        unoptimized
                                     />
                                 </div>
                             </div>
