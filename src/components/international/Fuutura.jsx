@@ -31,7 +31,7 @@ function CardShell({ className = "", children, isHovered = false, isFirstDeck = 
           className="absolute inset-0 rounded-[33px]"
           style={{
             background: "linear-gradient(169.15deg, rgba(10, 124, 255, 0.3) 0%, rgba(58, 123, 255, 0.15) 96.79%)",
-            filter: "blur(25px)",
+            filter: "blur(0px)",
             zIndex: 0,
           }}
         />
