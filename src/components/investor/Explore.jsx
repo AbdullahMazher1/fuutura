@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 function Explore() {
@@ -21,7 +22,8 @@ function Explore() {
                 </h2>
             </div>
             <div className='mt-20'>
-                <button
+                <Link
+                    href={'/ecosystem'}
                     className="px-10 py-3 bg-transparent backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={{
                         borderRadius: '12px',
@@ -29,7 +31,7 @@ function Explore() {
                     }}
                 >
                     Explore ECOSYSTEM
-                </button>
+                </Link>
             </div>
         </section>
     )
