@@ -52,8 +52,8 @@ function KycAml() {
           </div>
 
           {/* CARD 2 */}
-          <div className="bg-animated-border-reverse rounded-[32px] overflow-hidden">
-            <div className="relative rounded-[30px] bg-[#191B21] p-6 sm:p-8 flex flex-col lg:flex-row gap-6">
+          <div className="bg-animated-border rounded-[32px]  h-full overflow-hidden">
+            <div className="relative rounded-[30px] bg-[#191B21] p-6 h-full sm:p-8 flex flex-col lg:flex-row gap-6">
 
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold leading-tight">
