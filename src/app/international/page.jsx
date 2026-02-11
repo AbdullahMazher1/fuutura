@@ -3,6 +3,9 @@ import Fuutura from '@/components/international/Fuutura'
 import Moderan from '@/components/international/Moderan'
 import Assetes from '@/components/international/Assetes'
 import Trust from '@/components/international/Trust'
+import Markets from '@/components/international/Markets'
+import Calm from '@/components/international/Calm'
+import Explore from '@/components/international/Explore'
 import React from 'react'
 
 const page = () => {
@@ -13,6 +16,9 @@ const page = () => {
             <Fuutura />
             <Assetes />
             <Trust />
+            <Markets />
+            <Calm />
+            <Explore />
         </div>
     )
 }

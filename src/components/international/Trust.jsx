@@ -1,14 +1,59 @@
-import React from 'react'
+"use client";
+
+import React, { useEffect, useRef, useState } from 'react'
 
 function Trust() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Trigger animation every time component enters viewport
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            // Reset animation when component leaves viewport
+            setIsVisible(false);
+          }
+        });
+      },
+      { 
+        threshold: 0.2,
+        rootMargin: '0px'
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-gradient-to-b from-[#0a0e1a] to-[#1a1f2e] py-24">
-      <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-0">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 min-h-[800px]">
+    <section 
+      ref={sectionRef}
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#0a0e1a] to-[#1a1f2e]"
+    >
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-0 mt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           
-          {/* Left side - Text content */}
-          <div className="flex-1 max-w-[600px] text-white">
-            <h2 className="font-futura text-[56px] font-bold leading-[1.05] text-white mb-8">
+          {/* Left side - Text content - animates from left to right */}
+          <div 
+            className="flex-1 max-w-[600px] text-white mb-80 mt-0 transition-all  duration-[1000ms] ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateX(0)' : 'translateX(-100px)',
+            }}
+          >
+            <h2 className="font-futura text-[56px] font-bold leading-[1.05] text-white mb-8 whitespace-nowrap">
               Trust, Oversight & <span className="text-[#00C2FF]">Responsibility</span>
             </h2>
 
@@ -22,16 +67,17 @@ function Trust() {
             </div>
           </div>
 
-          {/* Right side - GIF */}
-          <div className="flex-1 flex items-center justify-center lg:justify-end relative">
+          {/* Right side - GIF - animates from right to left */}
+          <div className="flex-1 flex items-center justify-end relative mt-20">
             <div
-              className="relative"
+              className="relative transition-all duration-[1000ms] ease-out"
               style={{
-                width: '1690px',
-                height: '951px',
+                width: '400px',
+                height: '400px',
                 top: '-111px',
-                left: '100px',
-                opacity: 1,
+                right: '10px',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(200px)',
               }}
             >
               <img
