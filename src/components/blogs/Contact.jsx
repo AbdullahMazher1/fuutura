@@ -64,7 +64,7 @@ function Contact() {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center py-24 px-6">
+    <section className="relative w-full flex items-center justify-center py-24 px-6" id="subscribe">
       {/* Outer container with gradient border */}
       <div
         className="relative rounded-xl p-[2px]"

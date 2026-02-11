@@ -12,7 +12,7 @@ const Hero = () => {
 
         {/* Badge */}
         <div className="mx-auto rounded-full px-4 py-2 sm:px-6 sm:py-2.5 
-        border border-[#ffffff80] text-white bg-transparent backdrop-blur-md text-sm sm:text-base">
+        border border-[#ffffff80] text-white bg-transparent backdrop-blur-md text-sm sm:text-base mt-12">
           A New Market Exists
         </div>
 

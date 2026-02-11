@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { GimIcon } from '../assets/Svg';
 
@@ -41,16 +41,21 @@ const platformData = [
 function Capabilities() {
   const [index, setIndex] = useState(0);
 
-  const handleNext = () => {
-    setIndex((prev) => (prev + 1) % platformData.length);
-  };
+  useEffect(() => {
+    // Auto-cycle through platform data every 4 seconds
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % platformData.length);
+    }, 6000);
+
+    // Cleanup interval on unmount
+    return () => clearInterval(interval);
+  }, []);
 
   const current = platformData[index];
 
   return (
     <section
-      onClick={handleNext}
-      className="relative z-[10] font-futura flex flex-col lg:flex-row gap-12 lg:gap-24 bg-black pb-12 lg:pb-0 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen items-center overflow-hidden cursor-pointer select-none"
+      className="relative z-[10] font-futura flex flex-col lg:flex-row gap-12 lg:gap-24 bg-black pb-12 lg:pb-0 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen items-center overflow-hidden select-none"
     >
       {/* Glow */}
       <div
@@ -87,7 +92,7 @@ function Capabilities() {
           </span>
         </h1>
 
-        <p className="text-white text-sm sm:text-base md:text-lg opacity-80 max-w-md mx-auto lg:mx-0">
+        <p className="text-white text-sm sm:text-base md:text-lg opacity-80 max-w-md mx-auto lg:mx-0 line-clamp-2">
           {current.description}
         </p>
       </div>
@@ -103,12 +108,12 @@ function Capabilities() {
             {current.cardTitle}
           </h2>
 
-          <div className="relative z-30 w-full h-full flex items-center justify-center">
+          <div className="relative z-30 h-[250px] w-[250px] flex items-center justify-center">
             <Image
               src={current.gif}
               alt={current.title}
               fill
-              className="object-contain p-4 sm:p-8"
+              className="object-contain p-4 sm:p-8 h-[250px] w-[250px]"
               unoptimized
             />
           </div>
