@@ -200,7 +200,7 @@ const FuuturaUsage = () => {
       {/* ===== VIDEO BACKGROUND ===== */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110"
         src="/beam.mp4"
         muted
         playsInline
