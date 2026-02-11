@@ -33,14 +33,16 @@ function Mission() {
 
                     {/* Top Label */}
                     {/* Top Label */}
-                    <div className="inline-flex w-auto max-w-full flex-shrink-0 items-center justify-center rounded-[32px] border border-[#3A7BFF] px-4 sm:px-6 md:px-[24px] py-2 sm:py-3 bg-white/5 backdrop-blur-sm">
-                        <div className="flex flex-row items-center gap-2 sm:gap-3">
-                            <GimIcon className="w-3 h-3 sm:w-4 sm:h-4" />
-                            <span className="text-white font-futura text-xs sm:text-sm font-medium tracking-widest truncate">
-                                Mission
-                            </span>
-                        </div>
-                    </div>
+                    {/* Top Label - Hidden on Mobile */}
+<div className="hidden sm:inline-flex w-auto max-w-full flex-shrink-0 items-center justify-center rounded-[32px] border border-[#3A7BFF] px-4 sm:px-6 md:px-[24px] py-2 sm:py-3 bg-white/5 backdrop-blur-sm">
+    <div className="flex flex-row items-center gap-2 sm:gap-3">
+        <GimIcon className="w-3 h-3 sm:w-4 sm:h-4" />
+        <span className="text-white font-futura text-xs sm:text-sm font-medium tracking-widest truncate">
+            Mission
+        </span>
+    </div>
+</div>
+
 
                     {/* Heading */}
                     <h1 className="font-futura font-bold text-2xl sm:text-3xl md:text-[48px] leading-snug md:leading-tight mb-4 sm:mb-6 tracking-tight px-2 sm:px-0 max-w-full">
