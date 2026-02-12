@@ -102,7 +102,7 @@ function Calm() {
               <img
                 src="/Videos/anim4.gif"
                 alt="Calm infrastructure"
-                className="w-full h-full object-contain relative z-10"
+                className="w-full h-full object-contain relative z-10 mt-12"
               />
             </div>
           </div>
