@@ -1,7 +1,7 @@
 export default function GettingStartedPage() {
   return (
     <>
-      <div className="flex-1 text-center ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover w-full" style={{ backgroundImage: "url('/Images/first1.png')" }} aria-hidden />
+      <div className="flex-1 text-center ecosystem-bg-full-width bg-fixed !fixed bg-center bg-no-repeat bg-cover w-full" style={{ backgroundImage: "url('/Images/first1.png')" }} aria-hidden />
       <div className="flex-1 text-center ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover w-full h-full bg-[#000000a4]" aria-hidden />
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-8 py-10 md:px-12 md:py-14">
         <div className="w-full max-w-4xl rounded-lg px-6 py-8 md:px-8 md:py-10 flex flex-col items-center justify-center">

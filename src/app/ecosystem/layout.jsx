@@ -101,8 +101,8 @@ export default function EcosystemLayout({ children }) {
               'linear-gradient(to top, rgba(30,40,60,0.9) 0%, transparent 40%), radial-gradient(ellipse 80% 50% at 50% 85%, rgba(10,124,255,0.15), transparent 50%)',
           }}
         />
-        <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden min-h-full h-full md:ml-[270px] overflow-anchor-none" style={{ overflowAnchor: 'none' }}>
-          <div key={pathname} className={`relative z-10 min-h-screen min-h-full ecosystem-line-enter ecosystem-animate-${enterDir}`}>
+        <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden min-h-full h-full overflow-anchor-none" style={{ overflowAnchor: 'none' }}>
+          <div key={pathname} className={`relative z-10 min-h-full ecosystem-line-enter ecosystem-animate-${enterDir}`}>
             {content}
           </div>
         </div>

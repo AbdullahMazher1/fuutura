@@ -1,7 +1,7 @@
 export default function IntroductionPage() {
   return (
     <>
-      <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first1.png')" }} aria-hidden />
+      <div className="w-full ecosystem-bg-full-width bg-fixed bg-center fixed bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first1.png')" }} aria-hidden />
       <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover bg-[#000000a4]" aria-hidden />
       <div className="relative z-10 min-h-screen w-full px-8 py-10 md:px-12 md:py-14">
         <div className="rounded-lg px-6 py-8 md:px-8 md:py-10 max-w-4xl mx-auto">
