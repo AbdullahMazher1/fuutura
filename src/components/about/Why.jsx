@@ -14,7 +14,7 @@ function Why() {
                     <div className='bg-center bg-no-repeat bg-cover h-auto md:h-[380px] w-full flex flex-col p-8 md:p-12 rounded-3xl' style={{ backgroundImage: "url('/hhhh.png')" }}>
 
                         {/* TOP HEADING ROW: Traditional Market -> Fuutura */}
-                        <div className="flex items-center justify-start gap-6 md:gap-12 mb-4 ml-0 md:ml-4">
+                        <div className="flex items-center justify-start gap-6 md:gap-12 mb-4 ml-0 -ml-8 ">
                             <h3 className="text-white font-futura text-sm md:text-2xl font-bold">
                                 Traditional Market
                             </h3>
@@ -24,9 +24,9 @@ function Why() {
                             </h3>
                         </div>
 
-                        <div className='flex flex-col md:flex-row items-center justify-between gap-6 md:gap-24'>
+                        <div className='flex flex-col md:flex-row items-center justify-between gap-6 md:gap-24 ml-4'>
                             {/* LEFT FEATURE COLUMN (Traditional) */}
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-4 ">
                                 <div className="inline-flex w-[160px] items-center justify-center rounded-[32px] border border-white/10 px-[24px] py-[10px] bg-white/5 backdrop-blur-sm">
                                     <span className="text-white/60 font-futura text-sm font-medium uppercase tracking-widest">
                                         Slow
@@ -45,7 +45,7 @@ function Why() {
                             </div>
 
                             {/* RIGHT FEATURE COLUMN (Fuutura) */}
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-4 ml-4">
                                 <div className="flex items-center w-full justify-center rounded-[32px] border border-[#3A7BFF] py-[10px] bg-[#3A7BFF]/10 backdrop-blur-sm shadow-[0_0_15px_rgba(58,123,255,0.3)]">
                                     <GimIcon className="" />
                                     <span className="text-white font-futura text-sm font-medium uppercase tracking-widest">

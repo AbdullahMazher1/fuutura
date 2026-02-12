@@ -3,7 +3,7 @@ import { GimIcon } from '@/assets/Svg';
 
 function Philosophy() {
     return (
-        <div className="relative flex flex-col md:flex-row items-center justify-center pt-24 px-6 md:px-24 gap-16">
+        <div className="relative flex flex-col md:flex-row items-center justify-center pt-16 px-6 md:px-24 gap-16">
             
             {/* Background overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm z-0"></div>
