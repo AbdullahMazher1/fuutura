@@ -2,9 +2,21 @@ import React from 'react'
 
 function Values() {
   const cards = [
-    { icon: '/Images/aboutIcon (1).png', title: 'Clear processes', highlight: true },
-    { icon: '/Images/aboutIcon (2).png', title: 'Transparent pricing', highlight: false },
-    { icon: '/Images/aboutIcon (3).png', title: 'Smooth transactions', highlight: false },
+    { 
+      icon: '/Images/About06.png', 
+      hoverIcon: '/Images/HoverAbout (1).png', 
+      title: 'Clear processes' 
+    },
+    { 
+      icon: '/Images/About03.png', 
+      hoverIcon: '/Images/HoverAbout (2).png', 
+      title: 'Transparent pricing' 
+    },
+    { 
+      icon: '/Images/About05.png', 
+      hoverIcon: '/Images/HoverAbout (3).png', 
+      title: 'Smooth transactions' 
+    },
   ]
 
   return (
@@ -20,17 +32,28 @@ function Values() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="group relative flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#0B0C0F] to-[#1A1A2E] rounded-xl p-8 w-full md:w-1/3 text-center overflow-hidden transition-shadow duration-500 hover:shadow-2xl"
+            className="group relative flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#0B0C0F] to-[#1A1A2E] rounded-xl p-8 w-full md:w-1/3 text-center overflow-hidden border border-white/5 transition-colors duration-300 hover:border-white/20"
           >
-            {/* Radial gradient on hover */}
-            <div className="absolute inset-0 bg-gradient-radial from-[#569FFF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"></div>
-
-            {/* Icon with optional purple highlight */}
-            <div className={`p-4 rounded-lg relative z-10 ${card.highlight ? 'border-2 border-[#8E5FFF]' : ''}`}>
-              <img src={card.icon} alt={card.title} className="w-12 h-12" />
+            {/* Icon Container */}
+            <div className="cursor-pointer relative w-16 h-16 flex items-center justify-center">
+              {/* Default Icon: Fades out and slides up slightly */}
+              <img 
+                src={card.icon} 
+                alt={card.title} 
+                className="w-12 h-12 absolute transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:-translate-y-2" 
+              />
+              
+              {/* Hover Icon: Fades in and slides up from below */}
+              <img 
+                src={card.hoverIcon} 
+                alt={`${card.title} hover`} 
+                className="w-12 h-12 absolute opacity-0 translate-y-2 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0" 
+              />
             </div>
 
-            <span className="text-white font-futura text-lg font-medium relative z-10">{card.title}</span>
+            <span className="text-white font-futura text-lg font-medium transition-colors duration-300 group-hover:text-[#00A3FF]">
+              {card.title}
+            </span>
           </div>
         ))}
       </div>
