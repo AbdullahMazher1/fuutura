@@ -59,7 +59,7 @@ function Calm() {
           
           {/* Left side - Text content - animates from top to bottom */}
           <div 
-            className="flex-1 max-w-[700px] w-full text-white transition-all duration-[1000ms] ease-out text-center lg:text-left"
+            className=" ml-20 flex-1 max-w-[700px] w-full text-white transition-all duration-[1000ms] ease-out text-center lg:text-left"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : isMobile ? 'translateY(-20px)' : 'translateY(-50px)',

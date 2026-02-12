@@ -133,7 +133,7 @@ function Fuutura() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-0">
         <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
           {/* ================= LEFT TEXT ================= */}
-          <div className="lg:col-span-5 text-center lg:text-left">
+          <div className="lg:col-span-5 text-center lg:text-left ml-10">
             <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.05] text-white">
               What <span className="text-[#00C2FF]">FUUTURA</span> Is
             </h2>
@@ -150,7 +150,7 @@ function Fuutura() {
           </div>
 
           {/* ================= RIGHT CARDS ================= */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end">
+          <div className="lg:col-span-7 flex justify-center lg:justify-end mr-10">
             <div
               className={`relative ${
                 isMobile ? "flex flex-col items-center gap-8" : ""

@@ -49,7 +49,7 @@ function Vision() {
                     className="px-10 py-3 bg-transparent border border-white/20 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={cardSurface}
                 >
-                    Explore Ecosystem
+                    Long-term relevance
                 </button>
                 <button
                     className="px-10 py-3 bg-transparent border border-white/20 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
