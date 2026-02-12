@@ -166,7 +166,7 @@ const FuuturaUsage = () => {
               ))}
             </div> */}
             <div
-              className="pl-0 lg:pl-12 text-center lg:text-left"
+              className="pl-0 lg:pl-12 text-center lg:text-left mt-12"
               data-aos="fade-left"
             >
               {features.map((item, i) => (

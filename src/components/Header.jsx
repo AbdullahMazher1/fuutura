@@ -9,62 +9,31 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const ToggleSwitch = () => (
-    <div className="flex items-center gap-6">
-      {/* Dynamic Label to the left of the toggle */}
-      <span className="text-white font-futura text-lg uppercase tracking-[0.2em] min-w-[120px] text-right">
-        {isInvestor ? 'Investor' : 'Customer'}
-      </span>
+    <Link
+      href={isInvestor ? "/" : "/investor"}
+      className="relative w-[160px] h-12 flex items-center bg-transparent backdrop-blur-md border border-[#569FFF]/30 rounded-full p-1.5 cursor-pointer overflow-hidden group shadow-inner"
+    >
+      <div className="relative w-full h-full flex items-center px-4">
 
-      <Link
-        href={isInvestor ? "/" : "/investor"}
-        className={`relative w-[105px] h-[40px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-500 ease-in-out overflow-hidden shadow-inner ${isInvestor ? 'bg-[#00113C]' : 'bg-[#D9E4FF]'
-          }`}
-      >
-        <div className="relative w-full h-full flex items-center justify-between px-2">
+        {/* The Text Label */}
+        {/* Reduced translate-x from 90px to 45px to keep it closer to the ball */}
+        <span className={`text-[12px] font-bold uppercase tracking-wider transition-all duration-500 ease-in-out z-10 ${isInvestor
+            ? 'translate-x-0 opacity-100 text-[#569FFF]'
+            : 'translate-x-[45px] opacity-100 text-[#569FFF]'
+          }`}>
+          {isInvestor ? 'Customers' : 'Investors'}
+        </span>
 
-          {/* Background Sun Icon (Left) - Visible when on Investor mode */}
-          <svg
-            className={`w-4 h-4 transition-opacity duration-300 ${!isInvestor ? 'opacity-0' : 'opacity-40'}`}
-            viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-          </svg>
-
-          {/* Background Moon Icon (Right) - Visible when on Customer mode */}
-          <svg
-            className={`w-4 h-4 transition-opacity duration-300 ${isInvestor ? 'opacity-0' : 'opacity-40'}`}
-            viewBox="0 0 24 24" fill="none" stroke="#0025B1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-
-          {/* Sliding Ball */}
-          <div
-            className="absolute h-[32px] w-[46px] transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) flex items-center justify-center shadow-md z-10"
-            style={{
-              left: isInvestor ? '55px' : '4px',
-              background: 'linear-gradient(180deg, #0025B1 0%, #3A56C0 100%)',
-              borderRadius: '16px'
-            }}
-          >
-            {isInvestor ? (
-              /* Moon inside ball */
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            ) : (
-              /* Sun inside ball - FIXED: Added stroke to show rays */
-              <svg
-                width="18" height="18" viewBox="0 0 24 24" fill="white"
-                stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
-            )}
-          </div>
+        {/* The Glowing Ball */}
+        {/* Adjusted the 'left' position when isInvestor is true to bring it inward */}
+        <div
+          className={`absolute h-9 w-9 bg-gradient-to-tr from-[#569FFF] to-[#80B3FF] rounded-full shadow-[0_0_20px_rgba(86,159,255,0.7)] transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) flex items-center justify-center ${isInvestor ? 'left-[105px]' : 'left-1.5'
+            }`}
+        >
+          <div className="h-2 w-2 bg-white rounded-full opacity-50 blur-[1px]" />
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 
   return (
@@ -73,15 +42,15 @@ const Header = () => {
 
         {/* Logo Section */}
         <div className="flex items-center gap-3 cursor-pointer">
-          <img className="h-9" src="/logo1.png" alt="Icon" />
-          <img className="h-5 hidden sm:block opacity-90" src="/logo.gif" alt="Text" />
+          <img className="h-10" src="/logo1.png" alt="Icon" />
+          <img className="h-6 hidden sm:block" src="/logo.gif" alt="Text" />
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10 bg-black/30 backdrop-blur-xl border border-white/5 px-10 py-2.5 rounded-full">
-          <Link href="/" className={`text-[13px] font-medium tracking-wide transition-all ${!isInvestor ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>HOME</Link>
-          <Link href="/blogs" className={`text-[13px] font-medium tracking-wide transition-all ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>BLOGS</Link>
-          <Link href="/about" className={`text-[13px] font-medium tracking-wide transition-all ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>ABOUT</Link>
+        <nav className="hidden md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
+          <Link href="/" className={`text-[18px] tracking-wide ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
+          <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
+          <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
         </nav>
 
         {/* Desktop Toggle */}
@@ -93,30 +62,39 @@ const Header = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-[#569FFF]/5 border border-[#569FFF]/20 rounded-full"
+            className="w-10 h-10 flex items-center justify-center bg-[#569FFF]/10 border border-[#569FFF]/30 rounded-full"
           >
-            <div className={`w-5 h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-            <div className={`w-5 h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-            <div className={`w-5 h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            <div className="space-y-1.5">
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-[#070707] transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) z-[100] ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
-        <div className="flex flex-col h-full items-center justify-center px-10">
-          <div className="flex flex-col gap-10 text-center">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">HOME</Link>
-            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">BLOGS</Link>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">ABOUT</Link>
+      {/* Mobile Impressive UI Overlay */}
+      <div className={`fixed inset-0 bg-[#050505] transition-all duration-700 ease-in-out z-[100] ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex flex-col h-full pt-24 items-center px-10">
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-8 right-8 text-white/40 text-sm tracking-tighter"
+          >
+            X
+          </button>
+
+          <div className="flex flex-col gap-8 text-center mb-16">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">HOME</Link>
+            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">BLOGS</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ABOUT</Link>
           </div>
 
-          <div className="w-24 h-[1px] bg-[#569FFF]/40 my-16" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />
 
-          <div className="scale-[1.4]" onClick={() => setIsMobileMenuOpen(false)}>
+          <p className="text-[#569FFF] text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
+          <div className="scale-125" onClick={() => setIsMobileMenuOpen(false)}>
             <ToggleSwitch />
           </div>
-          <p className="mt-8 text-[10px] tracking-[0.4em] text-white/30 font-bold">MODE SELECT</p>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ export const Direction = () => {
             {/* RIGHT COLUMN */}
             <div className="flex flex-col gap-6 md:gap-8 max-w-xl w-full items-center md:items-start justify-center text-center md:text-left">
                 <h2 className="font-futura text-white text-[28px] sm:text-[30px] md:text-[38px] font-bold leading-tight">
-                    Fuuture <span className="text-[#00A3FF]">Direction</span>
+                    Fuutura <span className="text-[#00A3FF]">Direction</span>
                 </h2>
 
                 <p className="font-futura text-white/60 text-base sm:text-lg md:text-xl leading-relaxed">
