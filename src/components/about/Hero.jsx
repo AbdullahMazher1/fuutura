@@ -19,7 +19,7 @@ function Hero() {
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center max-w-3xl gap-6">
                 <button className="text-white border border-white px-4 py-1 rounded-full text-sm md:text-base font-futura">
-                    Future About Us
+                    Fuutura About Us
                 </button>
 
                 <h2 className="font-futura text-white text-[30px] md:text-[60px] font-bold leading-tight">

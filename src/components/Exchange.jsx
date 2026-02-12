@@ -26,7 +26,7 @@ const platformData = [
     title: "Safeguards",
     description: "Verification and controls designed to support oversight, transparency, and market integrity.",
     gif: "/Videos/Id.gif",
-    cardTitle: "Future Id"
+    cardTitle: "Fuutura Id"
   },
   {
     id: 3,
