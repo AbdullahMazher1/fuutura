@@ -29,7 +29,7 @@ function Philosophy() {
             {/* RIGHT COLUMN */}
             <div className="relative z-10 w-full md:w-1/2 flex items-center justify-center">
                 <img 
-                    className="w-3/4 md:w-full" 
+                    className="w-3/4 md:w-full opacity-50" 
                     src="/Images/Ellipse1.png" 
                     alt="Ellipse Background" 
                 />

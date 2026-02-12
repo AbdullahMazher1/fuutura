@@ -2,13 +2,13 @@ import React from 'react';
 
 export const Direction = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center px-6 md:px-24 bg-black gap-12 md:gap-16 py-16">
+        <div className="flex flex-col md:flex-row items-center justify-center px-6 md:px-24 bg-black gap-0 md:gap-16 py-16">
 
             {/* LEFT COLUMN */}
             <div className="relative w-full md:w-1/2 flex items-center justify-center">
                 {/* Ellipse Background */}
                 <img
-                    className="w-full max-w-[300px] md:w-full md:max-w-none"
+                    className="w-full max-w-[500px] md:w-full md:max-w-none opacity-50"
                     src="/Images/Ellipse1.png"
                     alt="Ellipse Background"
                 />
