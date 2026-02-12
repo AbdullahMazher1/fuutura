@@ -81,15 +81,20 @@ function Capabilities() {
         </div>
 
         <div className="flex flex-col gap-2">
-            <h1 className="flex flex-wrap justify-center lg:justify-start gap-x-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="text-white">
-                {current.tag}
+          <h1
+            className="flex flex-wrap items-baseline justify-center lg:justify-start gap-x-3 text-3xl sm:text-4xl md:text-5xl lg:text-6x font-bold leading-[1.3] pb-[0.1em]">
+
+            <span className="text-white align-baseline">
+              {current.tag}
             </span>
-            <span className="bg-gradient-to-r from-[#3486FF] to-[#14C7FF] bg-clip-text text-transparent">
-                {current.title}
+
+            <span className="bg-gradient-to-r from-[#3486FF] to-[#14C7FF] bg-clip-text pb-[0.2em] text-transparent align-baseline">
+              {current.title}
             </span>
-            </h1>
+
+          </h1>
         </div>
+
 
         <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-md mx-auto lg:mx-0 leading-relaxed">
           {current.description}
@@ -99,26 +104,26 @@ function Capabilities() {
       {/* Right Card */}
       <div className="relative z-10 w-full lg:w-1/2 flex justify-center items-center">
         <div className="relative w-full max-w-[550px] aspect-square sm:aspect-[4/3] rounded-[32px] border border-blue-500/20 overflow-hidden shadow-[0_0_80px_rgba(58,123,255,0.15)] flex flex-col items-center justify-center p-6 transition-all duration-500">
-          
+
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-black/90" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(58,123,255,0.15)_0%,transparent_70%)]" />
 
           {/* Centered Content Container */}
           <div className="relative z-30 flex flex-col items-center justify-center gap-8 w-full h-full">
-             <h2 className="text-[#00C2FF] text-xl sm:text-2xl font-bold tracking-[0.1em] text-center drop-shadow-[0_0_10px_rgba(0,194,255,0.3)]">
-                {current.cardTitle}
+            <h2 className="text-[#00C2FF] text-xl sm:text-2xl font-bold tracking-[0.1em] text-center drop-shadow-[0_0_10px_rgba(0,194,255,0.3)]">
+              {current.cardTitle}
             </h2>
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center">
-                <Image
+              <Image
                 src={current.gif}
                 alt={current.title}
                 fill
                 className="object-contain"
                 unoptimized
-                />
+              />
             </div>
 
-           
+
           </div>
 
           <div className="absolute bottom-0 w-[120%] h-1/3 bg-blue-600/10 blur-[100px] rounded-full z-20 translate-y-1/2" />

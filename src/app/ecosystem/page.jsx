@@ -234,24 +234,28 @@ const EcosystemPageInner = () => {
         aria-hidden={!(verifying || showWelcomeSection)}
       >
         <div className="bg-[#00000080] h-full w-full flex items-center justify-center px-6">
-          <div className="max-w-xl text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              {verifying && "Verifying Email"}
-              {!verifying && isVerified && "Email Verified"}
-              {!verifying &&
-                !isVerified &&
-                verificationError &&
-                "Verification Failed"}
-            </h1>
-            <p className="text-[#E5EAEC] text-base md:text-lg">
-              {verifying && "We are verifying your email. Please wait..."}
-              {!verifying &&
-                isVerified &&
-                "Your access is now verified. Welcome To The FUUTURA Ecosystem."}
-              {!verifying && verificationError && verificationError}
-            </p>
-          </div>
-        </div>
+  <div className="max-w-xl text-center">
+    <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+      {verifying && "Verifying Email"}
+      {!verifying && isVerified && "Email Verified"}
+      {!verifying && !isVerified && verificationError && "Verification Failed"}
+    </h1>
+
+    <p className="text-[#E5EAEC] text-base md:text-lg">
+      {verifying && "We are verifying your email. Please wait..."}
+      {!verifying && isVerified &&
+        "Your access is now verified. Welcome To The FUUTURA Ecosystem."}
+      {!verifying && verificationError && verificationError}
+    </p>
+
+    {!verifying && isVerified && (
+      <p className="mt-4 text-sm text-[#00C2FF] animate-pulse cursor-pointer">
+        Click to Continue →
+      </p>
+    )}
+  </div>
+</div>
+
       </section>
     </div>
   );

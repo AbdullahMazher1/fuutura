@@ -26,12 +26,19 @@ function Hero() {
             className="relative flex flex-col text-center items-center overflow-hidden h-[550px] bg-black pt-16"
         >
             {/* Background Video */}
+
             <video
                 src="/Videos/light2.mp4"
                 autoPlay
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                    // This creates a linear gradient mask starting transparent at the top 
+                    // and becoming fully opaque at 20% of the height.
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%)',
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%)',
+                }}
             />
 
             <div className="absolute inset-0 bg-black/50 -z-10" />
@@ -88,7 +95,7 @@ function Hero() {
 
 
             {/* TITLE */}
-            <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
+            <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 mt-12 leading-tight z-10 relative">
                 Market <span className="text-[#00A3FF]">infrastructure</span> Build For
                 Scale, <br />
                 Oversight, And{" "}
@@ -115,7 +122,7 @@ function Hero() {
                 <motion.img
                     src="/Images/Earth.png"
                     alt="Earth"
-                    className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] object-contain"
+                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain"
                     animate={inView ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                         repeat: inView ? Infinity : 0,
