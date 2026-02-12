@@ -23,7 +23,7 @@ function Hero() {
                 </button>
 
                 <h2 className="font-futura text-white text-[30px] md:text-[60px] font-bold leading-tight">
-                    About <span className="text-[#00A3FF]">US</span>
+                    About <span className="text-[#00A3FF]">Us</span>
                 </h2>
 
                 <p className="font-futura text-white/60 text-lg md:text-xl leading-relaxed">
