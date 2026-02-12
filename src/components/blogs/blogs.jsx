@@ -21,10 +21,11 @@ const EyeIcon = () => (
 );
 
 const SearchIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M19 19L14.65 14.65" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
+  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 5.16766C0.5 5.78062 0.620692 6.38759 0.855186 6.95389C1.08968 7.5202 1.43338 8.03476 1.86667 8.46819C2.29996 8.90162 2.81434 9.24544 3.38046 9.48001C3.94658 9.71458 4.55334 9.83531 5.1661 9.83531C5.77886 9.83531 6.38562 9.71458 6.95174 9.48001C7.51785 9.24544 8.03224 8.90162 8.46553 8.46819C8.89881 8.03476 9.24252 7.5202 9.47701 6.95389C9.7115 6.38759 9.83219 5.78062 9.83219 5.16766C9.83219 4.55469 9.7115 3.94773 9.47701 3.38142C9.24252 2.81512 8.89881 2.30056 8.46553 1.86713C8.03224 1.43369 7.51785 1.08988 6.95174 0.855304C6.38562 0.620732 5.77886 0.5 5.1661 0.5C4.55334 0.5 3.94658 0.620732 3.38046 0.855304C2.81434 1.08988 2.29996 1.43369 1.86667 1.86713C1.43338 2.30056 1.08968 2.81512 0.855186 3.38142C0.620692 3.94773 0.5 4.55469 0.5 5.16766Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5001 12.4997L8.5 8.49902" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 );
 
 // Sample blog data array - exported for use in detail page
@@ -550,14 +551,14 @@ function Blogs() {
         {/* Header Section */}
         <div className="text-center mb-12">
           {/* Articles Tag */}
-          <div className="inline-block mb-6">
+          {/* <div className="inline-block mb-6">
             <div className="px-4 py-2 rounded-lg border border-[#3A7BFF] bg-[#3A7BFF]/10 backdrop-blur-sm">
               <span className="font-futura text-sm font-medium text-white">
                 Articles
               </span>
             </div>
-          </div>
-
+          </div> */}
+          <img src="/Images/Tab.png" alt="" className="mx-auto mb-6" />
           {/* Main Title */}
           <h1 className="font-futura text-5xl md:text-6xl font-bold text-white mb-4">
             Top Stories
@@ -570,7 +571,7 @@ function Blogs() {
         </div>
 
         {/* Search and Filters Section */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12 items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-4 mb-12 items-center gap-8">
           {/* Search Bar */}
           <div className="relative flex-1 max-w-md">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none">
@@ -581,7 +582,7 @@ function Blogs() {
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-12 pl-12 pr-4 rounded-lg bg-gray-800/50 border border-white/10 text-white placeholder-white/50 font-futura focus:outline-none focus:border-[#3A7BFF]/50 transition-colors"
+              className="w-full h-12 pl-12 pr-4 rounded-full bg-[#101012] border border-white/10 text-white placeholder-white/50 font-futura focus:outline-none focus:border-[#3A7BFF]/50 transition-colors"
             />
           </div>
 
@@ -591,9 +592,9 @@ function Blogs() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg font-futura text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full font-futura text-sm font-medium ${
                   selectedCategory === category
-                    ? "bg-gray-800 text-white border border-white/20"
+                    ? "bg-[#101012] border border-white/10 text-white "
                     : "text-white/70 hover:text-white hover:bg-gray-800/50"
                 }`}
               >

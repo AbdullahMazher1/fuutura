@@ -51,32 +51,32 @@ function BlogDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen  mt-8 bg-black">
       {/* Back Button */}
       <div className="max-w-[1200px] mx-auto px-6 pt-8 pb-4">
-        <button
+        {/* <button
           onClick={() => router.push('/blogs')}
           className="flex items-center gap-2 text-white/70 hover:text-white font-futura transition-colors"
         >
           <ArrowLeftIcon />
           <span>Back to Blogs</span>
-        </button>
+        </button> */}
+      </div>
+
+      {/* Blog Image - Full Width */}
+      <div className="relative w-full overflow-hidden mb-8">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-auto"
+          onError={(e) => {
+            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='500'%3E%3Crect fill='%23333' width='900' height='500'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='24' dy='10.5' font-weight='bold' x='50%25' y='50%25' text-anchor='middle'%3EBlog Image%3C/text%3E%3C/svg%3E";
+          }}
+        />
       </div>
 
       {/* Blog Content */}
       <article className="max-w-[900px] mx-auto px-6 py-8">
-        {/* Blog Image */}
-        <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden mb-8">
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='500'%3E%3Crect fill='%23333' width='900' height='500'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='24' dy='10.5' font-weight='bold' x='50%25' y='50%25' text-anchor='middle'%3EBlog Image%3C/text%3E%3C/svg%3E";
-            }}
-          />
-        </div>
-
         {/* Blog Header */}
         <div className="mb-8">
           {/* Category Badge */}
