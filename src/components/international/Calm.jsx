@@ -85,10 +85,24 @@ function Calm() {
             }}
           >
             <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
+              {/* Glowing background effect - bulb-like glow covering half screen */}
+              <div 
+                className="absolute -z-10"
+                style={{
+                  background: 'radial-gradient(ellipse at center, #052A5E 0%, rgba(5, 42, 94, 0.7) 20%, rgba(5, 42, 94, 0.4) 40%, rgba(2, 22, 48, 0.3) 60%, #021630 80%, transparent 100%)',
+                  width: '200%',
+                  height: '200%',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  filter: 'blur(60px)',
+                  opacity: 0.6,
+                }}
+              />
               <img
                 src="/Videos/anim4.gif"
                 alt="Calm infrastructure"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain relative z-10"
               />
             </div>
           </div>
