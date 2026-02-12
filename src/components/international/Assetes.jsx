@@ -44,7 +44,7 @@ function Assetes() {
       </div>
 
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 max-w-[1200px] w-full px-6 flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="relative z-10 max-w-[1200px] w-full px-6 flex flex-col lg:flex-row items-center justify-between gap-16 py-10">
         {/* ================= GLOBE ================= */}
         <div
           className={`

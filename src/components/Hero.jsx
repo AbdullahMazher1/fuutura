@@ -25,6 +25,7 @@ const Hero = () => {
           </span>{" "}
           for real markets and real people.
         </h2>
+        
 
         {/* Paragraph */}
         <p className="text-sm sm:text-base md:text-lg text-white text-center max-w-xl mx-auto">

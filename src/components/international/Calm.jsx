@@ -65,7 +65,7 @@ function Calm() {
               transform: isVisible ? 'translateY(0)' : isMobile ? 'translateY(-20px)' : 'translateY(-50px)',
             }}
           >
-            <h1 className="font-futura font-medium text-2xl sm:text-3xl md:text-4xl lg:text-[48px] !leading-tight tracking-normal align-middle uppercase text-white mb-4 sm:mb-6 lg:mb-8">
+            <h1 className="font-futura font-medium text-2xl sm:text-3xl md:text-4xl lg:text-[48px] !leading-tight tracking-normal align-middle text-white mb-4 sm:mb-6 lg:mb-8">
               <span className="text-[#00C2FF]">FUUTURA</span> is building calm, modern market infrastructure designed to last.
             </h1>
             

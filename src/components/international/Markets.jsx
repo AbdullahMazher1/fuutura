@@ -58,27 +58,27 @@ function Markets() {
         </div>
 
         {/* Middle section - Flags and Chart */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-16 h-auto">
+        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-24 xl:gap-32 lg:min-h-[320px]">
           
           {/* Left side - Flags container with animation - comes from left to right */}
           <div 
-            className="flex items-center justify-center transition-all duration-[1000ms] ease-out w-full lg:w-auto"
+            className="flex items-center justify-center lg:items-center lg:h-full transition-all duration-[1000ms] ease-out w-full lg:w-auto"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateX(0)' : 'translateX(-100px)',
             }}
           >
             <div
-              className="relative overflow-hidden rounded-lg border border-[#00C2FF]/30 bg-black/20 w-full max-w-[456px] lg:w-[456px] h-[80px] sm:h-[90px] lg:h-[96px]"
+              className="mt-6 relative overflow-hidden rounded-[24px] border border-[#00C2FF]/30 bg-black/10 w-full max-w-[456px] lg:w-[456px] h-[80px] sm:h-[90px] lg:h-[96px]"
             >
-              <div className="flex items-center h-full gap-4 sm:gap-6 lg:gap-[37px] animate-flags-scroll px-4">
+              <div className=" flex items-center h-full gap-4 sm:gap-6 lg:gap-[37px] animate-flags-scroll px-4">
                 {/* Flags row - duplicated for seamless loop */}
                 <div className="flex items-center gap-4 sm:gap-6 lg:gap-[37px] flex-shrink-0">
-                  <img src="/Images/Usa.png" alt="USA" className="w-10 h-6 sm:w-12 sm:h-8 object-contain" />
-                  <img src="/Images/uk.png" alt="UK" className="w-10 h-6 sm:w-12 sm:h-8 object-contain" />
-                  <img src="/Images/germany.png" alt="Germany" className="w-10 h-6 sm:w-12 sm:h-8 object-contain" />
-                  <img src="/Images/australia.png" alt="Australia" className="w-10 h-6 sm:w-12 sm:h-8 object-contain" />
-                  <img src="/Images/south africa.png" alt="South Africa" className="w-10 h-6 sm:w-12 sm:h-8 object-contain" />
+                  <img src="/Images/Usa.png" alt="USA" className="w-12 h-8 sm:w-14 sm:h-10 object-contain" />
+                  <img src="/Images/uk.png" alt="UK" className="w-12 h-8 sm:w-14 sm:h-10 object-contain" />
+                  <img src="/Images/germany.png" alt="Germany" className="w-12 h-8 sm:w-14 sm:h-10 object-contain" />
+                  <img src="/Images/australia.png" alt="Australia" className="w-12 h-8 sm:w-14 sm:h-10 object-contain" />
+                  <img src="/Images/south africa.png" alt="South Africa" className="w-12 h-8 sm:w-14 sm:h-10 object-contain" />
                 </div>
                 {/* Duplicate for seamless loop */}
                 <div className="flex items-center gap-4 sm:gap-6 lg:gap-[37px] flex-shrink-0">
@@ -94,7 +94,7 @@ function Markets() {
 
           {/* Right side - Chart GIF - comes from right to left */}
           <div 
-            className="flex items-center justify-center transition-all duration-[1000ms] ease-out w-full lg:w-auto"
+            className="flex items-center justify-center lg:items-center lg:h-full transition-all duration-[1000ms] ease-out w-full lg:w-auto"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateX(0)' : 'translateX(100px)',
@@ -113,7 +113,7 @@ function Markets() {
         </div>
 
         {/* Bottom paragraph */}
-        <div className="text-center text-white mt-16 sm:mt-24 lg:mt-32">
+        <div className="text-center text-white mt-12 sm:mt-12 lg:mt-12">
           <p className="font-futura text-base sm:text-lg font-normal leading-relaxed text-white/90 max-w-4xl mx-auto px-4 sm:px-0">
             Access connected to regulated exchanges. The goal is not to replace existing markets, but to make them more accessible.
           </p>

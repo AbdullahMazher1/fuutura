@@ -612,11 +612,11 @@ function Blogs() {
               className="group bg-gray-800/50 rounded-xl border border-white/10 overflow-hidden hover:border-[#3A7BFF]/50 transition-all duration-300 cursor-pointer"
             >
               {/* Blog Image */}
-              <div className="relative w-full h-48 bg-gray-700 overflow-hidden">
+              <div className="relative w-full h-60 bg-gray-700 overflow-hidden">
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover bg-center group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
                     e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23333' width='400' height='300'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='20' dy='10.5' font-weight='bold' x='50%25' y='50%25' text-anchor='middle'%3EBlog Image%3C/text%3E%3C/svg%3E";
