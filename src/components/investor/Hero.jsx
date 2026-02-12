@@ -9,7 +9,6 @@ function Hero() {
         triggerOnce: false,
     });
 
-    // Generate small random translate values (max 4px)
     const randomOffset = () => Math.floor(Math.random() * 9) - 4;
 
     const iconOffsets = useMemo(() => {
@@ -24,13 +23,12 @@ function Hero() {
     return (
         <div
             ref={ref}
-            className="relative flex flex-col text-center items-center justify-center overflow-hidden h-screen bg-black pt-16"
+            className="relative flex flex-col text-center items-center overflow-hidden h-[550px] bg-black pt-16"
         >
             {/* Background Video */}
             <video
                 src="/Videos/light2.mp4"
                 autoPlay
-                loop
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
@@ -90,7 +88,7 @@ function Hero() {
 
 
             {/* TITLE */}
-            <h2 className="pt-20 font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
+            <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
                 Market <span className="text-[#00A3FF]">infrastructure</span> Build For
                 Scale, <br />
                 Oversight, And{" "}
@@ -103,21 +101,21 @@ function Hero() {
                 markets in a responsible, regulation-aligned way.
             </p>
 
-            {/* GLOBE */}
+            {/* GLOBE - Positioned to be cut exactly in half */}
             <motion.div
-                className="mt-10 z-10 relative"
-                initial={{ opacity: 0, y: 100 }}
+                className="absolute bottom-0 z-10 translate-y-1/2 pt-40"
+                initial={{ opacity: 0, y: "100%" }}
                 animate={
                     inView
-                        ? { opacity: 1, y: 0 }
-                        : { opacity: 0, y: 100 }
+                        ? { opacity: 1, y: "50%" } // "50%" keep it shifted halfway down to cut it
+                        : { opacity: 0, y: "100%" }
                 }
                 transition={{ duration: 1 }}
             >
                 <motion.img
                     src="/Images/Earth.png"
                     alt="Earth"
-                    className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain"
+                    className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] object-contain"
                     animate={inView ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                         repeat: inView ? Infinity : 0,

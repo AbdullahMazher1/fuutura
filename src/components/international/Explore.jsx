@@ -48,12 +48,12 @@ function Explore() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-24 max-w-4xl mx-auto">
         {/* Main heading */}
-        <h1 className="font-futura text-[56px] md:text-[72px] font-bold leading-tight text-white mb-6">
+        <h1 className="font-futura text-[56px] md:text-[50px] font-bold leading-tight text-white mb-6">
           EXPLORE THE <span className="text-[#00BFFF]">ECOSYSTEM</span>
         </h1>
 
         {/* Sub-heading */}
-        <p className="font-futura text-lg md:text-xl font-normal leading-relaxed text-white/90 mb-12 max-w-3xl">
+        <p className="font-futura text-lg md:text-xl font-normal leading-normal text-white/90 mb-12 max-w-3xl">
           Explore How The Exchange Connects With Supporting Tools, Services, And Infrastructure Built Around Long-Term Trust.
         </p>
 
@@ -62,7 +62,7 @@ function Explore() {
           onClick={handleClick}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className={`relative px-8 py-4 rounded-lg bg-[#0a0e1a]/80 backdrop-blur-sm transition-all duration-300 ease-out cursor-pointer ${isHovered ? 'explore-button-hover' : 'explore-button'}`}
+          className={`mt-12 font-futura relative px-8 py-4 rounded-lg bg-[#0a0e1a]/80 backdrop-blur-sm transition-all duration-300 ease-out cursor-pointer ${isHovered ? 'explore-button-hover' : 'explore-button'}`}
           style={{
             fontFamily: 'Inter, sans-serif',
             fontWeight: 400,

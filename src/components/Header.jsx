@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <div className="w-full h-[67px] absolute top-0 z-50">
-      <div className="grid grid-cols-3 max-w-[1300px] mx-auto py-5 px-6 md:px-0">
+      <div className="grid grid-cols-2 sm:grid-cols-3 max-w-[1300px] mx-auto py-5 px-6 md:px-0">
 
         {/* Logo Section */}
         <div className="flex items-center gap-2 cursor-pointer max-w-max">
@@ -39,7 +39,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Hamburger Menu */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center justify-end">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? (
               // Close X
@@ -61,8 +61,8 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-md w-full absolute top-[67px] left-0 z-40 flex flex-col items-center py-6 gap-4">
           <Link href="/" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>RoadMap</div>
-          <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>Press Section</div>
+          {/* <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>RoadMap</div>
+          <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>Press Section</div> */}
           <Link href="/blogs" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
           <Link href="/about" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
           <Link href={linkHref} className="mt-2 px-6 py-2 rounded-full border border-[#002371] text-white hover:bg-[#002371]/30 font-medium" onClick={() => setIsMobileMenuOpen(false)}>

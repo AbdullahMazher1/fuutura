@@ -200,7 +200,7 @@ const FuuturaUsage = () => {
       {/* ===== VIDEO BACKGROUND ===== */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110"
+        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110 sm:block hidden"
         src="/beam.mp4"
         muted
         playsInline
@@ -211,10 +211,11 @@ const FuuturaUsage = () => {
       <div className="absolute inset-0" />
 
       {/* ===== CONTENT ===== */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-8">
+
         {/* TOP 4 COLUMNS */}
         <div className="pt-32 pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-16 gap-y-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-x-16 gap-y-14">
             {[
               {
                 title: "Exchange",
@@ -233,7 +234,7 @@ const FuuturaUsage = () => {
                 desc: "Move money in and out smoothly — without giving up control of your assets.",
               },
             ].map((item, i) => (
-              <div key={i} className="max-w-[260px] space-y-5">
+              <div key={i} className="sm:max-w-[260px] space-y-5">
                 <h3 className="text-[20px] font-semibold text-white/90">
                   {item.title}
                 </h3>
@@ -249,10 +250,9 @@ const FuuturaUsage = () => {
         <div className="pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px_1fr] items-start">
             {/* LEFT */}
-            <div className="pr-12 space-y-6" data-aos="fade-right">
-              <h2 className="text-[44px] font-semibold leading-[1.15] tracking-tight">
-                Why People Use{" "}
-                <span className="text-cyan-400 font-bold">FUUTURA</span>
+            <div className="px-12 my-12 space-y-6" data-aos="fade-right">
+              <h2 className="font-futura text-white text-[30px] md:text-[40px] font-bold mb-6 leading-tight whitespace-nowrap z-10 relative">
+                Why People Use <span className="text-[#00A3FF]">FUUTURA</span>
               </h2>
 
               <p className="text-[17px] leading-[1.9] text-white/70 max-w-[520px]">

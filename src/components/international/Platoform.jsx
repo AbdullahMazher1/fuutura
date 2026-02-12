@@ -2,131 +2,86 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-function Platoform() {
+function Platform() {
   const sectionRef = useRef(null);
-  const videoRef = useRef(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Trigger when at least 10% is visible
-        setInView(entry.intersectionRatio >= 0.1);
+        setInView(entry.isIntersecting);
       },
-      {
-        threshold: [0, 0.1, 1],
-      }
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
-
-  // Control video playback rate at 0.3x speed when visible
-  useEffect(() => {
-    if (videoRef.current && inView) {
-      videoRef.current.playbackRate = 0.1;
-      videoRef.current.play().catch(() => {
-        // Video not available, will fallback to GIF
-      });
-    }
-  }, [inView]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen overflow-hidden bg-[#0a0e1a] py-24"
+      /* Reduced pt-20 to pt-10 on mobile. Reduced min-height on mobile to avoid stretching the gap */
+      className="relative w-full min-h-[70vh] lg:min-h-screen bg-[#0a0e1a] pt-10 lg:pt-20 overflow-hidden flex flex-col items-center"
+      style={{
+        backgroundImage: `url('/Images/tradeBg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      {/* Content */}
-      <div className="relative z-20 max-w-[1440px] mx-auto px-6 lg:px-0">
-        <div className="text-center text-white mb-16">
-          <h1 className="font-futura text-[56px] font-bold leading-tight text-[#00C2FF] mb-6">
-            The Platform
-          </h1>
-          <p className="font-futura text-xl font-normal leading-relaxed text-white/90 max-w-4xl mx-auto">
-            FUUTURA Is A Web3 Exchange Built For Simple, Secure, And Reliable Market Access.
-          </p>
-        </div>
+      {/* 1. Header Content */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-[#00C2FF] text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight">
+          The <span className="text-white">Platform</span>
+        </h2>
+        <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
+          FUUTURA Is A Web3 Exchange Built For Simple, Secure, And Reliable Market Access.
+        </p>
       </div>
 
-      {/* Background container */}
-      <div className="absolute inset-0 w-full h-full z-10 flex items-end justify-center">
+      {/* 2. Visual Centerpiece Container - Anchored to bottom */}
+      <div className="relative flex-1 w-full flex flex-col justify-end items-center mt-8 lg:mt-0">
         
-        {/* Platform Image */}
+        {/* Background Animation - Blended from top */}
         <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 will-change-transform z-10"
+          className="absolute bottom-[-5%] transition-all duration-1000 ease-out z-10"
+          style={{
+            opacity: inView ? 0.6 : 0,
+            transform: `translateY(${inView ? "0px" : "100px"})`,
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)',
+          }}
+        >
+          <img
+            src="/Videos/platformanim.gif"
+            alt="glow animation"
+            /* Increased mobile width slightly to fill space better */
+            className="w-[100vw] md:w-[700px] object-contain"
+          />
+        </div>
+
+        {/* Platform UI Image - Touches the bottom and hides the bottom 10% */}
+        <div 
+          className="relative z-20 transition-all duration-1000 delay-200 ease-out flex justify-center"
           style={{
             opacity: inView ? 1 : 0,
-            transform: `translateX(-50%) translateY(${inView ? "0%" : "40%"})`,
-            transition: "opacity 3s ease, transform 3s ease",
+            /* Negative bottom value hides the bottom 10% of the image */
+            marginBottom: "-80px", 
+            transform: `scale(${inView ? 1 : 0.95}) translateY(${inView ? "0px" : "60px"})`,
           }}
         >
           <img
             src="/Images/platform.jpg"
-            alt="Platform interface"
-            className="w-full max-w-[600px] h-auto object-contain"
-          />
-        </div>
-
-        {/* Animation Behind - half hidden below, comes up a bit on scroll */}
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 will-change-transform z-0"
-          style={{
-            opacity: inView ? 1 : 0,
-            transform: `translateX(-50%) translateY(${inView ? "30%" : "50%"})`,
-            transition: "opacity 3s ease, transform 3s ease",
-          }}
-        >
-          {/* Try video first for speed control (0.3x), fallback to GIF */}
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full max-w-[900px] h-auto object-contain"
-            style={{ display: 'none' }}
-            onError={() => {
-              // If video fails to load, hide video and show GIF
-              if (videoRef.current) {
-                videoRef.current.style.display = 'none';
-                const gifElement = videoRef.current.nextElementSibling;
-                if (gifElement) {
-                  gifElement.style.display = 'block';
-                }
-              }
-            }}
-            onLoadedData={() => {
-              // Video loaded successfully, show it and hide GIF
-              if (videoRef.current) {
-                videoRef.current.style.display = 'block';
-                const gifElement = videoRef.current.nextElementSibling;
-                if (gifElement) {
-                  gifElement.style.display = 'none';
-                }
-              }
-            }}
-          >
-            <source src="/Videos/platformanim.mp4" type="video/mp4" />
-            <source src="/Videos/platformanim.webm" type="video/webm" />
-          </video>
-          <img
-            src="/Videos/platformanim.gif"
-            alt="Platform animation"
-            className="w-full max-w-[900px] h-auto object-contain"
-            style={{ display: 'block' }}
+            alt="Platform Interface"
+            className="w-[90vw] max-w-[800px] h-auto rounded-t-2xl shadow-[0_-20px_50px_rgba(0,194,255,0.1)] border-t border-x border-white/10"
           />
         </div>
       </div>
+
+      {/* 3. Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0a0e1a] to-transparent z-40 pointer-events-none" />
     </section>
   );
 }
 
-export default Platoform;
+export default Platform;
