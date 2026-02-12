@@ -31,15 +31,16 @@ function Hero() {
       <div
         className="absolute w-[90%] max-w-[600px] sm:max-w-[667px] lg:max-w-[667px] h-auto opacity-100 z-30 left-1/2 -translate-x-1/2 top-[320px] sm:top-[360px] lg:top-[430px] px-4 flex items-center justify-center gap-4"
       >
-        <h1 className="font-futura font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight text-center text-white whitespace-normal">
-          A Modern <span className="text-[#00C2FF]">Exchange</span> Built For Real <span className="text-[#00C2FF]">Markets</span> And Real <span className="text-[#00C2FF]">People</span>
+        <h1 className="font-futura font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight text-center text-white">
+          A Modern <span className="text-[#00C2FF] whitespace-nowrap">Exchange</span> Built For Real <br />
+          <span className="text-[#00C2FF]">Markets</span> And Real <span className="text-[#00C2FF]">People</span>
         </h1>
 
       </div>
 
       {/* Description text - Responsive positioning and sizing - Always centered */}
       <div
-        className="absolute w-[90%] max-w-[650px] sm:max-w-[738px] lg:max-w-[738px] h-auto lg:h-[86px] opacity-100 z-30 left-1/2 -translate-x-1/2 top-[420px] sm:top-[460px] lg:top-[550px] px-4"
+        className=" mt-10 absolute w-[90%] max-w-[650px] sm:max-w-[738px] lg:max-w-[738px] h-auto lg:h-[86px] opacity-100 z-30 left-1/2 -translate-x-1/2 top-[420px] sm:top-[460px] lg:top-[550px] px-4"
       >
         <br />
         <p className="font-futura font-normal text-sm sm:text-base md:text-lg lg:text-[20px] leading-[134%] text-center text-white">
