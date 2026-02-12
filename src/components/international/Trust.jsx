@@ -14,7 +14,7 @@ function Trust() {
           setIsVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     const currentRef = sectionRef.current;
@@ -49,18 +49,15 @@ function Trust() {
       className="relative w-full bg-gradient-to-b from-[#0a0e1a] to-[#1a1f2e]"
     >
       <div className="mx-auto max-w-[1440px] px-5 lg:px-8 py-10">
-        
         {/* Main Container */}
-        <div className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 lg:gap-20">
-          
+        {/* <div className="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 lg:gap-20"> */}
+        <div className="min-h-[50vh] lg:min-h-[80vh] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-20">
           {/* LEFT COLUMN */}
           <div
             className="flex-1 max-w-[600px] w-full text-center lg:text-left transition-all duration-[1000ms] ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible
-                ? "translateX(0)"
-                : "translateX(-80px)",
+              transform: isVisible ? "translateX(0)" : "translateX(-80px)",
             }}
           >
             <h2 className="font-futura text-white text-[28px] sm:text-[32px] md:text-[38px] font-bold mb-6 leading-tight">
@@ -85,9 +82,7 @@ function Trust() {
             className="flex-1 flex items-center justify-center lg:justify-end transition-all duration-[1000ms] ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible
-                ? "translateX(0)"
-                : "translateX(80px)",
+              transform: isVisible ? "translateX(0)" : "translateX(80px)",
             }}
           >
             <div
@@ -103,7 +98,6 @@ function Trust() {
               />
             </div>
           </div>
-
         </div>
       </div>
     </section>

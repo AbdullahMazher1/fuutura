@@ -11,7 +11,7 @@ function Platform() {
       ([entry]) => {
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -22,11 +22,12 @@ function Platform() {
     <section
       ref={sectionRef}
       /* Reduced pt-20 to pt-10 on mobile. Reduced min-height on mobile to avoid stretching the gap */
-      className="relative w-full min-h-[70vh] lg:min-h-screen bg-[#0a0e1a] pt-10 lg:pt-20 overflow-hidden flex flex-col items-center"
+      // className="relative w-full min-h-[70vh] lg:min-h-screen bg-[#0a0e1a] pt-10 lg:pt-20 overflow-hidden flex flex-col items-center"
+      className="relative w-full min-h-[40vh] md:min-h-[70vh] lg:min-h-screen bg-[#0a0e1a] pt-8 md:pt-10 lg:pt-20 overflow-hidden flex flex-col items-center"
       style={{
         backgroundImage: `url('/Images/tradeBg.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* 1. Header Content */}
@@ -35,21 +36,23 @@ function Platform() {
           The <span className="text-white">Platform</span>
         </h2>
         <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
-          FUUTURA Is A Web3 Exchange Built For Simple, Secure, And Reliable Market Access.
+          FUUTURA Is A Web3 Exchange Built For Simple, Secure, And Reliable
+          Market Access.
         </p>
       </div>
 
       {/* 2. Visual Centerpiece Container - Anchored to bottom */}
       <div className="relative flex-1 w-full flex flex-col justify-end items-center mt-8 lg:mt-0">
-        
         {/* Background Animation - Blended from top */}
         <div
           className="absolute bottom-[-5%] transition-all duration-1000 ease-out z-10"
           style={{
             opacity: inView ? 0.6 : 0,
             transform: `translateY(${inView ? "0px" : "100px"})`,
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)',
-            maskImage: 'linear-gradient(to bottom, transparent 0%, black 40%, black 100%)',
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 40%, black 100%)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 40%, black 100%)",
           }}
         >
           <img
@@ -61,12 +64,12 @@ function Platform() {
         </div>
 
         {/* Platform UI Image - Touches the bottom and hides the bottom 10% */}
-        <div 
+        <div
           className="relative z-20 transition-all duration-1000 delay-200 ease-out flex justify-center"
           style={{
             opacity: inView ? 1 : 0,
             /* Negative bottom value hides the bottom 10% of the image */
-            marginBottom: "-80px", 
+            marginBottom: "-80px",
             transform: `scale(${inView ? 1 : 0.95}) translateY(${inView ? "0px" : "60px"})`,
           }}
         >
