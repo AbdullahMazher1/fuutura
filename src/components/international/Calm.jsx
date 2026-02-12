@@ -86,7 +86,7 @@ function Calm() {
           >
             <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px]">
               <img
-                src="/Videos/calmgif.gif"
+                src="/Videos/anim4.gif"
                 alt="Calm infrastructure"
                 className="w-full h-full object-contain"
               />
