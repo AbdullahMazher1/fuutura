@@ -34,9 +34,10 @@ function KycAml() {
               >
                 <div className="relative w-[160px] sm:w-[220px] md:w-[260px] aspect-square">
                   <img
-                    src="/Images/lock.png"
-                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${hoveredImage === 'lock' ? 'opacity-0' : 'opacity-100'
-                      }`}
+                    src="/Images/lock1.png"
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                      hoveredImage === 'lock' ? 'opacity-0' : 'opacity-100'
+                    }`}
                   />
                   <img
                     src="/Images/lockHover.png"
@@ -74,14 +75,16 @@ function KycAml() {
               >
                 <div className="relative w-[200px] sm:w-[260px] md:w-[320px] aspect-square">
                   <img
-                    src="/Images/protect.png"
-                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${hoveredImage === 'protect' ? 'opacity-0' : 'opacity-100'
-                      }`}
+                    src="/Images/protect1.png"
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                      hoveredImage === 'protect' ? 'opacity-0' : 'opacity-100'
+                    }`}
                   />
                   <img
-                    src="/Images/protecthover.png"
-                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${hoveredImage === 'protect' ? 'opacity-100' : 'opacity-0'
-                      }`}
+                    src="/Images/protectHover1.png"
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                      hoveredImage === 'protect' ? 'opacity-100' : 'opacity-0'
+                    }`}
                   />
                 </div>
               </div>
@@ -117,9 +120,10 @@ function KycAml() {
             >
               <div className="relative w-[220px] sm:w-[300px] md:w-[420px] aspect-square rotate-[10deg]">
                 <img
-                  src="/Images/up.png"
-                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${hoveredImage === 'up' ? 'opacity-0' : 'opacity-100'
-                    }`}
+                  src="/Images/up1.png"
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${
+                    hoveredImage === 'up' ? 'opacity-0' : 'opacity-100'
+                  }`}
                 />
                 <img
                   src="/Images/upHover.png"

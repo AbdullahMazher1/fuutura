@@ -31,7 +31,7 @@ const Moderan = () => {
           transition-all duration-[4000ms] ease-in-out
           transform-gpu
           translate-y-0 opacity-100
-          translate-x-[-45%]
+          translate-x-[-35%]
           group-hover:translate-y-[50%] group-hover:opacity-0
           z-20
         "
