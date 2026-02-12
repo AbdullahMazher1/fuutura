@@ -11,7 +11,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        futura: ['Futura', 'system-ui', 'sans-serif'],
+        futura: [
+          'Futura',
+          'Futura PT',
+          'Futura-Medium',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol'
+        ],
       },
       animation: {
         'border-spin': 'border-spin 7s linear infinite',
