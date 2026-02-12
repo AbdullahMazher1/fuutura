@@ -44,7 +44,7 @@ function FutuuraMatters() {
             </div>
 
       {/* Main Content */}
-      <div className="relative z-20 w-full max-w-[1400px] mt-16 sm:mt-20">
+      <div className="relative z-20 w-full max-w-[1400px] mt-24 sm:mt-32">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 

@@ -44,7 +44,7 @@ function Operate() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-futura font-bold text-3xl md:text-[48px] leading-tight mb-6 tracking-tight">
+          <h1 className="font-futura font-bold text-3xl md:text-[48px] leading-tight my-6 tracking-tight">
             <span className="text-white">Built and operated </span>
             <span className="text-[#00C2FF]">from</span>
             <br />
