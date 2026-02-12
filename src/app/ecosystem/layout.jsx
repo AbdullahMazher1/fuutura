@@ -79,21 +79,6 @@ export default function EcosystemLayout({ children }) {
       </div>
 
       <main className="flex-1 min-w-0 flex flex-col relative overflow-hidden h-full w-full">
-        {/* Same background as content – full width so it shows behind sidebar (blurred) */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(15, 40, 70, 0.4), transparent 50%), radial-gradient(ellipse 100% 100% at 50% 80%, rgba(20, 30, 50, 0.8), #0a0e1a 60%)',
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-60"
-          style={{
-            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)`,
-            backgroundSize: '22px 22px',
-          }}
-        />
         <div
           className="absolute inset-0 opacity-80"
           style={{
