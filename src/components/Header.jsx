@@ -8,41 +8,63 @@ const Header = () => {
   const isInvestor = pathname.includes('investor');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const ToggleSwitch = () => (
-    <Link 
-      href={isInvestor ? "/" : "/investor"}
-      // Changed bg opacity slightly for a more "decent" glass look
-      className="relative w-[165px] h-11 flex items-center bg-transparent backdrop-blur-md border border-[#569FFF]/40 rounded-full p-1 cursor-pointer overflow-hidden group shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-    >
-      <div className="relative w-full h-full flex items-center">
-        
-        {/* The Text Label - Balanced spacing */}
-        <span className={`absolute text-[11px] font-bold uppercase tracking-widest transition-all duration-700 ease-in-out ${
-          isInvestor 
-          ? 'left-6 opacity-100 text-[#569FFF]' // Moved right slightly to clear the left edge
-          : 'left-12 opacity-100 text-[#569FFF]' // Moved left slightly to get closer to the ball
-        }`}>
-          {isInvestor ? 'Customers' : 'Investors'}
-        </span>
+  const ToggleSwitch = () => (
+    <div className="flex items-center gap-6">
+      {/* Dynamic Label to the left of the toggle */}
+      <span className="text-white font-futura text-lg uppercase tracking-[0.2em] min-w-[120px] text-right">
+        {isInvestor ? 'Investor' : 'Customer'}
+      </span>
 
-        {/* The Glowing Ball - Adjusted for breathing room */}
-        <div 
-          className={`absolute h-8 w-8 bg-gradient-to-tr from-[#569FFF] to-[#a2c9ff] rounded-full transition-all duration-900 ease-in-out flex items-center justify-center ${
-            // 118px keeps it perfectly centered within the right "slot" of the padding
-            isInvestor ? 'left-[118px]' : 'left-1'
+      <Link
+        href={isInvestor ? "/" : "/investor"}
+        className={`relative w-[105px] h-[40px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-500 ease-in-out overflow-hidden shadow-inner ${isInvestor ? 'bg-[#00113C]' : 'bg-[#D9E4FF]'
           }`}
-        >
-          {/* Subtle Inner Glow */}
-          <div className="h-1.5 w-1.5 bg-white rounded-full opacity-60 blur-[0.5px]" />
+      >
+        <div className="relative w-full h-full flex items-center justify-between px-2">
+
+          {/* Static Icons Layer (Background) */}
+          <svg
+            className={`w-4 h-4 transition-opacity duration-300 ${!isInvestor ? 'opacity-0' : 'opacity-40'}`}
+            viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+
+          <svg
+            className={`w-4 h-4 transition-opacity duration-300 ${isInvestor ? 'opacity-0' : 'opacity-40'}`}
+            viewBox="0 0 24 24" fill="none" stroke="#0025B1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+
+          {/* The Animated Sliding Ball (Squircle Shape) */}
+          <div
+            className="absolute h-[32px] w-[46px] transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) flex items-center justify-center shadow-md"
+            style={{
+              left: isInvestor ? '55px' : '4px',
+              background: 'linear-gradient(180deg, #0025B1 0%, #3A56C0 100%)',
+              borderRadius: '16px'
+            }}
+          >
+            {isInvestor ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            )}
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 
   return (
     <div className="w-full h-[80px] absolute top-0 z-50">
       <div className="max-w-[1300px] mx-auto h-full flex items-center justify-between px-6">
-        
+
         {/* Logo Section */}
         <div className="flex items-center gap-3 cursor-pointer">
           <img className="h-9" src="/logo1.png" alt="Icon" />
@@ -51,7 +73,7 @@ const ToggleSwitch = () => (
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10 bg-black/30 backdrop-blur-xl border border-white/5 px-10 py-2.5 rounded-full">
-          <Link href="/" className={`text-[13px] font-medium tracking-wide transition-all ${pathname === '/' ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>HOME</Link>
+          <Link href="/" className={`text-[13px] font-medium tracking-wide transition-all ${!isInvestor ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>HOME</Link>
           <Link href="/blogs" className={`text-[13px] font-medium tracking-wide transition-all ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>BLOGS</Link>
           <Link href="/about" className={`text-[13px] font-medium tracking-wide transition-all ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white/60 hover:text-white'}`}>ABOUT</Link>
         </nav>
@@ -63,7 +85,7 @@ const ToggleSwitch = () => (
 
         {/* Mobile Menu Trigger */}
         <div className="md:hidden">
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-[#569FFF]/5 border border-[#569FFF]/20 rounded-full"
           >
@@ -84,7 +106,7 @@ const ToggleSwitch = () => (
           </div>
 
           <div className="w-24 h-[1px] bg-[#569FFF]/40 my-16" />
-          
+
           <div className="scale-[1.4]" onClick={() => setIsMobileMenuOpen(false)}>
             <ToggleSwitch />
           </div>
