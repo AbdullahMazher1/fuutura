@@ -102,8 +102,10 @@ export default function EcosystemLayout({ children }) {
           }}
         />
         <div className="relative z-10 flex-1 overflow-y-auto overflow-x-hidden min-h-full h-full overflow-anchor-none" style={{ overflowAnchor: 'none' }}>
-          <div key={pathname} className={`relative z-10 min-h-full ecosystem-line-enter ecosystem-animate-${enterDir}`}>
-            {content}
+          <div key={pathname} className={`z-10 h-[100vh] fixed inset-0 ecosystem-line-enter ecosystem-animate-${enterDir}`}>
+            <div className='overflow-auto h-[full]'>
+              {content}
+            </div>
           </div>
         </div>
       </main>

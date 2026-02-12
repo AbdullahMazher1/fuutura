@@ -99,7 +99,7 @@ export default function EcosystemSidebar() {
 
   return (
     <aside
-      className="w-[270px] h-full flex flex-col shrink-0 overflow-auto  backdrop-blur-2xl border-r border-white/10"
+      className="w-[270px] h-full flex flex-col shrink-0 overflow-auto custom__scrollbar backdrop-blur-sm border-r border-white/10"
     >
       {/* Logo */}
       <div className="flex items-center gap-4 pt-12 pb-6 px-6">
