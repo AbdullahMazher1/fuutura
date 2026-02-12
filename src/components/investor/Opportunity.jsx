@@ -18,7 +18,7 @@ function Opportunity() {
             {/* Center GIF */}
             <div className="flex justify-center items-center">
                 <img
-                    src="/Videos/anim4.gif"
+                    src="/Videos/1.21.gif"
                     alt="Background GIF"
                     className="w-[400px] h-auto object-contain"
                 />
