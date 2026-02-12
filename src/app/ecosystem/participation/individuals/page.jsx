@@ -1,7 +1,10 @@
 export default function IndividualsPage() {
   return (
-    <div className="w-full bg-fixed bg-center bg-no-repeat bg-cover min-h-full" style={{ backgroundImage: "url('/Images/first5.png')" }}>
-      <div className="bg-[#0000002a] h-full w-full px-8 py-10 md:px-12 md:py-14">
+    <>
+      <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover" style={{ backgroundImage: "url('/Images/first5.png')" }} aria-hidden />
+      <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover bg-[#0000002a]" aria-hidden />
+      <div className="relative z-10 min-h-screen w-full px-8 py-10 md:px-12 md:py-14">
+        <div className="min-h-full w-full">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
             Individuals
@@ -80,7 +83,8 @@ export default function IndividualsPage() {
             Sovereignty Over Access And Information.
           </p>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

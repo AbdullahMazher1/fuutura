@@ -57,14 +57,17 @@ export default function EcosystemSidebar() {
 
   const isActive = (href) => pathname === href;
 
-  const renderDropdown = (items, dropdownState, setDropdownState) => (
+  const renderDropdown = (items, dropdownState, setDropdownState) => {
+    const hasNested = items.links && items.links.length > 0;
+    return (
     <div className="rounded-lg overflow-hidden">
       <button
         type="button"
-        onClick={() => setDropdownState((o) => !o)}
-        className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-left text-white text-sm font-medium hover:bg-white/10 transition-colors"
+        onClick={() => hasNested && setDropdownState((o) => !o)}
+        className={`w-full flex items-center ${hasNested ? 'justify-between' : 'justify-start'} px-4 py-3 rounded-lg text-left text-white text-sm font-medium hover:bg-white/10 transition-colors`}
       >
         {items.title}
+        {hasNested && (
         <svg
           className={`w-4 h-4 text-white/60 shrink-0 transition-transform ${dropdownState ? 'rotate-180' : ''}`}
           fill="none"
@@ -73,8 +76,9 @@ export default function EcosystemSidebar() {
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
+        )}
       </button>
-      {dropdownState && (
+      {hasNested && dropdownState && (
         <div className="pl-4 pb-1 space-y-0.5">
           {items.links.map(({ href, label }) => (
             <Link
@@ -85,24 +89,17 @@ export default function EcosystemSidebar() {
               }`}
             >
               {label}
-              <svg
-                className="w-4 h-4 text-white/60 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </Link>
           ))}
         </div>
       )}
     </div>
   );
+  };
 
   return (
     <aside
-      className="w-[270px] h-full flex flex-col shrink-0 overflow-auto backdrop-blur-[20px] border-r border-white/10"
+      className="w-[270px] h-full flex flex-col shrink-0 overflow-auto  backdrop-blur-2xl border-r border-white/10"
     >
       {/* Logo */}
       <div className="flex items-center gap-4 pt-12 pb-6 px-6">
@@ -113,7 +110,7 @@ export default function EcosystemSidebar() {
       <nav className="flex-1 p-3 space-y-0.5 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
         {/* Getting Started */}
         <div className="rounded-lg overflow-hidden">
-          <div className={`w-full flex items-center px-4 py-3 rounded-lg ${pathname === GETTING_STARTED_PAGE ? 'bg-[#0A7CFF]/30' : ''}`}>
+          <div className={`w-full flex items-center ${GETTING_STARTED_SUB.length > 0 ? 'justify-between' : ''} px-4 py-3 rounded-lg ${pathname === GETTING_STARTED_PAGE ? 'bg-[#0A7CFF]/30' : ''}`}>
             <Link
               href={GETTING_STARTED_PAGE}
               className={`flex-1 flex items-center text-left text-sm font-medium transition-colors hover:opacity-90 ${
@@ -122,6 +119,7 @@ export default function EcosystemSidebar() {
             >
               Getting Started
             </Link>
+            {GETTING_STARTED_SUB.length > 0 && (
             <button
               type="button"
               onClick={() => setDropdownOpen((o) => !o)}
@@ -137,8 +135,9 @@ export default function EcosystemSidebar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+            )}
           </div>
-          {dropdownOpen && (
+          {GETTING_STARTED_SUB.length > 0 && dropdownOpen && (
             <div className="pl-4 pb-1 space-y-0.5">
               {GETTING_STARTED_SUB.map(({ href, label }) => (
                 <Link
