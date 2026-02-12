@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { GimIcon } from '@/assets/Svg';
 
 const scrollingData = [
   { id: 1, title: 'Transparent Process', icon: '/Images/1.png' },
@@ -44,20 +45,20 @@ function FutuuraMatters() {
             </div>
 
       {/* Main Content */}
-      <div className="relative z-20 w-full max-w-[1400px] mt-24 sm:mt-32">
+      <div className="relative z-20 w-full max-w-[1400px] mt-16 sm:mt-20">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
           {/* Left Text */}
           <div className="lg:col-span-5 flex flex-col gap-4 text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-2">
-              <span className="w-2 h-2 bg-[#00C2FF] rotate-45" />
-              <span className="text-white/60 text-xs tracking-widest">
+              <GimIcon/>
+              <span className="text-white text-xs tracking-widest">
                 Fuutura Matters in Pakistan
               </span>
             </div>
 
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold !leading-tight">
               Why Fuutura <br />
               Matters in <span className="text-[#00C2FF]">Pakistan</span>
             </h1>
