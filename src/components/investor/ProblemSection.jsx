@@ -26,11 +26,15 @@ const ProblemSection = () => {
                         src="/Images/secondInvestor.png"
                         alt="Background"
                         className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity"
+                        style={{
+                            transform: 'scale(1.15)',
+                            transformOrigin: 'center'
+                        }}
                     />
                     <img
                         src="/Videos/secondInvestor.gif"
                         alt="Background GIF"
-                        className="absolute inset-0 w-full h-full object-cover opacity-5 mix-blend-screen"
+                        className="absolute -bottom-[10%] left-0 w-auto h-auto w-[400px] h-[300px] object-contain opacity-10 mix-blend-screen"
                     />
                 </div>
 
@@ -81,7 +85,7 @@ const ProblemCard = ({ text }) => {
         <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative cursor-pointer rounded-[12px] border border-white/10 overflow-hidden px-5 py-4 transition-all duration-500"
+            className="relative cursor-pointer rounded-[12px] border border-white/10 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
             style={{
                 background: `radial-gradient(
             89.9% 95.19% at 0% 0%, 
@@ -93,13 +97,24 @@ const ProblemCard = ({ text }) => {
             {/* Backdrop blur */}
             <div className="absolute inset-0 backdrop-blur-xl -z-10" />
 
-            {/* Animated Hover Overlay */}
-            <div
-                className={`absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent transition-transform duration-500 ease-in-out ${isHovered ? 'translate-x-0' : '-translate-x-full'
-                    }`}
+            {/* Default 4px blue left border */}
+            <div 
+                className="absolute left-0 top-0 bottom-0 bg-[#3A7BFF] transition-all duration-[1500ms] ease-in-out z-20"
+                style={{
+                    width: isHovered ? '0' : '7px'
+                }}
             />
 
-            <p className={`relative z-10 font-futura text-[18px] md:text-[20px] transition-all duration-500 ${isHovered ? 'text-white translate-x-2' : 'text-white translate-x-0'
+            {/* Animated Blue Background on Hover - expands from left */}
+            <div
+                className="absolute inset-0 bg-[#3A7BFF] transition-all duration-[1500ms] ease-in-out origin-left"
+                style={{
+                    transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
+                    transformOrigin: 'left'
+                }}
+            />
+
+            <p className={`relative z-10 font-futura text-[18px] md:text-[20px] transition-all duration-100 ${isHovered ? 'text-white' : 'text-white'
                 }`}>
                 {text}
             </p>
