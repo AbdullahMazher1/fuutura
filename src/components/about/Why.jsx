@@ -15,11 +15,11 @@ function Why() {
 
                         {/* TOP HEADING ROW: Traditional Market -> Fuutura */}
                         <div className="flex items-center justify-start gap-6 md:gap-12 mb-4 ml-0 md:ml-4">
-                            <h3 className="text-white font-futura text-xl md:text-2xl font-bold">
+                            <h3 className="text-white font-futura text-sm md:text-2xl font-bold">
                                 Traditional Market
                             </h3>
                             <span className="text-white/60 text-2xl">→</span>
-                            <h3 className="text-white font-futura text-xl md:text-2xl font-bold">
+                            <h3 className="text-white font-futura text-sm md:text-2xl font-bold">
                                 Fuutura
                             </h3>
                         </div>

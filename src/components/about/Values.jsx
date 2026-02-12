@@ -46,7 +46,7 @@ function Values() {
                 src={card.icon} 
                 alt={card.title} 
                 className="w-12 h-12 absolute transition-all duration-500 ease-in-out
-                           group-hover:opacity-0 group-hover:-translate-y-[20px]" 
+                           group-hover:opacity-0 group-hover:-translate-y-[10px]" 
               />
 
               {/* Hover Icon */}
@@ -54,7 +54,7 @@ function Values() {
                 src={card.hoverIcon} 
                 alt={`${card.title} hover`} 
                 className="w-12 h-12 absolute opacity-0 transition-all duration-500 ease-in-out
-                           group-hover:opacity-100 group-hover:-translate-y-[20px]
+                           group-hover:opacity-100 group-hover:-translate-y-[10px]
 " 
               />
             </div>
