@@ -106,9 +106,9 @@ const Header = () => {
       <div className={`fixed inset-0 bg-[#070707] transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) z-[100] ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
         <div className="flex flex-col h-full items-center justify-center px-10">
           <div className="flex flex-col gap-10 text-center">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-5xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">HOME</Link>
-            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-5xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">BLOGS</Link>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-5xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">ABOUT</Link>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">HOME</Link>
+            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">BLOGS</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-white tracking-tighter hover:text-[#569FFF] transition-colors">ABOUT</Link>
           </div>
 
           <div className="w-24 h-[1px] bg-[#569FFF]/40 my-16" />
