@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Cross-platform font rendering fixes */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ensure consistent font rendering across platforms */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
 /* Ecosystem content: background image fixed (only text scrolls above it) */
 .ecosystem-bg-full-width {
   position: fixed;
@@ -38,6 +60,35 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Fix text alignment issues on macOS */
+.font-futura {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+/* Ensure smooth transitions on macOS Safari */
+[class*="transition"] {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+/* Fix transform issues on macOS */
+[class*="rotate"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .bg-animated-border {
@@ -54,7 +105,11 @@ html {
     inset: -2px;
     border-radius: 32px;
     background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, #0A7CFF 280deg, #00C2FF 300deg, #0A7CFF 320deg, transparent 330deg, transparent 360deg);
+    -webkit-animation: borderTravel 10s linear infinite;
     animation: borderTravel 10s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
     z-index: 0;
   }
   
@@ -77,7 +132,11 @@ html {
     inset: -2px;
     border-radius: 32px;
     background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, #0A7CFF 280deg, #00C2FF 300deg, #0A7CFF 320deg, transparent 330deg, transparent 360deg);
+    -webkit-animation: borderTravelReverse 3s linear infinite;
     animation: borderTravelReverse 3s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
     z-index: 0;
   }
   
@@ -88,18 +147,22 @@ html {
   
   @keyframes borderTravel {
     0% {
+      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
+      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }
   
   @keyframes borderTravelReverse {
     0% {
+      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
     100% {
+      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
   }
@@ -108,31 +171,42 @@ html {
 
   @keyframes wave {
     0%, 100% {
+      -webkit-transform: translateY(0px);
       transform: translateY(0px);
     }
     50% {
+      -webkit-transform: translateY(-20px);
       transform: translateY(-20px);
     }
   }
 
   .animate-wave {
+    -webkit-animation: wave 4s ease-in-out infinite;
     animation: wave 4s ease-in-out infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   @keyframes gradient-slide {
     0% {
+      -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
     }
     25% {
+      -webkit-transform: translateX(0%);
       transform: translateX(0%);
     }
     50% {
+      -webkit-transform: translateX(0%);
       transform: translateX(0%);
     }
     75% {
+      -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
     }
     100% {
+      -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
     }
   }
@@ -143,44 +217,64 @@ html {
 
   /* Ecosystem page slide animations */
   @keyframes ecosystem-enter-from-top {
-    0% { opacity: 0; transform: translateY(-56px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; -webkit-transform: translateY(-56px); transform: translateY(-56px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
   }
   @keyframes ecosystem-enter-from-bottom {
-    0% { opacity: 0; transform: translateY(56px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; -webkit-transform: translateY(56px); transform: translateY(56px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
   }
   @keyframes ecosystem-enter-from-left {
-    0% { opacity: 0; transform: translateX(-56px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; -webkit-transform: translateX(-56px); transform: translateX(-56px); }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
   }
   @keyframes ecosystem-enter-from-right {
-    0% { opacity: 0; transform: translateX(56px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; -webkit-transform: translateX(56px); transform: translateX(56px); }
+    100% { opacity: 1; -webkit-transform: translateX(0); transform: translateX(0); }
   }
 
   .ecosystem-animate-top {
+    -webkit-animation: ecosystem-enter-from-top 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
     animation: ecosystem-enter-from-top 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
   .ecosystem-animate-bottom {
+    -webkit-animation: ecosystem-enter-from-bottom 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
     animation: ecosystem-enter-from-bottom 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
   .ecosystem-animate-left {
+    -webkit-animation: ecosystem-enter-from-left 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
     animation: ecosystem-enter-from-left 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
   .ecosystem-animate-right {
+    -webkit-animation: ecosystem-enter-from-right 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
     animation: ecosystem-enter-from-right 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
 
   /* Ecosystem text: line-by-line slow reveal (staggered, one line at a time) */
   @keyframes ecosystem-line-in {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+    100% { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
   }
   .ecosystem-line-enter [class*="max-w-4xl"] > *,
   .ecosystem-line-enter .flex-col.items-center > *,
   .ecosystem-line-enter > * {
+    -webkit-animation: ecosystem-line-in 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
     animation: ecosystem-line-in 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform, opacity;
     opacity: 0;
   }
   .ecosystem-line-enter [class*="max-w-4xl"] > *:nth-child(1),
@@ -216,15 +310,21 @@ html {
 
   @keyframes flags-scroll {
     0% {
+      -webkit-transform: translateX(0);
       transform: translateX(0);
     }
     100% {
+      -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
     }
   }
 
   .animate-flags-scroll {
+    -webkit-animation: flags-scroll 15s linear infinite;
     animation: flags-scroll 15s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .explore-button {
@@ -236,14 +336,20 @@ html {
     background: linear-gradient(#0a0e1a, #0a0e1a) padding-box,
                 linear-gradient(89.7deg, #0A7CFF 0.26%, #00CCFF 210.9%) border-box;
     box-shadow: 0px 3px 49.9px 0px #00CCFF;
+    -webkit-transform: scale(1.02);
     transform: scale(1.02);
+    -webkit-transform: translateZ(0) scale(1.02);
+    transform: translateZ(0) scale(1.02);
+    will-change: transform;
   }
 
   @keyframes orbitSpin {
     from {
+      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     to {
+      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }
@@ -252,7 +358,11 @@ html {
     position: absolute;
     inset: 0;
     border-radius: 9999px;
+    -webkit-animation: orbitSpin 18s linear infinite;
     animation: orbitSpin 18s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
     background: conic-gradient(
       from 0deg,
       transparent 0deg,
