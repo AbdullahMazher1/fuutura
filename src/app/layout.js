@@ -22,6 +22,13 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      
+      {/* ✅ Added Head Section */}
+      <head>
+        <title>Fuutura</title>
+        <link rel="icon" href="Images/favicon.png" />
+      </head>
+
       <body className={`${geistSans.variable} bg-[#0B0B0D] ${geistMono.variable} antialiased`}>
 
         {!hideLayout && <Header />}

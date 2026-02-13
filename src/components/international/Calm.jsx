@@ -100,9 +100,9 @@ function Calm() {
                 }}
               />
               <img
-                src="/Videos/anim4.gif"
+                src="/Videos/cube.gif"
                 alt="Calm infrastructure"
-                className="w-full h-full object-contain relative z-10 mt-12"
+                className="w-full h-full object-contain relative z-10"
               />
             </div>
           </div>

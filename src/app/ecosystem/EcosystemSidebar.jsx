@@ -102,9 +102,9 @@ export default function EcosystemSidebar() {
       className="w-[270px] h-full flex flex-col shrink-0 overflow-auto custom__scrollbar backdrop-blur-sm border-r border-white/10"
     >
       {/* Logo */}
-      <div className="flex items-center gap-4 pt-12 pb-6 px-6">
+      <Link href="/" className="flex items-center gap-4 pt-12 pb-6 px-6">
         <img className="h-[34px]" src="/Images/side1.png" alt="Logo" />
-      </div>
+      </Link>
 
       {/* Navigation */}
       <nav className="flex-1 p-3 space-y-0.5 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
