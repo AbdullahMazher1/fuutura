@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
+import { MagicLinkEmail } from "@/emails/MagicLinkEmail";
 
 export async function POST(req: Request) {
   try {
@@ -41,16 +42,10 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
+      from: "Fuutura",
       to: email,
       subject: "Your OTP Code",
-      html: `
-        <div style="font-family: Arial;">
-          <h2>Your Verification Code</h2>
-          <p>Your OTP is:</p>
-          <h1>${otp}</h1>
-          <p>This code will expire in 5 minutes.</p>
-        </div>
-      `,
+      html: MagicLinkEmail(otp),
     });
 
     return NextResponse.json({ message: "OTP sent successfully" });
