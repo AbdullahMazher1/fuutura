@@ -37,7 +37,7 @@ const EcosystemPageInner = () => {
     setSendSuccess(null);
 
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("https://fuutura.com/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -68,7 +68,7 @@ const EcosystemPageInner = () => {
     setOtpLoading(true);
     setOtpError('');
     try {
-      const res = await fetch('/api/verify-email', {
+      const res = await fetch('https://fuutura.com/api/verify-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp: otpValue }),
@@ -103,7 +103,7 @@ const EcosystemPageInner = () => {
     setOtpError('');
     setOtp('');
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch('https://fuutura.com/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -133,7 +133,7 @@ const EcosystemPageInner = () => {
 
     const verify = async () => {
       try {
-        const res = await fetch("/api/verify-token", {
+        const res = await fetch("https://fuutura.com/api/verify-token", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token }),
