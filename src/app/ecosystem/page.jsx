@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { IoClose } from 'react-icons/io5';
+import OTPInput from 'react-otp-input';
 
 // Inner component that actually uses search params, wrapped in Suspense by the page
 const EcosystemPageInner = () => {
@@ -19,6 +21,13 @@ const EcosystemPageInner = () => {
   const [verificationError, setVerificationError] = useState(null);
   const [showWelcomeSection, setShowWelcomeSection] = useState(false);
 
+  // OTP Screen States
+  const [showOTPScreen, setShowOTPScreen] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [otpLoading, setOtpLoading] = useState(false);
+  const [resendLoading, setResendLoading] = useState(false);
+
   const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value);
 
   const handleSendEmail = async () => {
@@ -28,7 +37,7 @@ const EcosystemPageInner = () => {
     setSendSuccess(null);
 
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("https://fuutura.com/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -39,7 +48,9 @@ const EcosystemPageInner = () => {
         throw new Error(data.message || "Failed to send verification email.");
       }
 
-      setSendSuccess("Verification link sent. Please check your email.");
+      // Show OTP screen when OTP is sent successfully
+      setSendSuccess("OTP sent successfully to your email.");
+      setShowOTPScreen(true);
     } catch (err) {
       const message =
         err instanceof Error
@@ -48,6 +59,64 @@ const EcosystemPageInner = () => {
       setSendError(message);
     } finally {
       setIsSending(false);
+    }
+  };
+
+
+  // Handle OTP Verification
+  const handleVerifyOTP = async (otpValue) => {
+    setOtpLoading(true);
+    setOtpError('');
+    try {
+      const res = await fetch('https://fuutura.com/api/verify-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, otp: otpValue }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || 'Invalid OTP');
+      }
+
+      // On success, close OTP screen and proceed with verification
+      setShowOTPScreen(false);
+      setOtp('');
+      setIsVerified(true);
+      setVerifying(false);
+      
+      // Show welcome section after a short delay
+      setTimeout(() => {
+        setShowWelcomeSection(true);
+      }, 2000);
+    } catch (error) {
+      setOtpError(error.message || 'Invalid OTP. Please try again.');
+    } finally {
+      setOtpLoading(false);
+    }
+  };
+
+  // Handle Resend OTP
+  const handleResendOTP = async () => {
+    setResendLoading(true);
+    setOtpError('');
+    setOtp('');
+    try {
+      const res = await fetch('https://fuutura.com/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || 'Failed to resend OTP');
+      }
+    } catch (error) {
+      setOtpError(error.message || 'Failed to resend OTP. Please try again.');
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -64,7 +133,7 @@ const EcosystemPageInner = () => {
 
     const verify = async () => {
       try {
-        const res = await fetch("/api/verify-token", {
+        const res = await fetch("https://fuutura.com/api/verify-token", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token }),
@@ -91,6 +160,17 @@ const EcosystemPageInner = () => {
     verify();
   }, [router, searchParams]);
 
+  // Auto-transition to second section after 3 seconds
+  useEffect(() => {
+    if (!showSecondSection) {
+      const timer = setTimeout(() => {
+        setShowSecondSection(true);
+      }, 3000); // 3 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [showSecondSection]);
+
   return (
     <div className="relative h-[100vh] w-full overflow-hidden">
       {/* <section
@@ -102,12 +182,11 @@ const EcosystemPageInner = () => {
       >
       </section> */}
       <section
-        onClick={() => setShowSecondSection(true)}
         className={`h-screen w-full flex flex-col items-center justify-center
   bg-cover bg-center bg-no-repeat
   bg-[url('/Images/MobileScreen.gif')]
   md:bg-[url('/Images/step1.gif')]
-  cursor-pointer transition-opacity duration-[1200ms] ease-in-out
+  transition-opacity duration-[1200ms] ease-in-out
   ${showSecondSection ? "opacity-0 pointer-events-none" : "opacity-100"}
   `}
         aria-hidden={showSecondSection}
@@ -169,8 +248,8 @@ const EcosystemPageInner = () => {
                   onClick={handleSendEmail}
                   disabled={!isValidEmail(email) || isSending}
                   className={`px-9 py-2.5 rounded-full text-white font-semibold text-sm transition-colors shadow-[0_0_20px_rgba(10,124,255,0.5)] ${!isValidEmail(email) || isSending
-                      ? "bg-gray-600 cursor-not-allowed"
-                      : "bg-gradient-to-r from-[#00CCFF] to-[#064A99] cursor-pointer"
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-[#00CCFF] to-[#064A99] cursor-pointer"
                     }`}
                 >
                   {isSending ? "Sending..." : "Verify"}
@@ -179,11 +258,6 @@ const EcosystemPageInner = () => {
               {sendError && (
                 <p className="mt-4 text-sm text-red-400 text-center">
                   {sendError}
-                </p>
-              )}
-              {sendSuccess && (
-                <p className="mt-4 text-sm text-[#9BADB3] text-center">
-                  {sendSuccess}
                 </p>
               )}
               {isVerified && (
@@ -221,8 +295,8 @@ const EcosystemPageInner = () => {
       {/* Third section - full-screen verifying / verified overlay (same page). Click when verified to go forward. */}
       <section
         className={`absolute inset-0 flex items-center justify-center h-[100vh] w-full z-50 bg-center bg-cover transition-opacity duration-[1200ms] ease-in-out ${verifying || showWelcomeSection
-            ? "opacity-100"
-            : "opacity-0 pointer-events-none"
+          ? "opacity-100"
+          : "opacity-0 pointer-events-none"
           }`}
         style={{ backgroundImage: "url('/Images/55.png')" }}
         onClick={() => {
@@ -234,29 +308,120 @@ const EcosystemPageInner = () => {
         aria-hidden={!(verifying || showWelcomeSection)}
       >
         <div className="bg-[#00000080] h-full w-full flex items-center justify-center px-6">
-  <div className="max-w-xl text-center">
-    <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-      {verifying && "Verifying Email"}
-      {!verifying && isVerified && "Email Verified"}
-      {!verifying && !isVerified && verificationError && "Verification Failed"}
-    </h1>
+          <div className="max-w-xl text-center">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              {verifying && "Verifying Email"}
+              {!verifying && isVerified && "Email Verified"}
+              {!verifying && !isVerified && verificationError && "Verification Failed"}
+            </h1>
 
-    <p className="text-[#E5EAEC] text-base md:text-lg">
-      {verifying && "We are verifying your email. Please wait..."}
-      {!verifying && isVerified &&
-        "Your access is now verified. Welcome To The FUUTURA Ecosystem."}
-      {!verifying && verificationError && verificationError}
-    </p>
+            <p className="text-[#E5EAEC] text-base md:text-lg">
+              {verifying && "We are verifying your email. Please wait..."}
+              {!verifying && isVerified &&
+                "Your access is now verified. Welcome To The FUUTURA Ecosystem."}
+              {!verifying && verificationError && verificationError}
+            </p>
 
-    {!verifying && isVerified && (
-      <p className="mt-4 text-sm text-[#00C2FF] animate-pulse cursor-pointer">
-        Click to Continue →
-      </p>
-    )}
-  </div>
-</div>
+            {!verifying && isVerified && (
+              <p className="mt-4 text-sm text-[#00C2FF] animate-pulse cursor-pointer">
+                Click to Continue →
+              </p>
+            )}
+          </div>
+        </div>
 
       </section>
+
+      {/* OTP Screen Popup */}
+      {showOTPScreen && (
+        <div className="fixed inset-0 z-[111111111] flex items-center justify-center bg-[#1111119f] bg-opacity-70 backdrop-blur-sm">
+          <div
+            className="backdrop-blur-md p-6 md:p-8 rounded-2xl text-center max-w-[340px] md:max-w-[420px] w-full mx-4 border border-[#00C2FF]/30 shadow-2xl"
+            style={{
+              background: 'linear-gradient(135deg, rgba(26, 31, 58, 0.95) 0%, rgba(0, 194, 255, 0.1) 50%, rgba(26, 31, 58, 0.95) 100%)',
+            }}
+          >
+            {/* Close Button */}
+            <div className="flex items-center justify-end mb-4">
+              <button
+                onClick={() => {
+                  setShowOTPScreen(false);
+                  setOtp('');
+                  setOtpError('');
+                }}
+                className="text-white/60 hover:text-white transition-colors p-1"
+              >
+                <IoClose className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="space-y-6">
+              {/* Title and Email Message */}
+              <div className="space-y-2">
+                <h2 className="text-xl md:text-2xl text-white font-medium">Enter Your OTP</h2>
+                <p className="text-[#9CA3AF] text-xs md:text-sm">
+                  OTP sent successfully to this email
+                </p>
+                <p className="text-[#00C2FF] text-xs md:text-sm font-medium break-all">
+                  {email}
+                </p>
+              </div>
+
+              {/* OTP Input */}
+              <div className="space-y-2 mx-auto">
+                {/* <p className="text-xs text-[#E0E0E0]">Enter OTP</p> */}
+                <OTPInput
+                  value={otp}
+                  onChange={(val) => {
+                    setOtp(val);
+                    if (otpError) setOtpError('');
+                  }}
+                  numInputs={6}
+                  inputType="text"
+                  shouldAutoFocus
+                  renderInput={(props) => (
+                    <input
+                      {...props}
+                      className="w-8 h-8 md:w-12 md:h-12 rounded-lg text-center text-white text-sm md:text-lg font-semibold bg-[#1a1f3a]/90 border-2 focus:outline-none focus:border-[#00C2FF] transition-all"
+                      style={{
+                        borderColor: otpError ? '#ef4444' : 'rgba(0, 194, 255, 0.3)',
+                        marginRight: '12px',
+                      }}
+                    />
+                  )}
+                />
+                {otpError && (
+                  <p className="text-[10px] md:text-xs text-red-500 mt-2">{otpError}</p>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => handleVerifyOTP(otp)}
+                  disabled={otpLoading || otp.length !== 6}
+                  className={`flex items-center justify-center bg-gradient-to-r from-[#00CCFF] to-[#064A99] text-white cursor-pointer py-2.5 text-xs md:text-sm px-4 w-full rounded-md transition-all shadow-[0_0_20px_rgba(10,124,255,0.5)] ${otpLoading || otp.length !== 6
+                      ? "opacity-70 pointer-events-none"
+                      : "hover:from-[#00D9FF] hover:to-[#0755B3]"
+                    }`}
+                >
+                  {otpLoading ? "Verifying..." : "Continue"}
+                </button>
+                {/* <button
+                  onClick={() => {
+                    setShowOTPScreen(false);
+                    setOtp('');
+                    setOtpError('');
+                  }}
+                  className="text-xs text-[#E0E0E0] hover:text-[#00C2FF] cursor-pointer  transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Cancel
+                </button> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
