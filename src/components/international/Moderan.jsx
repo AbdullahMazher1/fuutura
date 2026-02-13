@@ -15,30 +15,34 @@ const Moderan = () => {
       {/* ================= IMAGE ================= */}
       {/* Desktop version (unchanged) */}
       <img
-        src="/Images/moderan1.jpg"
-        alt=""
-        className="
-          hidden lg:block
-          absolute
-          h-full
-          w-full
-          left-1/2
-          right-0
-          top-0
-          bottom-0
-          object-contain
-          object-right
-          transition-all duration-[4000ms] ease-in-out
-          transform-gpu
-          translate-y-0 opacity-100
-          translate-x-[-45%]
-          group-hover:translate-y-[50%] group-hover:opacity-0
-          z-20
-        "
-        style={{
-          minWidth: "50%",
-        }}
-      />
+  src="/Images/moderan1.jpg"
+  alt=""
+  className="
+    hidden lg:block
+    absolute
+    h-full
+    w-full
+    left-1/2
+    right-0
+    top-0
+    bottom-0
+    object-contain
+    object-right
+    transition-all duration-[4000ms] ease-in-out
+    transform-gpu
+    translate-y-0 opacity-100
+    translate-x-[-35%]
+    group-hover:translate-y-[50%] group-hover:opacity-0
+    z-20
+
+    [mask-image:linear-gradient(to_right,transparent_0%,black_50%,black_100%)]
+    [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_25%,black_100%)]
+  "
+  style={{
+    minWidth: "50%",
+  }}
+/>
+
 
       {/* Mobile background image */}
       <div

@@ -68,10 +68,10 @@ function Hero() {
       </div>
 
       {/* Content container */}
-      <div className="relative flex flex-col mt-10 z-30 max-w-[1200px] mx-auto px-6 lg:px-0 py-24 items-center justify-center">
+      <div className="relative flex flex-col mt-10 z-30 max-w-[1200px] mx-auto px-6 lg:px-0 pt-24 pb-16 items-center justify-center">
         {/* Fuutura Blogs label - top left */}
         <div className="mb-12">
-          <div className="inline-block px-4 py-2 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm">
+          <div className="inline-block px-7 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm">
             <span className="font-futura text-sm font-medium text-white/90">
               Fuutura Blogs
             </span>
@@ -97,7 +97,7 @@ function Hero() {
 
         {/* Call-to-action button */}
         <div className="text-center">
-          <a href="#subscribe" className="px-8 py-4 rounded-lg font-futura text-lg font-medium text-white bg-gradient-to-r from-[#0A7CFF] to-[#00C2FF] hover:from-[#0A7CFF]/90 hover:to-[#00C2FF]/90 transition-all duration-300 shadow-lg shadow-[#00C2FF]/20 hover:shadow-[#00C2FF]/40">
+          <a href="#subscribe" className="px-8 py-4 rounded-lg block max-w-max mx-auto font-futura text-lg font-medium text-white bg-gradient-to-r from-[#0A7CFF] to-[#00C2FF] hover:from-[#0A7CFF]/90 hover:to-[#00C2FF]/90 transition-all duration-300 shadow-lg shadow-[#00C2FF]/20 hover:shadow-[#00C2FF]/40">
             Subscribe to our Newsletter
           </a>
         </div>

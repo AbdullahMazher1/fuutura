@@ -115,9 +115,14 @@ const EcosystemPageInner = () => {
 
       {/* Second section - Ecosystem Layer Verification (full h & w) */}
       <section
+<<<<<<< HEAD
         className={`absolute inset-0 flex flex-col h-[100vh] w-full items-center justify-center transition-opacity duration-[1200ms] ease-in-out delay-300 ${
           showSecondSection ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+=======
+        className={`absolute inset-0 flex flex-col h-[100vh] w-full items-center justify-center transition-opacity duration-[1200ms] ease-in-out delay-300 ${showSecondSection ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+>>>>>>> d958223c0637c1066805a8a0f21772bca5733925
         aria-hidden={!showSecondSection}
       >
         <div
@@ -169,11 +174,18 @@ const EcosystemPageInner = () => {
                   type="button"
                   onClick={handleSendEmail}
                   disabled={!isValidEmail(email) || isSending}
+<<<<<<< HEAD
                   className={`px-9 py-2.5 rounded-full text-white font-semibold text-sm transition-colors shadow-[0_0_20px_rgba(10,124,255,0.5)] ${
                     !isValidEmail(email) || isSending
                       ? "bg-gray-600 cursor-not-allowed"
                       : "bg-gradient-to-r from-[#00CCFF] to-[#064A99] cursor-pointer"
                   }`}
+=======
+                  className={`px-9 py-2.5 rounded-full text-white font-semibold text-sm transition-colors shadow-[0_0_20px_rgba(10,124,255,0.5)] ${!isValidEmail(email) || isSending
+                      ? "bg-gray-600 cursor-not-allowed"
+                      : "bg-gradient-to-r from-[#00CCFF] to-[#064A99] cursor-pointer"
+                    }`}
+>>>>>>> d958223c0637c1066805a8a0f21772bca5733925
                 >
                   {isSending ? "Sending..." : "Verify"}
                 </button>
@@ -222,11 +234,18 @@ const EcosystemPageInner = () => {
 
       {/* Third section - full-screen verifying / verified overlay (same page). Click when verified to go forward. */}
       <section
+<<<<<<< HEAD
         className={`absolute inset-0 flex items-center justify-center h-[100vh] w-full z-50 bg-center bg-cover transition-opacity duration-[1200ms] ease-in-out ${
           verifying || showWelcomeSection
             ? "opacity-100"
             : "opacity-0 pointer-events-none"
         }`}
+=======
+        className={`absolute inset-0 flex items-center justify-center h-[100vh] w-full z-50 bg-center bg-cover transition-opacity duration-[1200ms] ease-in-out ${verifying || showWelcomeSection
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none"
+          }`}
+>>>>>>> d958223c0637c1066805a8a0f21772bca5733925
         style={{ backgroundImage: "url('/Images/55.png')" }}
         onClick={() => {
           if (!verifying && isVerified) {
@@ -237,6 +256,7 @@ const EcosystemPageInner = () => {
         aria-hidden={!(verifying || showWelcomeSection)}
       >
         <div className="bg-[#00000080] h-full w-full flex items-center justify-center px-6">
+<<<<<<< HEAD
           <div className="max-w-xl text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
               {verifying && "Verifying Email"}
@@ -255,6 +275,30 @@ const EcosystemPageInner = () => {
             </p>
           </div>
         </div>
+=======
+  <div className="max-w-xl text-center">
+    <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+      {verifying && "Verifying Email"}
+      {!verifying && isVerified && "Email Verified"}
+      {!verifying && !isVerified && verificationError && "Verification Failed"}
+    </h1>
+
+    <p className="text-[#E5EAEC] text-base md:text-lg">
+      {verifying && "We are verifying your email. Please wait..."}
+      {!verifying && isVerified &&
+        "Your access is now verified. Welcome To The FUUTURA Ecosystem."}
+      {!verifying && verificationError && verificationError}
+    </p>
+
+    {!verifying && isVerified && (
+      <p className="mt-4 text-sm text-[#00C2FF] animate-pulse cursor-pointer">
+        Click to Continue →
+      </p>
+    )}
+  </div>
+</div>
+
+>>>>>>> d958223c0637c1066805a8a0f21772bca5733925
       </section>
     </div>
   );

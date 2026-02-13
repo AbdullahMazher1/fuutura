@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header.jsx";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,27 @@ export default function RootLayout({ children }) {
         {children}
 
         {!hideLayout && (
-          <div className="w-full bg-black">
-            <img className="mx-auto" src="/footer.png" alt="footer" />
-          </div>
+          <footer className="w-full bg-[#000000] py-8">
+            <div className="w-full max-w-[1300px] mx-auto sm:space-y-20 px-4">
+              <img className="w-full h-auto" src="/Images/footerF.png" alt="" />
+              <div className="flex sm:items-center sm:flex-row flex-col justify-between gap-14 sm:gap-4 py-5">
+                <div className="flex items-center gap-14">
+                  <Link className="text-white max-w-max text-sm" href='/'>
+                    Home
+                  </Link>
+                  <Link className="text-white max-w-max text-sm" href='/blogs'>
+                    Blog
+                  </Link>
+                  <Link className="text-white max-w-max text-sm" href='/about'>
+                    About
+                  </Link>
+                </div>
+                <p className="text-white max-w-max text-sm">
+                  © 2026 Fuutura. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </footer>
         )}
 
       </body>

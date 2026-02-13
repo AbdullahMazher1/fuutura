@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
     return (
-        <div className="relative w-full h-screen flex flex-col items-center justify-center px-6 md:px-24 bg-black overflow-hidden">
+        <div className="relative w-full h-[60vh] md:h-[80vh] flex flex-col items-center justify-center px-6 md:px-24 bg-black overflow-hidden">
             
             {/* Background Video */}
             <video
@@ -19,11 +19,11 @@ function Hero() {
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center text-center max-w-3xl gap-6">
                 <button className="text-white border border-white px-4 py-1 rounded-full text-sm md:text-base font-futura">
-                    Future About Us
+                    Fuutura About Us
                 </button>
 
-                <h2 className="font-futura text-white text-[30px] md:text-[48px] font-bold leading-tight">
-                    About <span className="text-[#00A3FF]">US</span>
+                <h2 className="font-futura text-white text-[30px] md:text-[60px] font-bold leading-tight">
+                    About <span className="text-[#00A3FF]">Us</span>
                 </h2>
 
                 <p className="font-futura text-white/60 text-lg md:text-xl leading-relaxed">

@@ -4,9 +4,9 @@ export default function IntroductionPage() {
       <div className="w-full ecosystem-bg-full-width bg-center fixed bg-no-repeat bg-cover inset-0" style={{ backgroundImage: "url('/Images/first1.png')" }} aria-hidden />
       <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover bg-[#000000a4]" aria-hidden />
       <div className="relative z-10 w-full px-8 py-10 md:px-12 md:py-14 overflow-auto max-h-[100vh] h-[90%]">
-        <div className="rounded-lg px-6 py-8 md:px-8 md:py-10 max-w-4xl mx-auto">
+        <div className="rounded-lg px-6 py-8 md:px-8 md:py-10 max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Welcome To <span className="text-[#0A7CFF]" style={{ textShadow: '0 0 30px rgba(10,124,255,0.6)' }}>FUUTURA</span>
+            Welcome To <span className="text-[#00CCFF]" style={{ textShadow: '0 0 30px rgba(10,124,255,0.6)' }}>FUUTURA</span>
           </h1>
           <p className="text-white/90 text-base md:text-lg leading-relaxed mb-10">
             A Unified Digital Ecosystem Designed To Give Individuals And Organizations Direct Control Over Identity, Assets, Communication, And Privacy—Without Relying On Centralized Intermediaries. This Knowledge Hub Exists To Explain How The Ecosystem Works, How Its Layers Connect, And What Participation Looks Like In Practice.

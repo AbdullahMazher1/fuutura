@@ -32,22 +32,30 @@ function Values() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="group relative flex flex-col items-center justify-center gap-4 bg-gradient-to-b from-[#0B0C0F] to-[#1A1A2E] rounded-xl p-8 w-full md:w-1/3 text-center overflow-hidden border border-white/5 transition-colors duration-300 hover:border-white/20"
+            className="group relative flex flex-col items-center justify-center gap-4 
+                       bg-gradient-to-b from-[#0B0C0F] to-[#1A1A2E] rounded-xl p-8 w-full md:w-1/3 
+                       text-center overflow-hidden border border-white/5 
+                       transition-all duration-500 ease-in-out
+                       hover:from-[#1A1A2E] hover:to-[#0B0C0F] hover:border-white/20
+                       hover:shadow-lg hover:scale-105"
           >
             {/* Icon Container */}
             <div className="cursor-pointer relative w-16 h-16 flex items-center justify-center">
-              {/* Default Icon: Fades out and slides up slightly */}
+              {/* Default Icon */}
               <img 
                 src={card.icon} 
                 alt={card.title} 
-                className="w-12 h-12 absolute transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:-translate-y-2" 
+                className="w-12 h-12 absolute transition-all duration-500 ease-in-out
+                           group-hover:opacity-0 group-hover:-translate-y-[10px]" 
               />
-              
-              {/* Hover Icon: Fades in and slides up from below */}
+
+              {/* Hover Icon */}
               <img 
                 src={card.hoverIcon} 
                 alt={`${card.title} hover`} 
-                className="w-12 h-12 absolute opacity-0 translate-y-2 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0" 
+                className="w-12 h-12 absolute opacity-0 transition-all duration-500 ease-in-out
+                           group-hover:opacity-100 group-hover:-translate-y-[10px]
+" 
               />
             </div>
 

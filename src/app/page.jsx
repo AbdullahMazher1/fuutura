@@ -6,12 +6,13 @@ import KycAml from "@/components/KycAml";
 import Ecosystem from "@/components/Ecosystem";
 import Hero from "../components/Hero";
 import Second from "../components/second";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="">
-      <Hero/>
-      <Second/>
+      <Hero />
+      <Second />
       <Capabilities />
       <FutuuraMatters />
       <KycAml />

@@ -5,71 +5,98 @@ import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const pathname = usePathname();
-  const label = pathname.includes('investor') ? 'Customers' : 'Investors';
-  const linkHref = label === 'Customers' ? '/' : '/investor';
-
+  const isInvestor = pathname.includes('investor');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const ToggleSwitch = () => (
+    <Link
+      href={isInvestor ? "/" : "/investor"}
+      className="relative w-[160px] h-12 flex items-center bg-transparent backdrop-blur-md border border-[#569FFF]/30 rounded-full p-1.5 cursor-pointer overflow-hidden group shadow-inner"
+    >
+      <div className="relative w-full h-full flex items-center px-4">
+
+        {/* The Text Label */}
+        {/* Reduced translate-x from 90px to 45px to keep it closer to the ball */}
+        <span className={`text-[12px] font-bold uppercase tracking-wider transition-all duration-500 ease-in-out z-10 ${isInvestor
+            ? 'translate-x-0 opacity-100 text-[#569FFF]'
+            : 'translate-x-[45px] opacity-100 text-[#569FFF]'
+          }`}>
+          {isInvestor ? 'Customers' : 'Investors'}
+        </span>
+
+        {/* The Glowing Ball */}
+        {/* Adjusted the 'left' position when isInvestor is true to bring it inward */}
+        <div
+          className={`absolute h-9 w-9 bg-gradient-to-tr from-[#569FFF] to-[#80B3FF] rounded-full shadow-[0_0_20px_rgba(86,159,255,0.7)] transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) flex items-center justify-center ${isInvestor ? 'left-[105px]' : 'left-1.5'
+            }`}
+        >
+          <div className="h-2 w-2 bg-white rounded-full opacity-50 blur-[1px]" />
+        </div>
+      </div>
+    </Link>
+  );
+
   return (
-    <div className="w-full h-[67px] absolute top-0 z-50">
-      <div className="grid grid-cols-2 sm:grid-cols-3 max-w-[1300px] mx-auto py-5 px-6 md:px-0">
+    <div className="w-full h-[80px] absolute top-0 z-50">
+      <div className="max-w-[1300px] mx-auto h-full flex items-center justify-between px-6">
 
         {/* Logo Section */}
-        <div className="flex items-center gap-2 cursor-pointer max-w-max">
-          <img className="h-10" src="/logo1.png" alt="Logo Icon" />
-          <img className="h-6" src="/logo.gif" alt="Logo Text" />
+        <div className="flex items-center gap-3 cursor-pointer">
+          <img className="h-10" src="/logo1.png" alt="Icon" />
+          <img className="h-6 hidden sm:block" src="/logo.gif" alt="Text" />
         </div>
 
-        {/* Navigation Bar for Desktop */}
-        <div className="hidden md:flex font-futura max-w-max mx-auto font-semibold text-white px-12 py-3 flex-row gap-10 border bg-black/20 backdrop-blur-md border-[#569FFF]/50 rounded-full">
-          <Link href="/" className={pathname === '/' ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Home</Link>
-          {/* <div className={pathname.includes('roadmap') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>RoadMap</div>
-          <div className={pathname.includes('press') ? 'text-[#569FFF] cursor-pointer' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Press Section</div> */}
-          <Link href="/blogs" className={pathname === '/blogs' ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>Blogs</Link>
-          <Link href="/about" className={pathname.includes('about') ? 'text-[#569FFF] cursor-pointer transition-colors' : 'cursor-pointer hover:text-[#569FFF] transition-colors'}>About Us</Link>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
+          <Link href="/" className={`text-[18px] tracking-wide ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
+          <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
+          <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
+        </nav>
+
+        {/* Desktop Toggle */}
+        <div className="hidden md:block">
+          <ToggleSwitch />
         </div>
 
-        {/* Investors/Customers Button (Desktop) */}
-        <div className='justify-self-end hidden md:block max-w-max'>
-          <div className=" rounded-full p-[1px] max-w-max cursor-pointer border border-[#002371] overflow-hidden transition-all hover:bg-[#002371]/30">
-            <Link href={linkHref} className="bg-transparent px-8 py-2 flex items-center justify-center text-white font-medium">
-              {label}
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile Hamburger Menu */}
-        <div className="md:hidden flex items-center justify-end">
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? (
-              // Close X
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              // Hamburger
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+        {/* Mobile Menu Trigger */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="w-10 h-10 flex items-center justify-center bg-[#569FFF]/10 border border-[#569FFF]/30 rounded-full"
+          >
+            <div className="space-y-1.5">
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+              <div className={`w-5 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </div>
           </button>
         </div>
-
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-md w-full absolute top-[67px] left-0 z-40 flex flex-col items-center py-6 gap-4">
-          <Link href="/" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          {/* <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>RoadMap</div>
-          <div className="text-white text-lg font-medium cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>Press Section</div> */}
-          <Link href="/blogs" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
-          <Link href="/about" className="text-white text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-          <Link href={linkHref} className="mt-2 px-6 py-2 rounded-full border border-[#002371] text-white hover:bg-[#002371]/30 font-medium" onClick={() => setIsMobileMenuOpen(false)}>
-            {label}
-          </Link>
+      {/* Mobile Impressive UI Overlay */}
+      <div className={`fixed inset-0 bg-[#050505] transition-all duration-700 ease-in-out z-[100] ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex flex-col h-full pt-24 items-center px-10">
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-8 right-8 text-white/40 text-sm tracking-tighter"
+          >
+            X
+          </button>
+
+          <div className="flex flex-col gap-8 text-center mb-16">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">HOME</Link>
+            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">BLOGS</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ABOUT</Link>
+          </div>
+
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />
+
+          <p className="text-[#569FFF] text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
+          <div className="scale-125" onClick={() => setIsMobileMenuOpen(false)}>
+            <ToggleSwitch />
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

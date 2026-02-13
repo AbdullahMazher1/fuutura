@@ -2,15 +2,15 @@ import React from 'react'
 
 const Second = () => {
   return (
-    <div className="bg-animated-border bg-[#ffffff41] p-[1px] 
+    <div className="bg-animated-border bg-[#ffffff41] p-[1px] h-[380px] 
     max-w-[1000px] mx-auto rounded-3xl my-12 sm:my-16 lg:my-20 px-4">
 
       <div
-        className="rounded-3xl p-4 sm:p-5 bg-[#151A24] bg-center bg-no-repeat bg-cover"
+        className="rounded-3xl p-4 sm:p-5 bg-[#151A24] bg-center bg-no-repeat bg-cover h-full"
         style={{ backgroundImage: "url('/ll.png')" }}
       >
         <div
-          className="bg-center bg-no-repeat bg-cover 
+          className="bg-center bg-no-repeat bg-cover h-full 
           w-full flex flex-col lg:flex-row items-center gap-6 rounded-3xl p-4 sm:p-6"
           style={{ backgroundImage: "url('/hhhh.png')" }}
         >

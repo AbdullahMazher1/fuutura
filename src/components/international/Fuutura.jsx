@@ -17,7 +17,6 @@ function CardShell({
         className,
       ].join(" ")}
     >
-      {/* This div acts as the MASK */}
       <div
         className="h-full w-full rounded-[31px] overflow-hidden"
         style={{
@@ -54,29 +53,12 @@ function StackCard({
     <div
       className={
         isMobile
-          ? "relative"
+          ? "relative w-full max-w-[320px] mx-auto" // Centered and contained on mobile
           : "absolute right-0 top-1/2 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       }
-      // style={
-      //   isMobile
-      //     ? {
-      //         width: `${width * scale}px`,
-      //         height: `${height * scale}px`,
-      //       }
-      //     : {
-      //         width: `${width * scale}px`,
-      //         height: `${height * scale}px`,
-      //         zIndex,
-      //         transform: getTransform(),
-      //       }
-      // }
       style={
         isMobile
-          ? {
-              width: "150%",
-              // maxWidth: "340px",
-              height: "200px",
-            }
+          ? { height: "200px" }
           : {
               width: `${width * scale}px`,
               height: `${height * scale}px`,
@@ -90,13 +72,13 @@ function StackCard({
         isHovered={isMobile ? true : isOpen}
         isFirstDeck={isFirstDeck}
       >
-        <div className="flex h-full w-full flex-col items-center justify-center gap-6 px-4">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-4 lg:gap-6 px-4">
           <img
             src={imgSrc}
             alt=""
-            className="h-20 w-20 lg:h-[110px] lg:w-[110px] object-contain drop-shadow-[0_0_30px_rgba(0,194,255,0.35)]"
+            className="h-16 w-16 lg:h-[110px] lg:w-[110px] object-contain drop-shadow-[0_0_30px_rgba(0,194,255,0.35)]"
           />
-          <div className="pb-4 font-futura text-lg lg:text-[26px] text-white/95 text-center">
+          <div className="pb-2 font-futura text-lg lg:text-[26px] text-white/95 text-center">
             {label}
           </div>
         </div>
@@ -115,12 +97,10 @@ function Fuutura() {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-
       if (width >= 1024) setScale(1);
       else if (width >= 768) setScale(0.7);
       else setScale(0.6);
-
-      setIsMobile(width < 768);
+      setIsMobile(width < 1024); // Set mobile logic for tablet and below to ensure centering
     };
 
     handleResize();
@@ -129,9 +109,10 @@ function Fuutura() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#050608] py-16 lg:py-24">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-0">
+    <section className="relative w-full bg-[#050608] py-16 lg:py-24 overflow-x-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
+          
           {/* ================= LEFT TEXT ================= */}
           <div className="lg:col-span-5 text-center lg:text-left">
             <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.05] text-white">
@@ -142,7 +123,7 @@ function Fuutura() {
               Fuutura is an exchange at its core.
             </p>
 
-            <div className="mt-10 space-y-2 text-lg sm:text-xl lg:text-[22px] leading-[1.45] text-white/80">
+            <div className="mt-8 lg:mt-10 space-y-2 text-lg sm:text-xl lg:text-[22px] leading-[1.45] text-white/80">
               <p>Everything around it exists to make market</p>
               <p>access. No distractions. No unnecessary steps.</p>
               <p>Just execution done right.</p>
@@ -152,8 +133,8 @@ function Fuutura() {
           {/* ================= RIGHT CARDS ================= */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end">
             <div
-              className={`relative ${
-                isMobile ? "flex flex-col items-center gap-8" : ""
+              className={`relative w-full ${
+                isMobile ? "flex flex-col items-center gap-6" : ""
               }`}
               style={
                 isMobile
@@ -169,31 +150,18 @@ function Fuutura() {
               {isMobile ? (
                 <>
                   <StackCard
-                    width={299}
-                    height={290}
                     label="More Reliable"
                     imgSrc="/Images/setting.png"
-                    isOpen={true}
-                    isFirstDeck={true}
-                    scale={0.6}
                     isMobile={true}
                   />
                   <StackCard
-                    width={198}
-                    height={290}
                     label="Safer"
                     imgSrc="/Images/sheildlock.png"
-                    isOpen={true}
-                    scale={0.6}
                     isMobile={true}
                   />
                   <StackCard
-                    width={159}
-                    height={290}
                     label="Easier"
                     imgSrc="/Images/rocket.png"
-                    isOpen={true}
-                    scale={0.6}
                     isMobile={true}
                   />
                 </>

@@ -53,8 +53,8 @@ function Assetes() {
             ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[180px]"}
           `}
         >
-          {/* <div className="relative w-[440px] h-[440px]"> */}
-          <div className="relative w-[380px] h-[380px] md:w-[440px] md:h-[440px]">
+          <div className="relative w-[300px] h-[300px] md:w-[440px] md:h-[440px]">
+
             {/* Subtle glow around globe */}
 
             {/* ORBIT ARC (SVG SEMI-CIRCLE) - put above globe */}

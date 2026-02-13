@@ -3,11 +3,11 @@ export default function OverviewPage() {
     <>
       <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover fixed inset-0" style={{ backgroundImage: "url('/Images/first2.png')" }} aria-hidden />
       <div className="w-full ecosystem-bg-full-width bg-fixed bg-center bg-no-repeat bg-cover bg-[#000000a4] " aria-hidden />
-      <div className="relative z-10 min-h-screen w-full px-8 py-10 md:px-12 md:py-14 overflow-auto max-h-[100vh] h-[90%]">
+      <div className="relative z-10 min-h-screen w-full px-8 py-20 md:px-12 md:py-14 overflow-auto max-h-[100vh] h-[90%] custom__scrollbar">
         <div className="min-h-full w-full">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-          What The <span className="text-[#0A7CFF]" style={{ textShadow: '0 0 30px rgba(10,124,255,0.6)' }}>FUUTURA</span> Ecosystem Is
+          What The <span className="text-[#00CCFF]" style={{ textShadow: '0 0 30px rgba(10,124,255,0.6)' }}>FUUTURA</span> Ecosystem Is
         </h1>
         <p className="text-white/90 text-base md:text-lg leading-relaxed mb-10">
           A Unified Digital System Where Identity, Finance, Communication, And Privacy Operate As Interconnected Layers Rather Than Isolated Products. Each Layer Is Designed To Work Independently While Remaining Fully Compatible With The Others.

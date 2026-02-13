@@ -21,18 +21,35 @@ const ProblemSection = () => {
             <div className="relative w-full min-h-[550px] border-y border-white/10 bg-[#0B0B0D] overflow-hidden pt-16 pb-12">
 
                 {/* 3 & 4. Blended Background Layers */}
-                <div className="absolute inset-0 z-0">
+                {/* Blended Background Layers */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
                     <img
                         src="/Images/secondInvestor.png"
                         alt="Background"
                         className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity"
+                        style={{
+                            transform: 'scale(1.15)',
+                            transformOrigin: 'center'
+                        }}
                     />
+
+                    {/* Centered GIF */}
                     <img
                         src="/Videos/secondInvestor.gif"
                         alt="Background GIF"
-                        className="absolute inset-0 w-full h-full object-cover opacity-5 mix-blend-screen"
+                        className="absolute 
+             top-1/2 left-1/2 
+             -translate-x-1/2 -translate-y-1/2
+             w-[380px] sm:w-[340px] md:w-[1000px]
+             h-auto
+             object-contain
+             opacity-[0.05]
+             mix-blend-screen
+             [mask-image:radial-gradient(circle,rgba(0,0,0,1)_60%,rgba(0,0,0,0)_100%)]
+             [-webkit-mask-image:radial-gradient(circle,rgba(0,0,0,1)_60%,rgba(0,0,0,0)_100%)]"
                     />
                 </div>
+
 
                 {/* 2. Content Layer - Left Aligned */}
                 <div
@@ -81,11 +98,11 @@ const ProblemCard = ({ text }) => {
         <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative cursor-pointer rounded-[12px] border border-white/10 overflow-hidden px-5 py-4 transition-all duration-500"
+            className="relative cursor-pointer rounded-[12px] border border-white/10 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
             style={{
                 background: `radial-gradient(
             89.9% 95.19% at 0% 0%, 
-            rgba(167, 167, 167, 0.1) 0%, 
+            rgba(167, 167, 167, 0.2) 0%, 
             rgba(0, 89, 112, 0.1) 100%
         )`
             }}
@@ -93,13 +110,24 @@ const ProblemCard = ({ text }) => {
             {/* Backdrop blur */}
             <div className="absolute inset-0 backdrop-blur-xl -z-10" />
 
-            {/* Animated Hover Overlay */}
+            {/* Default 4px blue left border */}
             <div
-                className={`absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent transition-transform duration-500 ease-in-out ${isHovered ? 'translate-x-0' : '-translate-x-full'
-                    }`}
+                className="absolute left-0 top-0 bottom-0 bg-[#3A7BFF]/20 transition-all duration-[1500ms] ease-in-out z-20"
+                style={{
+                    width: isHovered ? '0' : '7px'
+                }}
             />
 
-            <p className={`relative z-10 font-futura text-[18px] md:text-[20px] transition-all duration-500 ${isHovered ? 'text-white translate-x-2' : 'text-white translate-x-0'
+            {/* Animated Blue Background on Hover - expands from left */}
+            <div
+                className="absolute inset-0 bg-[#3A7BFF]/20 transition-all duration-[1500ms] ease-in-out origin-left"
+                style={{
+                    transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
+                    transformOrigin: 'left'
+                }}
+            />
+
+            <p className={`relative z-10 font-futura text-[18px] md:text-[20px] transition-all duration-100 ${isHovered ? 'text-white' : 'text-white'
                 }`}>
                 {text}
             </p>
