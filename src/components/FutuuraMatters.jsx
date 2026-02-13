@@ -33,7 +33,7 @@ function FutuuraMatters() {
           <div className="absolute top-0 w-full h-full bg-black rounded-b-full border-x border-b border-white/10" />
 
           {/* Floating Image */}
-          <div className="relative z-10 w-full h-full mt-[-10%]">
+          <div className="relative z-10 w-full h-full mt-[-10%] lg:ml-5 md:ml-4 ml-2.5">
             <Image
               src="/Images/Rectangle.png"
               alt="Futuura Core"
@@ -95,9 +95,12 @@ function FutuuraMatters() {
               </div>
 
               {/* GIF / Empty Space Side */}
-              <div className="">
-
-
+              <div className='w-full flex justify-center items-center mt-0 md:mt-0'>
+                <img
+                  src="/Videos/loader.gif"
+                  alt=""
+                  className="w-full h-[250px] md:h-[250px] object-cover rounded-xl"
+                />
               </div>
             </div>
           </div>
