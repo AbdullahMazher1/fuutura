@@ -14,8 +14,8 @@ export const Direction = () => {
                 />
                 {/* Center GIF */}
                 <img
-                    className="absolute w-2/3 max-w-[400px] md:w-1/2 md:max-w-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    src="/Videos/logos.gif"
+                    className="absolute w-full w-full md:w-2/3 md:max-w-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    src="/Videos/plo.gif"
                     alt="Platform GIF"
                 />
             </div>

@@ -98,7 +98,7 @@ const ProblemCard = ({ text }) => {
         <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative cursor-pointer rounded-[12px] border border-white/10 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
+            className="relative cursor-pointer rounded-[12px] border border-white/5 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
             style={{
                 background: `radial-gradient(
             89.9% 95.19% at 0% 0%, 
@@ -112,7 +112,7 @@ const ProblemCard = ({ text }) => {
 
             {/* Default 4px blue left border */}
             <div
-                className="absolute left-0 top-0 bottom-0 bg-[#3A7BFF]/20 transition-all duration-[1500ms] ease-in-out z-20"
+                className="absolute left-0 top-0 bottom-0 bg-gradient-to-b from-[#003298] to-[#00CCFF] transition-all duration-[1500ms] ease-in-out z-20"
                 style={{
                     width: isHovered ? '0' : '7px'
                 }}
@@ -120,7 +120,7 @@ const ProblemCard = ({ text }) => {
 
             {/* Animated Blue Background on Hover - expands from left */}
             <div
-                className="absolute inset-0 bg-[#3A7BFF]/20 transition-all duration-[1500ms] ease-in-out origin-left"
+                className="absolute inset-0 bg-gradient-to-b from-[#003298] to-[#00CCFF] transition-all duration-[1500ms] ease-in-out origin-left"
                 style={{
                     transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
                     transformOrigin: 'left'

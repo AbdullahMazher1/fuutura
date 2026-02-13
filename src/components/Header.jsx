@@ -21,7 +21,7 @@ const Header = () => {
             ? 'translate-x-0 opacity-100 text-[#569FFF]'
             : 'translate-x-[45px] opacity-100 text-[#569FFF]'
           }`}>
-          {isInvestor ? 'Customers' : 'Investors'}
+          {isInvestor ? 'Users' : 'Investors'}
         </span>
 
         {/* The Glowing Ball */}
