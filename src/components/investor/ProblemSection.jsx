@@ -98,7 +98,7 @@ const ProblemCard = ({ text }) => {
         <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative cursor-pointer rounded-[12px] border border-white/5 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
+            className="relative cursor-pointer rounded-[12px] border border-[#E0E0E0]/30 overflow-hidden px-5 py-4 transition-all duration-[1500ms]"
             style={{
                 background: `radial-gradient(
             89.9% 95.19% at 0% 0%, 

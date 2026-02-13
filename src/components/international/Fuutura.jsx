@@ -14,16 +14,17 @@ function CardShell({
   return (
     <div
       className={[
-        "relative rounded-[33px] p-[3px]",
-        "bg-[linear-gradient(169.15deg,rgba(10,124,255,0.45)_0%,rgba(58,123,255,0.25)_86.79%)]",
+        "relative rounded-[33px] p-[1.75px]",
+        "bg-[linear-gradient(169.15deg,rgba(10,124,255,0.3)_0%,rgba(58,123,255,0.15)_96.79%)]",
         className,
       ].join(" ")}
     >
+
       <div
         className="h-full w-full rounded-[31px] overflow-hidden"
         style={{
           background:
-            "radial-gradient(120% 120% at 0% 0%, rgb(7, 16, 41) 0%, rgb(1, 12, 32) 100%)",
+            "radial-gradient(120% 120% at 0% 0%, rgb(3, 11, 32) 0%, rgb(1, 8, 20) 100%)",
         }}
       >
         {children}
@@ -62,11 +63,11 @@ function StackCard({
         isMobile
           ? { height: "200px" }
           : {
-              width: `${width * scale}px`,
-              height: `${height * scale}px`,
-              zIndex,
-              transform: getTransform(),
-            }
+            width: `${width * scale}px`,
+            height: `${height * scale}px`,
+            zIndex,
+            transform: getTransform(),
+          }
       }
     >
       <CardShell
@@ -122,13 +123,13 @@ function Fuutura() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={ref} // Attach observer to the section
       className="relative w-full bg-[#050608] py-16 lg:py-24 overflow-x-hidden"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
-          
+
           {/* ================= LEFT TEXT ================= */}
           <div className="lg:col-span-5 text-center lg:text-left">
             <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.05] text-white">
@@ -149,18 +150,17 @@ function Fuutura() {
           {/* ================= RIGHT CARDS ================= */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end">
             <div
-              className={`relative w-full ${
-                isMobile ? "flex flex-col items-center gap-6" : ""
-              }`}
+              className={`relative w-full ${isMobile ? "flex flex-col items-center gap-6" : ""
+                }`}
               style={
                 isMobile
                   ? {}
                   : {
-                      height: `${340 * scale}px`,
-                      width: `${760 * scale}px`,
-                    }
+                    height: `${340 * scale}px`,
+                    width: `${760 * scale}px`,
+                  }
               }
-              // Hover events removed as requested
+            // Hover events removed as requested
             >
               {isMobile ? (
                 <>
