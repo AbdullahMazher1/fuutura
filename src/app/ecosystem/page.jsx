@@ -5,8 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { IoClose } from 'react-icons/io5';
 import OTPInput from 'react-otp-input';
 
-// TODO: Change back to live URL when done - e.g. "https://fuutura.com"
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://fuutura.com";
 
 const JWT_KEY = "ecosystem_jwt";
 const JWT_EXPIRY_KEY = "ecosystem_jwt_expiry";
