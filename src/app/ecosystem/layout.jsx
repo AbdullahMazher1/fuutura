@@ -2,13 +2,30 @@
 
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import EcosystemSidebar from './EcosystemSidebar';
 
 const ECOSYSTEM_DIRECTIONS = ['top', 'bottom', 'left', 'right'];
 
+const JWT_KEY = 'ecosystem_jwt';
+const JWT_EXPIRY_KEY = 'ecosystem_jwt_expiry';
+
+const hasValidJWT = () => {
+  if (typeof window === 'undefined') return false;
+  const jwt = localStorage.getItem(JWT_KEY);
+  const expiry = localStorage.getItem(JWT_EXPIRY_KEY);
+  if (!jwt || !expiry) return false;
+  if (Date.now() > parseInt(expiry, 10)) {
+    localStorage.removeItem(JWT_KEY);
+    localStorage.removeItem(JWT_EXPIRY_KEY);
+    return false;
+  }
+  return true;
+};
+
 export default function EcosystemLayout({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
   const isDocPage = pathname !== '/ecosystem' && pathname.startsWith('/ecosystem');
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,6 +33,13 @@ export default function EcosystemLayout({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
+
+  // Protect ecosystem subpages: if no valid JWT, redirect to /ecosystem
+  useEffect(() => {
+    if (isDocPage && mounted && !hasValidJWT()) {
+      router.replace('/ecosystem');
+    }
+  }, [isDocPage, mounted, router]);
 
   useEffect(() => {
     const dir = ECOSYSTEM_DIRECTIONS[Math.floor(Math.random() * ECOSYSTEM_DIRECTIONS.length)];

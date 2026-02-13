@@ -44,7 +44,8 @@ function Hero() {
       >
         <br />
         <p className="font-futura font-normal text-sm sm:text-base md:text-lg lg:text-[20px] leading-[134%] text-center text-white">
-          Trade across digital assets, market-linked products, and regulated markets — all in one place. Designed for transparency, oversight, and long-term trust.
+          Designed for transparency, oversight, and long-term trust.
+          {/* Trade across digital assets, market-linked products, and regulated markets — all in one place.  */}
         </p>
       </div>
     </div>

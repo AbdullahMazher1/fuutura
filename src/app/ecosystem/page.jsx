@@ -5,6 +5,26 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { IoClose } from 'react-icons/io5';
 import OTPInput from 'react-otp-input';
 
+// TODO: Change back to live URL when done - e.g. "https://fuutura.com"
+const API_BASE_URL = "http://localhost:3000";
+
+const JWT_KEY = "ecosystem_jwt";
+const JWT_EXPIRY_KEY = "ecosystem_jwt_expiry";
+const JWT_TTL_MS = 2 * 24 * 60 * 60 * 1000;
+
+const hasValidJWT = () => {
+  if (typeof window === "undefined") return false;
+  const jwt = localStorage.getItem(JWT_KEY);
+  const expiry = localStorage.getItem(JWT_EXPIRY_KEY);
+  if (!jwt || !expiry) return false;
+  if (Date.now() > parseInt(expiry, 10)) {
+    localStorage.removeItem(JWT_KEY);
+    localStorage.removeItem(JWT_EXPIRY_KEY);
+    return false;
+  }
+  return true;
+};
+
 // Inner component that actually uses search params, wrapped in Suspense by the page
 const EcosystemPageInner = () => {
   const router = useRouter();
@@ -30,6 +50,13 @@ const EcosystemPageInner = () => {
 
   const isValidEmail = (value) => /\S+@\S+\.\S+/.test(value);
 
+  // If user has valid JWT in localStorage, redirect to getting-started
+  useEffect(() => {
+    if (hasValidJWT()) {
+      router.replace("/ecosystem/getting-started");
+    }
+  }, [router]);
+
   const handleSendEmail = async () => {
     if (!isValidEmail(email) || isSending) return;
     setIsSending(true);
@@ -37,7 +64,7 @@ const EcosystemPageInner = () => {
     setSendSuccess(null);
 
     try {
-      const res = await fetch("https://fuutura.com/api/send-email", {
+      const res = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -68,7 +95,7 @@ const EcosystemPageInner = () => {
     setOtpLoading(true);
     setOtpError('');
     try {
-      const res = await fetch('https://fuutura.com/api/verify-email', {
+      const res = await fetch(`${API_BASE_URL}/api/verify-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp: otpValue }),
@@ -78,6 +105,13 @@ const EcosystemPageInner = () => {
 
       if (!res.ok || !data.success) {
         throw new Error(data.message || 'Invalid OTP');
+      }
+
+      // Store JWT in localStorage with 24h expiry
+      if (data.token) {
+        const expiry = Date.now() + JWT_TTL_MS;
+        localStorage.setItem(JWT_KEY, data.token);
+        localStorage.setItem(JWT_EXPIRY_KEY, String(expiry));
       }
 
       // On success, close OTP screen and proceed with verification
@@ -103,7 +137,7 @@ const EcosystemPageInner = () => {
     setOtpError('');
     setOtp('');
     try {
-      const res = await fetch('https://fuutura.com/api/send-email', {
+      const res = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -133,7 +167,7 @@ const EcosystemPageInner = () => {
 
     const verify = async () => {
       try {
-        const res = await fetch("https://fuutura.com/api/verify-token", {
+        const res = await fetch(`${API_BASE_URL}/api/verify-token`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token }),
