@@ -34,8 +34,8 @@ function Philosophy() {
                     alt="Ellipse Background" 
                 />
                 <img
-                    className="absolute w-1/2 md:w-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    src="/Videos/about.gif"
+                    className="absolute w-full md:w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    src="/Videos/4.gif"
                     alt="Platform GIF"
                 />
             </div>

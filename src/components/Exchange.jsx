@@ -7,10 +7,10 @@ const platformData = [
   {
     id: 0,
     tag: "The",
-    title: "Exchange",
+    title: "Trade",
     description: "Access a range of markets through a single, unified trading platform.",
-    gif: "/Videos/Exchange.gif",
-    cardTitle: "Fuutura Exchange"
+    gif: "/Videos/trade.gif",
+    cardTitle: "Fuutura Trade"
   },
   {
     id: 1,
@@ -118,7 +118,7 @@ function Capabilities() {
                 src={current.gif}
                 alt={current.title}
                 fill
-                className="object-contain"
+                className="object-contain h-full w-full"
                 unoptimized
               />
             </div>

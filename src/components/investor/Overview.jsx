@@ -14,7 +14,7 @@ function Overview() {
 
     const cardSurface = {
         background:
-            "radial-gradient(100% 60% at 20% 100%, rgba(0, 89, 112, 0.1) 0%, rgba(11, 11, 13, 0.1) 100%)",
+            "radial-gradient(100% 60% at 20% 100%, rgba(0, 89, 112, 0.01) 0%, rgba(11, 11, 13, 0.01) 100%)",
     };
 
     return (
