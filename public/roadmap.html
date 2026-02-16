@@ -23,18 +23,26 @@
         [carousel="wrap"] {
             opacity: 0;
         }
-        body,
-        body *,
-        .font-futura,
-        .font-heading,
-        .font-sub {
-            font-family: "Futura", "Futura Std", "Century Gothic", sans-serif !important;
-        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuutura font - same as rest of project (load after Webflow/Tailwind to override) -->
+    <style>
+        html, body, body *, 
+        .font-futura, .font-heading, .font-sub,
+        nav a, nav span, button, p, h1, h2, h3, h4, a, span,
+        .carousel-fixed-label, .carousel_content_item, .roadmap-popup-content *,
+        footer, footer * {
+            font-family: "Futura", "Futura PT", "Futura-Medium", "Futura Std", "Century Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        html, body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+    </style>
 </head>
 
-<body cz-shortcut-listen="true">
+<body class="font-futura" cz-shortcut-listen="true">
     <!-- Header -->
     <div class="w-full h-[80px] absolute top-0 z-50">
         <div class="max-w-[1300px] mx-auto h-full flex items-center justify-between px-6">
@@ -320,7 +328,7 @@
                 Explore our ecosystem - see what's here currently <br> and what's coming next.
             </p>
 
-            <a href="#"
+            <a href="#explore"
                 class="inline-block px-9 py-3 rounded-lg bg-gradient-to-r from-[#3A7BFF] to-[#00F0FF] text-white font-sub font-semibold text-base hover:opacity-90 transition shadow-lg shadow-[#0ea5e9]/25">
                 Explore
             </a>
@@ -329,7 +337,7 @@
     <div carousel="component" class="carousel_component bg-[#0B0B0D]">
         <div id="carouselFixedLabel" class="carousel-fixed-label carousel-label-hidden"><span class="carousel-label-text">KYC</span></div>
         <div class="carousel_track">
-            <div class="carousel_sticky">
+            <div class="carousel_sticky" id="explore">
                 <div carousel="wrap" class="carousel_wrap w-dyn-list"
                     style="--3d-carousel-z: calc(var(--3d-carousel-item-width) / -0.42511312334004425 - var(--3d-carousel-gap)); perspective: calc(var(--3d-carousel-item-width) / 0.42511312334004425 + var(--3d-carousel-gap)); opacity: 1; --3d-carousel-rotate: -89.5768deg;">
                     <div role="list" class="carousel_list w-dyn-items">
