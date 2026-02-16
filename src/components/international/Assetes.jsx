@@ -113,10 +113,7 @@ function Assetes() {
           </p>
 
           <p className="text-lg text-white/80 leading-relaxed">
-            Fuutura is designed so users retain control of their assets rather
-            than handing them over to the platform. This reduces risk, improves
-            transparency, and reflects how modern financial infrastructure
-            should work.
+          Designed so users retain control of their assets rather than handing them over to the platform, Fuutura’s ethos is to reduce risk, improve transparency, and reflect how modern financial infrastructure should work.
           </p>
         </div>
       </div>

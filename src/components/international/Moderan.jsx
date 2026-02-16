@@ -73,7 +73,7 @@ const Moderan = () => {
       <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 z-50 pl-6 lg:pl-12 max-w-[50%]">
         <div className="text-white text-lg leading-loose transition-opacity duration-[2000ms] ease-in-out opacity-100 group-hover:opacity-0 font-futura text-lg sm:text-xl lg:text-[22px] font-normal">
           <h3 className="font-futura text-lg sm:text-xl lg:text-[22px] font-normal text-white/80 leading-relaxed sm:leading-loose">
-            Fuutura brings trading, payments, and market <br />
+            Fuutura brings execution, transfers, and market <br />
             access together in one calm, easy-to-use platform. <br />
             Built to be fast and cost-efficient — without <br />
             unnecessary complexity or hidden layers. <br />

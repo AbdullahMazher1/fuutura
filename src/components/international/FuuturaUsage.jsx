@@ -93,7 +93,7 @@ const FuuturaUsage = () => {
                 desc: "Trade digital assets, market-linked instruments, and — where permitted — products connected to regulated markets.",
               },
               {
-                title: "Identity & Safeguards",
+                title: "Privacy & Security",
                 desc: "Built-in verification and controls designed to support transparency, oversight, and responsible participation.",
               },
               {

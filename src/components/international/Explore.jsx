@@ -58,7 +58,7 @@ function Explore() {
 
         {/* Sub-heading */}
         <p className="font-futura text-lg md:text-xl font-normal leading-normal text-white/90 mb-12 max-w-3xl">
-          Explore How The Exchange Connects With Supporting Tools, Services, And
+          Explore How The Platform Connects With Supporting Tools, Services, And
           Infrastructure Built Around Long-Term Trust.
         </p>
 
