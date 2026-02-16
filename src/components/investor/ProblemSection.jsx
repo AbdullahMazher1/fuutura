@@ -12,7 +12,7 @@ const ProblemSection = () => {
         "Multiple Platforms",
         "Disconnected Payment Rails",
         "Opaque Execution",
-        "Unclear Custody And Risk Exposure"
+        "Unclear Custody and Risk Exposure"
     ];
 
     return (
@@ -71,9 +71,7 @@ const ProblemSection = () => {
                             maxWidth: '560px'
                         }}>
                             Access to markets remains fragmented, expensive, and operationally
-                            inefficient — particularly in emerging economies. Participants
-                            are forced to navigate. This creates friction, limits
-                            participation, and constrains market growth.
+                            inefficient — particularly in emerging economies. participation forces users to navigate. Complex, multi-app paths. This friction limits market growth.
                         </p>
                     </div>
 

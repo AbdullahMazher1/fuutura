@@ -53,8 +53,7 @@ function Markets() {
             Markets Today — <span className="text-[#00C2FF]">Markets Tomorrow</span>
           </h1>
           <p className="font-futura text-base sm:text-lg font-normal leading-relaxed text-white/90 max-w-4xl mx-auto px-4 sm:px-0">
-            Fuutura supports a range of market access models today and is built to expand over time. This includes digital assets, market-linked products, and — subject to approvals.
-          </p>
+          Fuutura supports a range of market access models today and is designed to expand over time, and with appropriate regulation, to include include all forms of digital assets, market-linked products and access to regulated exchanges.          </p>
         </div>
 
         {/* Middle section - Flags and Chart */}

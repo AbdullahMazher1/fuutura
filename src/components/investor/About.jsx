@@ -24,7 +24,7 @@ const About = () => {
 
     const featureItems = [
         { 
-            text: "Trades are processed securely with strong safeguards at every step.",
+            text: "Secure processing with strong safeguards at every step.",
             icon: "/Images/Shield.png"
         },
         { 
@@ -66,7 +66,7 @@ const About = () => {
                         What Fuutura Is
                     </h2>
                     <div className="font-futura text-gray-400 space-y-5 max-w-md text-base md:text-lg leading-relaxed">
-                        <p>Fuutura is an exchange at its core.</p>
+                        <p>Fuutura is built for market access.</p>
                         <p className="font-futura opacity-80">
                             All supporting systems exist to enable this design allows the 
                             platform to operate sustainably across market conditions.

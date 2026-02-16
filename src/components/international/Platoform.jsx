@@ -36,7 +36,7 @@ function Platform() {
           The <span className="text-white">Platform</span>
         </h2>
         <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
-          FUUTURA Is A Web3 Exchange Built For Simple, Secure, And Reliable
+          FUUTURA Is A Web3 Terminal Built For Simple, Secure, And Reliable
           Market Access.
         </p>
       </div>

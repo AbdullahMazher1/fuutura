@@ -137,12 +137,12 @@ function Fuutura() {
             </h2>
 
             <p className="mt-4 text-base sm:text-lg lg:text-[18px] text-white/70">
-              Fuutura is an exchange at its core.
+              Fuutura is built for friction free market access.
             </p>
 
             <div className="mt-8 lg:mt-10 space-y-2 text-lg sm:text-xl lg:text-[22px] leading-[1.45] text-white/80">
               <p>Everything around it exists to make market</p>
-              <p>access. No distractions. No unnecessary steps.</p>
+              <p>access simple. No distractions. No unnecessary steps.</p>
               <p>Just execution done right.</p>
             </div>
           </div>

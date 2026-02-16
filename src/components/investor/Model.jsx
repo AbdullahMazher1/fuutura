@@ -60,7 +60,7 @@ const Model = () => {
           </h2>
 
           <p className="font-futura text-white/80 text-[18px] md:text-[20px] leading-[1.6] mb-12 max-w-lg">
-            Rather Than Pursuing Growth Through Incentives, Leverage, Or Short-Term Optimisation, Fuutura Is Designed To Scale Through Trust And Participation.
+            Rather than Pursuing Growth Through Incentives, Leverage, or Short-Term Optimisation, Fuutura is Designed to Scale Through Trust and Participation.
           </p>
 
           {/* Staggered List Items */}

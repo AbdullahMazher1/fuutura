@@ -60,19 +60,18 @@ function Trust() {
             }}
           >
             <h2 className="font-futura text-white text-[28px] sm:text-[32px] md:text-[38px] font-bold mb-6 leading-tight">
-              Trust, Oversight & 
+              Trust & 
               <span className="text-[#00A3FF]"> Responsibility</span>
             </h2>
 
             <div className="space-y-4 text-white/80 text-[15px] sm:text-base lg:text-lg leading-relaxed">
               <p>
-                Fuutura is built with oversight, reporting, and safeguards in
-                mind from the start.
+              Fuutura is a ‘Trust First’ platform, structured for future alignment with regulatory frameworks and market integrity standards.
               </p>
-              <p>
+              {/* <p>
                 The platform is structured to align with regulatory frameworks
                 and market integrity standards as they apply.
-              </p>
+              </p> */}
             </div>
           </div>
 

@@ -33,7 +33,7 @@ const Second = () => {
           {/* Image */}
           <div className="flex-1 w-full flex justify-center items-center">
             <img
-              src="/x.gif"
+              src="/Videos/trade.gif"
               alt=""
               className="w-full max-w-[400px] sm:max-w-[500px] lg:max-w-full 
               h-auto rounded-xl"

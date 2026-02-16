@@ -32,8 +32,12 @@ function Hero() {
         className="absolute w-[90%] max-w-[600px] sm:max-w-[667px] lg:max-w-[667px] h-auto opacity-100 z-30 left-1/2 -translate-x-1/2 top-[320px] sm:top-[360px] lg:top-[430px] px-4 flex items-center justify-center gap-4"
       >
         <h1 className="font-futura font-semibold text-2xl sm:text-3xl md:text-3xl lg:text-[32px] leading-tight text-center text-white">
-          A Modern <span className="text-[#00C2FF] ">Exchange</span> Built For Real <br />
-          <span className="text-[#00C2FF]">Markets</span> And Real <span className="">People</span>
+        Fuutura – Your <span className="text-[#00C2FF] ">Key</span> to Unlock  <br />
+          <span >Global </span>
+          <span
+          className="text-[#00C2FF] ">
+            Markets
+           </span>
         </h1>
 
       </div>
@@ -44,7 +48,7 @@ function Hero() {
       >
         <br />
         <p className="font-futura font-normal text-sm sm:text-base md:text-lg lg:text-[20px] leading-[134%] text-center text-white">
-          Designed for transparency, oversight, and long-term trust.
+          Designed for transparency, security, and long-term trust.
           {/* Trade across digital assets, market-linked products, and regulated markets — all in one place.  */}
         </p>
       </div>

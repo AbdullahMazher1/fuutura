@@ -28,7 +28,7 @@ function Hero() {
 
                 <p className="font-futura text-white/60 text-lg md:text-xl leading-relaxed">
                     At Fuutura, we believe accessing markets should be simple, secure, and built around you. 
-                    We set out to create a platform that brings trading, payments, and market access together 
+                    We set out to create a platform that brings complete market access together 
                     in one calm, easy-to-use experience.
                 </p>
             </div>

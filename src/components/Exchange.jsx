@@ -6,8 +6,8 @@ import { GimIcon } from '../assets/Svg';
 const platformData = [
   {
     id: 0,
-    tag: "The",
-    title: "Trade",
+    tag: "Trading",
+    // title: "Trade",
     description: "Access a range of markets through a single, unified trading platform.",
     gif: "/Videos/trade.gif",
     cardTitle: "Fuutura Trade"
@@ -26,7 +26,7 @@ const platformData = [
     title: "Safeguards",
     description: "Verification and controls designed to support oversight, transparency, and market integrity.",
     gif: "/Videos/Id.gif",
-    cardTitle: "Fuutura Id"
+    cardTitle: "Fuutura ID"
   },
   {
     id: 3,
