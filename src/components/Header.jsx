@@ -50,10 +50,10 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
           <Link href="/" className={`text-[18px] tracking-wide ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
           <Link href="/roadmap.html" className={`text-[18px] tracking-wide ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
-          <Link href="/press-section" className={`text-[18px] tracking-wide ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link>
+          {/* <Link href="/press-section" className={`text-[18px] tracking-wide ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link> */}
           <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
           <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
-          <Link href="/news" className={`text-[18px] tracking-wide ${pathname.includes('news') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>News</Link>
+          {/* <Link href="/news" className={`text-[18px] tracking-wide ${pathname.includes('news') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>News</Link> */}
         </nav>
 
         {/* Desktop Toggle */}
@@ -89,10 +89,10 @@ const Header = () => {
           <div className="flex flex-col gap-8 text-center mb-16">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">HOME</Link>
             <Link href="/roadmap.html" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ROADMAP</Link>
-            <Link href="/press-section" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">PRESS SECTION</Link>
+            {/* <Link href="/press-section" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">PRESS SECTION</Link> */}
             <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">BLOGS</Link>
             <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ABOUT</Link>
-            <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">NEWS</Link>
+            {/* <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">NEWS</Link> */}
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />

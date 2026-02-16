@@ -13,18 +13,18 @@ const Footer = () => {
             <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/roadmap.html">
               RoadMap
             </Link>
-            <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/press-section">
+            {/* <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/press-section">
               Press Section
-            </Link>
+            </Link> */}
             <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/blogs">
               Blogs
             </Link>
             <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/about">
               About
             </Link>
-            <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/news">
+            {/* <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/news">
               News
-            </Link>
+            </Link> */}
           </div>
           <p className="text-white max-w-max text-sm">
             © 2026 Fuutura. All rights reserved.
