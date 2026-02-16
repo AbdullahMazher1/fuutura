@@ -53,6 +53,7 @@ const Header = () => {
           <Link href="/press-section" className={`text-[18px] tracking-wide ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link>
           <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
           <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
+          <Link href="/news" className={`text-[18px] tracking-wide ${pathname.includes('news') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>News</Link>
         </nav>
 
         {/* Desktop Toggle */}
