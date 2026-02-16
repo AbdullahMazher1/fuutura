@@ -49,7 +49,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
           <Link href="/" className={`text-[18px] tracking-wide ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
-          <Link href="/roadmap" className={`text-[18px] tracking-wide ${pathname === '/roadmap' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
+          <Link href="/roadmap.html" className={`text-[18px] tracking-wide ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
           <Link href="/press-section" className={`text-[18px] tracking-wide ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link>
           <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
           <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
