@@ -40,7 +40,7 @@ export default function PressSectionPage() {
   const hasMoreToLoad = visiblePopular < popularNews.length;
 
   return (
-    <div className="min-h-screen w-full bg-[#0a0e1a] text-white">
+    <div className="min-h-screen w-full bg-[#0a0e1a] text-white py-12">
       {/* Top Section: Left 1 + Right 5 */}
       <section className="max-w-[1200px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

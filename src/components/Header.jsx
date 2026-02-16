@@ -88,8 +88,11 @@ const Header = () => {
 
           <div className="flex flex-col gap-8 text-center mb-16">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">HOME</Link>
+            <Link href="/roadmap.html" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ROADMAP</Link>
+            <Link href="/press-section" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">PRESS SECTION</Link>
             <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">BLOGS</Link>
             <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ABOUT</Link>
+            <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">NEWS</Link>
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />
