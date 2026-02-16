@@ -1,0 +1,171 @@
+// Press Section - Dummy data (adapted from blogs, update later)
+// Structure: id, title, description, date, source, image
+
+export const pressSectionData = {
+  // Top section: 1 featured (left) + 5 side items (right)
+  featured: {
+    id: 1,
+    title: "Fuutura Raises $15M for Web3 KYC and Compliance Platform",
+    description: "Fuutura enables native identity verification to serve as trustless compliance across Web3 platforms globally.",
+    date: "09/08/2026",
+    source: "Fuutura News",
+    image: "/Images/sample-blog-1.jpg",
+  },
+  sideItems: [
+    {
+      id: 2,
+      title: "Fuutura KYC: Stay on Top of Compliance",
+      date: "09/08/2026",
+      source: "Crypto Brief",
+      image: "/Images/sample-blog-1.jpg",
+    },
+    {
+      id: 3,
+      title: "Why Fuutura is the Ultimate KYC Solution for Web3 Platforms",
+      date: "09/08/2026",
+      source: "Cointelegraph",
+      image: "/Images/sample-blog-2.jpg",
+    },
+    {
+      id: 4,
+      title: "Fuutura Pro Business: Powering Secure Web3 Adoption",
+      date: "09/08/2026",
+      source: "NewsBTC",
+      image: "/Images/sample-blog-3.jpg",
+    },
+    {
+      id: 5,
+      title: "Fuutura Wallet: Where Smart Meets Seamless in Crypto",
+      date: "09/08/2026",
+      source: "Blockdir",
+      image: "/Images/sample-blog-4.jpg",
+    },
+    {
+      id: 6,
+      title: "Global Compliance: How Fuutura Simplifies Worldwide Regulations",
+      date: "09/08/2026",
+      source: "CoinRage",
+      image: "/Images/sample-blog-5.jpg",
+    },
+  ],
+
+  // Latest Crypto News - slider section (3 cards visible)
+  latestNews: [
+    {
+      id: 7,
+      title: "Why Morgan Stanley's Bitcoin ETF Is The 'Most Bullish Thing Ever': Jeff Park",
+      description: "Analysts weigh in on the impact of institutional adoption and what it means for the broader crypto market.",
+      date: "Sun Aug 01, 2026",
+      source: "CoinRage",
+      image: "/Images/sample-blog-1.jpg",
+    },
+    {
+      id: 8,
+      title: "XRP Supply Shock? 22M Tokens Leave Exchanges",
+      description: "Major exchange outflows suggest accumulation as XRP holders prepare for potential price moves.",
+      date: "Wed Jul 01, 2026",
+      source: "UToday",
+      image: "/Images/sample-blog-2.jpg",
+    },
+    {
+      id: 9,
+      title: "The Death of the 4-Year Cycle: Experts on Bitcoin's New Macro Reality",
+      description: "Market analysts discuss how Bitcoin's traditional cycle may be evolving in the current macro environment.",
+      date: "Mon Jul 01, 2026",
+      source: "Blockdir.com",
+      image: "/Images/sample-blog-3.jpg",
+    },
+    {
+      id: 10,
+      title: "Fuutura KYC: Compliance Simplified for Web3",
+      description: "Web3-native KYC and compliance management platform gains traction among DeFi protocols.",
+      date: "Tue Jul 15, 2026",
+      source: "Crypto Brief",
+      image: "/Images/sample-blog-4.jpg",
+    },
+    {
+      id: 11,
+      title: "Fuutura Wallet Integrates Multi-Chain Support",
+      description: "Non-custodial wallet expands to support Ethereum, Polygon, and Solana in single interface.",
+      date: "Thu Jul 20, 2026",
+      source: "NewsBTC",
+      image: "/Images/sample-blog-5.jpg",
+    },
+    {
+      id: 12,
+      title: "Regulatory Update: Fuutura Pro Business Meets MiCA Requirements",
+      description: "Enterprise compliance platform adds EU MiCA framework support for crypto asset service providers.",
+      date: "Fri Jul 25, 2026",
+      source: "Cointelegraph",
+      image: "/Images/sample-blog-6.jpg",
+    },
+  ],
+
+  // Popular Crypto News - vertical list
+  popularNews: [
+    {
+      id: 13,
+      title: "Sustained On-Chain Buying Is Needed to Lift Bitcoin's $100,000 Fuss",
+      description: "Analysts suggest that continued accumulation by whales and institutions could push BTC toward key resistance levels.",
+      date: "09/08/2026",
+      source: "Coinpaper",
+      image: "/Images/sample-blog-1.jpg",
+    },
+    {
+      id: 14,
+      title: "Crypto Kingpin Behind $15M Bitcoin Seizure Deported to China – What Happens Next?",
+      description: "Legal experts weigh in on the implications of the high-profile seizure and deportation case.",
+      date: "09/08/2026",
+      source: "Coinpaper",
+      image: "/Images/sample-blog-2.jpg",
+    },
+    {
+      id: 15,
+      title: "Bitcoin and Ethereum Are Early in Adoption, Not Cheap, BlackRock Warns",
+      description: "Asset manager highlights long-term growth potential while cautioning against short-term volatility.",
+      date: "09/08/2026",
+      source: "Crypto Brief",
+      image: "/Images/sample-blog-3.jpg",
+    },
+    {
+      id: 16,
+      title: "Fuutura ID – Your Web3 Identity Your Control",
+      description: "Decentralized identity solution enables users to verify once and use across multiple Web3 platforms.",
+      date: "09/08/2026",
+      source: "UToday",
+      image: "/Images/sample-blog-6.jpg",
+    },
+    {
+      id: 17,
+      title: "Fuutura Ecosystem: Powering a Secure and Compliant Web3 Future",
+      description: "Unified framework combines KYC, compliance management, and wallet for end-to-end Web3 trust.",
+      date: "09/08/2026",
+      source: "Blockdir",
+      image: "/Images/sample-blog-7.jpg",
+    },
+    {
+      id: 18,
+      title: "DeFi Protocols Adopt Fuutura KYC for Compliance",
+      description: "Leading DeFi platforms integrate Fuutura's verification layer to meet regulatory requirements.",
+      date: "08/08/2026",
+      source: "Coinpaper",
+      image: "/Images/sample-blog-1.jpg",
+    },
+    {
+      id: 19,
+      title: "NFT Marketplaces Turn to Fuutura for Identity Verification",
+      description: "Art and collectibles platforms seek compliant onboarding with Fuutura's Web3-native KYC.",
+      date: "07/08/2026",
+      source: "Crypto Brief",
+      image: "/Images/sample-blog-2.jpg",
+    },
+    {
+      id: 20,
+      title: "Fuutura Pro Business Expands to 155+ Countries",
+      description: "Enterprise compliance platform now supports global regulatory frameworks across all major regions.",
+      date: "06/08/2026",
+      source: "NewsBTC",
+      image: "/Images/sample-blog-3.jpg",
+    },
+  ],
+};
