@@ -12,7 +12,7 @@ const Approach = () => {
     const cards = [
         {
             title: "Clear Execution",
-            description: "Trades are executed with precision, speed, and full clarity, ensuring users always understand how and when their orders are filled.",
+            description: "Executing with precision, speed, and full clarity, ensuring users always understand how and when their orders are filled.",
             image: "/Images/Safer (1).png",
         },
         {

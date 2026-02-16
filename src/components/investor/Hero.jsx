@@ -104,8 +104,7 @@ function Hero() {
 
             {/* DESCRIPTION */}
             <p className="font-futura text-white/60 text-xl max-w-2xl mx-auto leading-relaxed z-10 relative">
-                Fuutura is an exchange-first platform designed to modernise access to
-                markets in a responsible, regulation-aligned way.
+            Fuutura is designed to modernise access to markets responsibly and securely. 
             </p>
 
             {/* GLOBE - Positioned to be cut exactly in half */}

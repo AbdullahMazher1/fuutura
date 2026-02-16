@@ -22,7 +22,7 @@ function Philosophy() {
                 </h2>
 
                 <p className="font-futura text-white/60 text-lg md:text-xl leading-relaxed">
-                    Our platform is designed for people, not complexity. Whether you’re trading digital assets, market-linked instruments, or — where permitted — regulated products, Fuutura puts you in control of your assets, while ensuring built-in safeguards meet global compliance standards.
+                    Our platform is designed for people, not complexity. Whether its digital assets, market-linked instruments, or — where permitted — regulated products, Fuutura puts you in control, with built in safeguards to protect your security.
                 </p>
             </div>
 
