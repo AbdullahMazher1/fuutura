@@ -26,7 +26,7 @@ const Second = () => {
             </h2>
 
             <p className="text-sm sm:text-base text-white max-w-md mx-auto lg:mx-0">
-              Fuutura is an exchange at its core. Everything around it exists to make market access easier, safer, and more reliable for users in Pakistan.
+              Fuutura Trade is at its core. Everything around it exists to make market access easier, safer, and more reliable for users in Pakistan.
             </p>
           </div>
 

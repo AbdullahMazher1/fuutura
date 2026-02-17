@@ -85,7 +85,7 @@ const FuuturaUsage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-x-12 lg:gap-x-16 gap-y-12 lg:gap-y-14">
             {[
               {
-                title: "Exchange",
+                title: "Fuutura Trade",
                 desc: "Access multiple markets through a single, unified trading platform.",
               },
               {

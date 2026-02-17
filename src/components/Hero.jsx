@@ -19,7 +19,7 @@ const Hero = () => {
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
         font-bold text-white text-center leading-tight">
-          A modern exchange{" "}
+          A modern Fuutura Trade{" "}
           <span className="bg-gradient-to-r from-[#3A7BFF] to-[#00F0FF] bg-clip-text text-transparent">
             built in Pakistan
           </span>{" "}

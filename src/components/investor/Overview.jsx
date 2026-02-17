@@ -52,9 +52,9 @@ function Overview() {
 
                     {/* Cards */}
                     {[
-                        { title: "Unified Exchange Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: -80 } },
+                        { title: "Unified Fuutura Trade Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: -80 } },
                         { title: "Markets & Products", desc: "Access to digital assets and as we expand into regulated markets tokenized instruments. Connection to regulated markets is subject to required approvals.", initial: { x: 80, y: -80 } },
-                        { title: "Unified Exchange Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: 80 } },
+                        { title: "Unified Fuutura Trade Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: 80 } },
                         { title: "Transfers & Settlement", desc: "Efficient capital movement in and out of markets. Structured for operational clarity, reliability, and control.", initial: { x: 80, y: 80 } },
                     ].map((card, index) => (
                         <motion.div

@@ -40,7 +40,7 @@ function Ecosystem() {
                         WebkitBackdropFilter: 'blur(25px)',
                     }}
                 >
-                    Explore how the Exchange Connects with supporting Tools, Services and Infrastructure built around long-term trust.
+                    Explore how Fuutura Trade Connects with supporting Tools, Services and Infrastructure built around long-term trust.
                 </p>
 
                 <Link
