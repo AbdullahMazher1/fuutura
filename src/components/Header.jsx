@@ -17,9 +17,9 @@ const Header = () => {
 
         {/* The Text Label */}
         {/* Reduced translate-x from 90px to 45px to keep it closer to the ball */}
-        <span className={`text-[12px] font-bold uppercase tracking-wider transition-all duration-500 ease-in-out z-10 ${isInvestor
-            ? 'translate-x-0 opacity-100 text-[#569FFF]'
-            : 'translate-x-[45px] opacity-100 text-[#569FFF]'
+        <span style={{ letterSpacing: '1px' }} className={`text-[12px] font-bold uppercase tracking-widestr transition-all duration-500 ease-in-out z-10 ${isInvestor
+          ? 'translate-x-0 opacity-100 text-[#569FFF]'
+          : 'translate-x-[45px] opacity-100 text-[#569FFF]'
           }`}>
           {isInvestor ? 'USERS' : 'PARTNERS'}
         </span>
@@ -48,12 +48,12 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden flex-1 max-w-max mx-auto md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
-          <Link href="/" className={`text-[18px] tracking-wide ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
-          <Link href="/roadmap.html" className={`text-[18px] tracking-wide ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
-          {/* <Link href="/press-section" className={`text-[18px] tracking-wide ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link> */}
-          <Link href="/blogs" className={`text-[18px] tracking-wide ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
-          <Link href="/about" className={`text-[18px] tracking-wide ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
-          {/* <Link href="/news" className={`text-[18px] tracking-wide ${pathname.includes('news') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>News</Link> */}
+          <Link href="/" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
+          <Link href="/roadmap.html" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
+          {/* <Link href="/press-section" className={`text-[18px] tracking-widest ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link> */}
+          <Link href="/blogs" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
+          <Link href="/about" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
+          {/* <Link href="/news" style={{letterSpacing: '1px'}} className={`text-[18px] tracking-widest ${pathname.includes('news') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>News</Link> */}
         </nav>
 
         {/* Desktop Toggle */}
@@ -89,17 +89,17 @@ const Header = () => {
           </button>
 
           <div className="flex flex-col gap-8 text-center mb-16">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">HOME</Link>
-            <Link href="/roadmap.html" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ROADMAP</Link>
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-futura font-bold text-white tracking-tighter">HOME</Link>
+            <Link href="/roadmap.html" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-futura font-bold text-white tracking-tighter">ROADMAP</Link>
             {/* <Link href="/press-section" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">PRESS SECTION</Link> */}
-            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">BLOGS</Link>
-            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">ABOUT</Link>
+            <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-futura font-bold text-white tracking-tighter">BLOGS</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-futura font-bold text-white tracking-tighter">ABOUT</Link>
             {/* <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white tracking-tighter">NEWS</Link> */}
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />
 
-          <p className="text-[#569FFF] text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
+          <p className="text-[#569FFF] font-futura text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
           <div className="scale-125" onClick={() => setIsMobileMenuOpen(false)}>
             <ToggleSwitch />
           </div>
