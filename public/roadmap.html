@@ -21,6 +21,10 @@
         [carousel="wrap"] {
             opacity: 0;
         }
+        #mobileMenuOverlay.mobile-menu-open {
+            transform: translateY(0);
+            pointer-events: auto;
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -471,7 +475,7 @@
                             <img alt="" src="/assets/g.png" class="carousel_img !mt-8">
                             <div class="carousel_ratio"></div>
                         </div>
-                        <div role="listitem" class="carousel_item w-dyn-item" data-card-index="6">
+                        <div role="listitem" class="carousel_item w-dyn-item" data-card-index="7">
                             <img alt="" src="/assets/h.png" class="carousel_img !mt-8">
                             <div class="carousel_ratio"></div>
                         </div>
@@ -531,6 +535,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
+        (function () {
+            var overlay = document.getElementById("mobileMenuOverlay");
+            var openBtn = document.getElementById("mobileMenuBtn");
+            var closeBtn = document.getElementById("mobileMenuClose");
+            function openMenu() { if (overlay) overlay.classList.add("mobile-menu-open"); }
+            function closeMenu() { if (overlay) overlay.classList.remove("mobile-menu-open"); }
+            if (openBtn) openBtn.addEventListener("click", openMenu);
+            if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+            document.querySelectorAll(".mobile-menu-link").forEach(function (el) { el.addEventListener("click", closeMenu); });
+        })();
+
         $("[carousel='component']").each(function () {
             let componentEl = $(this);
             let wrapEl = componentEl.find("[carousel='wrap']");
@@ -621,16 +636,17 @@
         });
 
         var roadmapCards = [
-            { img: "/assets/a.png", title: "Fuutura KYC", desc: "Know Your Customer verification for secure identity validation." },
-            { img: "/assets/bb.png", title: "Fuutura Wallet", desc: "Secure digital wallet for managing your assets." },
-            { img: "/assets/cc.png", title: "Fuutura Trade", desc: "Fast and secure crypto exchange." },
-            { img: "/assets/d.png", title: "Fuutura Trade", desc: "Fast and secure crypto exchange." },
-            { img: "/assets/e.png", title: "Fuutura Chat", desc: "Encrypted messaging for private communications." },
-            { img: "/assets/f.png", title: "Fuutura Blockchain", desc: "Decentralized blockchain infrastructure." },
-            { img: "/assets/g.png", title: "Fuutura Card", desc: "Physical and virtual cards for everyday spending." },
-            { img: "/assets/h.png", title: "Fuutura VPN", desc: "Privacy-first VPN for secure browsing." }
+            { img: "/assets/trade.png", title: "Fuutura Trade", desc: "Fast and secure crypto exchange. Trade with low fees and real-time market data." },
+            { img: "/assets/bb.png", title: "Fuutura Wallet", desc: "Secure digital wallet for managing your assets. Store, send, and receive with full control and privacy." },
+            { img: "/assets/cc.png", title: "Fuutura Trade", desc: "Fast and secure crypto exchange. Trade with low fees and real-time market data." },
+            { img: "/assets/d.png", title: "Fuutura Chat", desc: "Encrypted messaging for private communications. Connect securely with your contacts." },
+            { img: "/assets/e.png", title: "Fuutura Blockchain", desc: "Decentralized blockchain infrastructure. Transparent, secure, and scalable technology." },
+            { img: "/assets/f.png", title: "Fuutura Card", desc: "Physical and virtual cards for everyday spending. Use your crypto anywhere, anytime." },
+            { img: "/assets/g.png", title: "Fuutura VPN", desc: "Privacy-first VPN for secure browsing. Protect your data and access content globally." },
+            { img: "/assets/h.png", title: "Fuutura VPN", desc: "Privacy-first VPN for secure browsing. Protect your data and access content globally." }
         ];
 
+        var noPopupIndices = [2, 3, 5];
         $(document).on("click", ".carousel_item, .carousel_img, .carousel_content_item, #carouselFixedLabel", function (e) {
             let idx;
             if ($(this).attr('id') === 'carouselFixedLabel') {
@@ -641,6 +657,7 @@
                 let item = $(this).closest(".carousel_item");
                 idx = parseInt(item.attr("data-card-index"), 10);
             }
+            if (noPopupIndices.indexOf(idx) >= 0) return;
             if (idx != null && roadmapCards[idx]) {
                 let card = roadmapCards[idx];
                 $("#roadmapPopupImg").attr("src", card.img);
