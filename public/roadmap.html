@@ -502,6 +502,9 @@
                 <div carousel="panel" role="listitem" class="carousel_content_item w-dyn-item">
                     <!-- <h2 class="text-4xl">Fuutura VPN</h2> -->
                 </div>
+                <div carousel="panel" role="listitem" class="carousel_content_item w-dyn-item">
+                    <!-- <h2 class="text-4xl">Fuutura VPN</h2> -->
+                </div>
             </div>
         </div>
         <div class="carousel_arrow_wrap">
@@ -597,13 +600,15 @@
                 onEnterBack: () => fixedLabel.removeClass("carousel-label-hidden")
             });
 
-            panelEl.each(function () {
-                ScrollTrigger.create({
-                    trigger: $(this),
-                    start: "top center",
-                    end: "bottom center",
-                    onToggle: ({ isActive }) => { if (isActive) makePanelActive($(this)); }
-                });
+            ScrollTrigger.create({
+                trigger: componentEl,
+                start: "top top",
+                end: "bottom bottom",
+                onUpdate: (self) => {
+                    let progress = self.progress;
+                    let index = Math.min(Math.floor(progress * panelEl.length), panelEl.length - 1);
+                    makePanelActive(panelEl.eq(index));
+                }
             });
 
             function scrollToActive() {
