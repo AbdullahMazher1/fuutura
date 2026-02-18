@@ -41,7 +41,7 @@ const Header = () => {
       <div className="max-w-[1500px] mx-auto h-full flex items-center justify-between px-6">
 
         {/* Logo Section */}
-        <div className="flex items-center gap-3 cursor-pointer w-[220px] xl:w-[380px]">
+        <div className="flex items-center gap-3 cursor-pointer w-[220px] xl:w-[400px]">
           <img className="h-10" src="/logo1.png" alt="Icon" />
           <img className="h-6 hidden sm:block" src="/logo.gif" alt="Text" />
         </div>
@@ -49,7 +49,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden flex-1 max-w-max mx-auto md:flex items-center gap-10 bg-white/5 backdrop-blur-lg border border-white/10 px-10 py-2.5 rounded-full">
           <Link href="/" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Home</Link>
-          <Link href="/roadmap.html" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>RoadMap</Link>
+          <Link href="/roadmap.html" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/roadmap.html' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Roadmap</Link>
           {/* <Link href="/press-section" className={`text-[18px] tracking-widest ${pathname === '/press-section' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Press Section</Link> */}
           <Link href="/blogs" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname === '/blogs' ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>Blogs</Link>
           <Link href="/about" style={{ letterSpacing: '1px' }} className={`text-[18px] font-futura tracking-widest ${pathname.includes('about') ? 'text-[#569FFF]' : 'text-white text-bold hover:text-white transition-colors'}`}>About Us</Link>
@@ -57,7 +57,7 @@ const Header = () => {
         </nav>
 
         {/* Desktop Toggle */}
-        <div className='hidden md:block text-end w-[220px] xl:w-[380px]'>
+        <div className='hidden md:block text-end w-[220px] xl:w-[400px]'>
           <div className="ml-auto flex items-center justify-end gap-4">
             <div className='hidden xl:flex items-center gap-2.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-lg py-2.5 px-4'>
 
@@ -65,7 +65,7 @@ const Header = () => {
                 <span className='flex items-center justify-center'>
                   <img src="/Images/h2.png" className='h-4' alt="" />
                 </span>
-                <p className='text-white text-sm font-semibold'>Wallet</p>
+                <p className='text-white text-sm font-semibold flex-1'>Wallet</p>
               </Link>
 
               {/* Center Line */}
@@ -75,7 +75,7 @@ const Header = () => {
                 <span className='flex items-center justify-center'>
                   <img src="/Images/h1.png" className='h-4' alt="" />
                 </span>
-                <p className='text-white text-sm font-semibold'>Exchange</p>
+                <p className='text-white text-sm font-semibold flex-1'>Exchange</p>
               </Link>
 
             </div>
