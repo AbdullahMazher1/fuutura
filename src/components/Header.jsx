@@ -38,10 +38,10 @@ const Header = () => {
 
   return (
     <div className="w-full h-[80px] absolute top-0 z-50">
-      <div className="max-w-[1300px] mx-auto h-full flex items-center justify-between px-6">
+      <div className="max-w-[1500px] mx-auto h-full flex items-center justify-between px-6">
 
         {/* Logo Section */}
-        <div className="flex items-center gap-3 cursor-pointer w-[220px]">
+        <div className="flex items-center gap-3 cursor-pointer w-[220px] xl:w-[380px]">
           <img className="h-10" src="/logo1.png" alt="Icon" />
           <img className="h-6 hidden sm:block" src="/logo.gif" alt="Text" />
         </div>
@@ -57,8 +57,29 @@ const Header = () => {
         </nav>
 
         {/* Desktop Toggle */}
-        <div className='w-[220px] hidden md:block text-end'>
-          <div className="ml-auto w-[160px]">
+        <div className='hidden md:block text-end w-[220px] xl:w-[380px]'>
+          <div className="ml-auto flex items-center justify-end gap-4">
+            <div className='hidden xl:flex items-center gap-2.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-lg py-2.5 px-4'>
+
+              <Link href='https://wallet.fuutura.com/' target='_blank' className='flex items-center gap-2 cursor-pointer'>
+                <span className='flex items-center justify-center'>
+                  <img src="/Images/h2.png" className='h-4' alt="" />
+                </span>
+                <p className='text-white text-sm font-semibold'>Wallet</p>
+              </Link>
+
+              {/* Center Line */}
+              <div className='w-[2px] bg-[#3A7BFFB2] self-stretch rounded-full'></div>
+
+              <Link href='#' className='flex items-center gap-2 cursor-pointer'>
+                <span className='flex items-center justify-center'>
+                  <img src="/Images/h1.png" className='h-4' alt="" />
+                </span>
+                <p className='text-white text-sm font-semibold'>Exchange</p>
+              </Link>
+
+            </div>
+
             <ToggleSwitch />
           </div>
         </div>
@@ -98,6 +119,26 @@ const Header = () => {
           </div>
 
           <div className="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16" />
+          <div className='flex items-center gap-2.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-lg py-2.5 px-4 mb-6'>
+
+            <Link href='https://wallet.fuutura.com/' target='_blank' className='flex items-center gap-2 cursor-pointer'>
+              <span className='flex items-center justify-center'>
+                <img src="/Images/h2.png" className='h-4' alt="" />
+              </span>
+              <p className='text-white text-sm font-semibold'>Wallet</p>
+            </Link>
+
+            {/* Center Line */}
+            <div className='w-[2px] bg-[#3A7BFFB2] self-stretch rounded-full'></div>
+
+            <Link href='#' className='flex items-center gap-2 cursor-pointer'>
+              <span className='flex items-center justify-center'>
+                <img src="/Images/h1.png" className='h-4' alt="" />
+              </span>
+              <p className='text-white text-sm font-semibold'>Exchange</p>
+            </Link>
+
+          </div>
 
           <p className="text-[#569FFF] font-futura text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
           <div className="scale-125" onClick={() => setIsMobileMenuOpen(false)}>

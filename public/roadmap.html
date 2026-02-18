@@ -79,8 +79,8 @@
 
 <body class="font-futura" cz-shortcut-listen="true">
     <div class="w-full h-[80px] absolute top-0 z-50">
-        <div class="max-w-[1300px] mx-auto h-full flex items-center justify-between px-6">
-            <a href="/" class="flex items-center gap-3 cursor-pointer w-[220px]">
+        <div class="max-w-[1500px] mx-auto h-full flex items-center justify-between px-6">
+            <a href="/" class="flex items-center gap-3 cursor-pointer w-[220px] xl:w-[380px]">
                 <img class="h-10" src="/logo1.png" alt="Icon" />
                 <img class="h-6 hidden sm:block" src="/logo.gif" alt="Text" />
             </a>
@@ -94,18 +94,43 @@
                 <a style="letter-spacing: 1px;" href="/about"
                     class="text-[18px]  text-white hover:text-white transition-colors">About Us</a>
             </nav>
-            <div class="hidden w-[220px] md:block">
-                <a href="/investor"
-                    class="relative w-[160px] h-12 flex items-center bg-transparent ml-auto backdrop-blur-md border border-[#569FFF]/30 rounded-full p-1.5 cursor-pointer overflow-hidden">
-                    <div class="relative w-full h-full flex items-center px-4">
-                        <span style="letter-spacing: 1px;"
-                            class="text-[12px] font-bold uppercase  text-[#569FFF] translate-x-[45px]">PARTNERS</span>
-                        <div
-                            class="absolute h-9 w-9 bg-gradient-to-tr from-[#569FFF] to-[#80B3FF] rounded-full shadow-[0_0_20px_rgba(86,159,255,0.7)] left-1.5 flex items-center justify-center">
-                            <div class="h-2 w-2 bg-white rounded-full opacity-50 blur-[1px]"></div>
-                        </div>
+            <div class="hidden text-end w-[220px] xl:w-[380px] md:block">
+                <div class="ml-auto flex items-center justify-end gap-4">
+
+                    <div
+                        class="hidden xl:flex items-center gap-2.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-lg py-2.5 px-4">
+
+                        <a href="https://wallet.fuutura.com/" target="_blank"
+                            class="flex items-center gap-2 cursor-pointer">
+                            <span class="flex items-center justify-center">
+                                <img src="/Images/h2.png" class="h-4" alt="" />
+                            </span>
+                            <p class="text-white text-sm font-semibold">Wallet</p>
+                        </a>
+
+                        <div class="w-[2px] bg-[#3A7BFFB2] self-stretch rounded-full"></div>
+
+                        <a href="#" class="flex items-center gap-2 cursor-pointer">
+                            <span class="flex items-center justify-center">
+                                <img src="/Images/h1.png" class="h-4" alt="" />
+                            </span>
+                            <p class="text-white text-sm font-semibold">Exchange</p>
+                        </a>
+
                     </div>
-                </a>
+
+                    <a href="/investor"
+                        class="relative w-[160px] h-12 flex items-center bg-transparent ml-auto backdrop-blur-md border border-[#569FFF]/30 rounded-full p-1.5 cursor-pointer overflow-hidden">
+                        <div class="relative w-full h-full flex items-center px-4">
+                            <span style="letter-spacing: 1px;"
+                                class="text-[12px] font-bold uppercase  text-[#569FFF] translate-x-[45px]">PARTNERS</span>
+                            <div
+                                class="absolute h-9 w-9 bg-gradient-to-tr from-[#569FFF] to-[#80B3FF] rounded-full shadow-[0_0_20px_rgba(86,159,255,0.7)] left-1.5 flex items-center justify-center">
+                                <div class="h-2 w-2 bg-white rounded-full opacity-50 blur-[1px]"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <button id="mobileMenuBtn"
                 class="md:hidden w-10 h-10 flex items-center justify-center bg-[#569FFF]/10 border border-[#569FFF]/30 rounded-full"
@@ -122,8 +147,11 @@
     <div id="mobileMenuOverlay"
         class="fixed inset-0 bg-[#050505] transition-all duration-700 ease-in-out z-[100] -translate-y-full">
         <div class="flex flex-col h-full pt-24 items-center px-10">
-            <button id="mobileMenuClose"
-                class="absolute top-8 right-8 text-white/40 text-sm tracking-tighter">X</button>
+
+            <button id="mobileMenuClose" class="absolute top-8 right-8 text-white/40 text-sm tracking-tighter">
+                X
+            </button>
+
             <div class="flex flex-col gap-8 text-center mb-16">
                 <a href="/" class="text-2xl font-bold text-white tracking-tighter mobile-menu-link">HOME</a>
                 <a href="/roadmap.html"
@@ -131,7 +159,30 @@
                 <a href="/blogs" class="text-2xl font-bold text-white tracking-tighter mobile-menu-link">BLOGS</a>
                 <a href="/about" class="text-2xl font-bold text-white tracking-tighter mobile-menu-link">ABOUT</a>
             </div>
+
             <div class="w-full h-px bg-gradient-to-r from-transparent via-[#569FFF]/40 to-transparent mb-16"></div>
+
+            <!-- Wallet + Exchange Box -->
+            <div class="flex items-center gap-2.5 bg-[#FFFFFF0D] backdrop-blur-md rounded-lg py-2.5 px-4 mb-6">
+
+                <a href="https://wallet.fuutura.com/" target="_blank" class="flex items-center gap-2 cursor-pointer">
+                    <span class="flex items-center justify-center">
+                        <img src="/Images/h2.png" class="h-4" alt="" />
+                    </span>
+                    <p class="text-white text-sm font-semibold">Wallet</p>
+                </a>
+
+                <!-- Center Line -->
+                <div class="w-[2px] bg-[#3A7BFFB2] self-stretch rounded-full"></div>
+
+                <a href="#" class="flex items-center gap-2 cursor-pointer">
+                    <span class="flex items-center justify-center">
+                        <img src="/Images/h1.png" class="h-4" alt="" />
+                    </span>
+                    <p class="text-white text-sm font-semibold">Exchange</p>
+                </a>
+
+            </div>
             <p class="text-[#569FFF] text-[10px] tracking-[0.3em] font-bold mb-6">SWITCH MODE</p>
             <a href="/investor" class="scale-125 mobile-menu-link">
                 <div
@@ -214,7 +265,8 @@
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                text-align: center; /* Center content horizontally */
+                text-align: center;
+                /* Center content horizontally */
                 backface-visibility: visible !important;
                 transform-style: preserve-3d !important;
             }
@@ -238,7 +290,8 @@
                 width: 60%;
                 height: auto;
                 display: block;
-                margin: 0 auto; /* This forces the horizontal centering */
+                margin: 0 auto;
+                /* This forces the horizontal centering */
             }
 
             .carousel_content_item {
