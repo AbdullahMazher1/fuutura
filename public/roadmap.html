@@ -177,6 +177,19 @@
 
             [carousel="wrap"]>div>div {
                 width: var(--3d-carousel-item-width);
+                overflow: visible !important;
+            }
+
+            .carousel_component,
+            .carousel_track,
+            .carousel_sticky,
+            .carousel_list,
+            [carousel="wrap"]>div {
+                overflow: visible !important;
+            }
+
+            .carousel_item {
+                overflow: visible !important;
             }
 
             .is-disabled {
@@ -346,8 +359,6 @@
                 position: absolute;
                 inset: -100px;
                 z-index: 0;
-                -webkit-mask-image: radial-gradient(circle, rgb(0, 0, 0) 100%, transparent 100%);
-                mask-image: radial-gradient(circle, black 100%, transparent 100%);
                 background: url("/assets/Ellipse.png") center/contain no-repeat;
                 opacity: 1;
                 pointer-events: none;
@@ -380,7 +391,7 @@
                 <div carousel="wrap" class="carousel_wrap w-dyn-list">
                     <div role="list" class="carousel_list">
                         <div role="listitem" class="carousel_item" data-card-index="0">
-                            <img alt="" src="/assets/a.png" class="carousel_img">
+                            <img alt="" src="/assets/a.png" class="carousel_img !mt-4">
                             <div class="carousel_ratio"></div>
                         </div>
                         <div role="listitem" class="carousel_item w-dyn-item" data-card-index="1">
@@ -404,11 +415,11 @@
                             <div class="carousel_ratio"></div>
                         </div>
                         <div role="listitem" class="carousel_item w-dyn-item" data-card-index="6">
-                            <img alt="" src="/assets/g.png" class="carousel_img">
+                            <img alt="" src="/assets/g.png" class="carousel_img !mt-8">
                             <div class="carousel_ratio"></div>
                         </div>
                         <div role="listitem" class="carousel_item w-dyn-item" data-card-index="6">
-                            <img alt="" src="/assets/h.png" class="carousel_img">
+                            <img alt="" src="/assets/h.png" class="carousel_img !mt-8">
                             <div class="carousel_ratio"></div>
                         </div>
                     </div>
