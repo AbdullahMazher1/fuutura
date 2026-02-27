@@ -17,7 +17,7 @@ const Header = () => {
 
         {/* The Text Label */}
         {/* Reduced translate-x from 90px to 45px to keep it closer to the ball */}
-        <span style={{ letterSpacing: '1px' }} className={`text-[12px] font-bold uppercase tracking-widestr transition-all duration-500 ease-in-out z-10 ${isInvestor
+        <span style={{ letterSpacing: '1px' }} className={`text-[12px] font-bold uppercase tracking-widestr transition-all duration-500 ease-in-out z-50 ${isInvestor
           ? 'translate-x-0 opacity-100 text-[#569FFF]'
           : 'translate-x-[45px] opacity-100 text-[#569FFF]'
           }`}>

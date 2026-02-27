@@ -33,7 +33,7 @@ const Moderan = () => {
     translate-y-0 opacity-100
     translate-x-[-35%]
     group-hover:translate-y-[50%] group-hover:opacity-0
-    z-20
+    z-10
 
     [mask-image:linear-gradient(to_right,transparent_0%,black_50%,black_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_25%,black_100%)]
@@ -55,7 +55,7 @@ const Moderan = () => {
 
       {/* ================= CONTENT ================= */}
 
-      <div className="relative z-50 max-w-[1300px] mx-auto px-6 lg:px-0 pt-16">
+      <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-0 pt-16">
         {/* Heading */}
         <div className="text-center space-y-4 transition-transform duration-[4000ms] ease-in-out lg:group-hover:translate-y-4">
           <h2 className="text-3xl sm:text-4xl text-white font-semibold">
@@ -70,7 +70,7 @@ const Moderan = () => {
       {/* ================= BODY TEXT ================= */}
 
       {/* Desktop text (unchanged position) */}
-      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 z-50 pl-6 lg:pl-12 max-w-[50%]">
+      <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 z-10 pl-6 lg:pl-12 max-w-[50%]">
         <div className="text-white text-lg leading-loose transition-opacity duration-[2000ms] ease-in-out opacity-100 group-hover:opacity-0 font-futura text-lg sm:text-xl lg:text-[22px] font-normal">
           <h3 className="font-futura text-lg sm:text-xl lg:text-[22px] font-normal text-white/80 leading-relaxed sm:leading-loose">
             Fuutura brings execution, transfers, and market <br />
@@ -83,7 +83,7 @@ const Moderan = () => {
       </div>
 
       {/* Mobile centered text */}
-      <div className="lg:hidden relative z-50 px-6 pt-12 pb-12 text-center text-white">
+      <div className="lg:hidden relative z-10 px-6 pt-12 pb-12 text-center text-white">
         <h3 className="text-base sm:text-lg leading-relaxed font-futura text-lg sm:text-xl lg:text-[22px] font-normal text-white/80">
           Fuutura brings trading, payments, and market access together in one
           calm, easy-to-use platform. Built to be fast and cost-efficient —
