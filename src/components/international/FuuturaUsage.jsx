@@ -33,22 +33,48 @@ const FuuturaUsage = () => {
       mirror: true,
     });
 
+    const tryPlay = () => {
+      if (!videoRef.current) return;
+      const el = videoRef.current;
+      el.muted = true;
+      const playPromise = el.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.catch(() => {});
+      }
+    };
+
+    // Try to autoplay as soon as possible
+    tryPlay();
+
+    // Also trigger play on first user interaction (helps iOS Safari)
+    const handleUserInteraction = () => {
+      tryPlay();
+      window.removeEventListener("touchstart", handleUserInteraction);
+      window.removeEventListener("click", handleUserInteraction);
+    };
+
+    window.addEventListener("touchstart", handleUserInteraction, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener("click", handleUserInteraction, { once: true });
+
+    // Scroll-based play/pause
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!videoRef.current) return;
 
         if (entry.isIntersecting) {
           if (!hasPlayedRef.current) {
-            videoRef.current.play();
+            tryPlay();
             hasPlayedRef.current = true;
           }
         } else {
           videoRef.current.pause();
-          videoRef.current.currentTime = 0;
           hasPlayedRef.current = false;
         }
       },
-      { threshold: 0.6 },
+      { threshold: 0.26 },
     );
 
     if (sectionRef.current) {
@@ -57,6 +83,8 @@ const FuuturaUsage = () => {
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
+      window.removeEventListener("touchstart", handleUserInteraction);
+      window.removeEventListener("click", handleUserInteraction);
     };
   }, []);
 
@@ -65,10 +93,10 @@ const FuuturaUsage = () => {
       ref={sectionRef}
       className="relative w-full min-h-screen overflow-hidden text-white"
     >
-      {/* ===== VIDEO (DESKTOP ONLY) ===== */}
+      {/* ===== BACKGROUND VIDEO (ALL DEVICES) ===== */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110"
+        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110 pointer-events-none"
         src="/beam.mp4"
         autoPlay
         muted
@@ -132,7 +160,7 @@ const FuuturaUsage = () => {
               </h2>
 
               <p className="text-[15px] sm:text-[16px] md:text-[17px] leading-[1.9] text-white/70 max-w-[520px] mx-auto lg:mx-0">
-                Because accessing markets shouldn’t require juggling multiple
+                Because accessing markets shouldn't require juggling multiple
                 apps, platforms, and payment providers. Fuutura reduces
                 unnecessary steps, helping lower costs and improve efficiency
                 compared to traditional routes.
