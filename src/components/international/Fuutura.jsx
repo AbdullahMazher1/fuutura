@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-// Import the hook from the library
 import { useInView } from "react-intersection-observer";
 
 /* ================= CARD SHELL ================= */
@@ -19,7 +18,6 @@ function CardShell({
         className,
       ].join(" ")}
     >
-
       <div
         className="h-full w-full rounded-[31px] overflow-hidden"
         style={{
@@ -47,6 +45,7 @@ function StackCard({
   isFirstDeck = false,
   scale = 1,
   isMobile = false,
+  delay = 0,
 }) {
   const getTransform = () => {
     return `translateX(${(isOpen ? openX : closedX) * scale}px) translateY(-50%)`;
@@ -56,18 +55,25 @@ function StackCard({
     <div
       className={
         isMobile
-          ? "relative w-full max-w-[320px] mx-auto"
+          ? "relative w-full max-w-[320px] mx-auto transition-all duration-700 ease-out"
           : "absolute right-0 top-1/2 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
       }
       style={
         isMobile
-          ? { height: "200px" }
+          ? {
+              height: "200px",
+              opacity: isOpen ? 1 : 0,
+              transform: isOpen
+                ? "translateY(0px)"
+                : "translateY(-40px)",
+              transitionDelay: `${delay}ms`,
+            }
           : {
-            width: `${width * scale}px`,
-            height: `${height * scale}px`,
-            zIndex,
-            transform: getTransform(),
-          }
+              width: `${width * scale}px`,
+              height: `${height * scale}px`,
+              zIndex,
+              transform: getTransform(),
+            }
       }
     >
       <CardShell
@@ -96,16 +102,10 @@ function Fuutura() {
   const [scale, setScale] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Setup the Intersection Observer
-  // threshold: 0.2 means trigger 'inView' when 20% visible
-  // We use the inView boolean directly to control the 'open' state
   const { ref, inView } = useInView({
-    threshold: [0.1, 0.2], // We track both 10% and 20%
-    initialInView: false,
+    threshold: 0.1,
   });
 
-  // Derived state: Open if inView (at 20% threshold)
-  // To strictly meet "10% out of view go back", we calculate it based on the hook's entry/exit
   const isOpen = inView;
 
   useEffect(() => {
@@ -124,12 +124,11 @@ function Fuutura() {
 
   return (
     <section
-      ref={ref} // Attach observer to the section
+      ref={ref}
       className="relative w-full bg-[#050608] py-16 lg:py-24 overflow-x-hidden"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
-
           {/* ================= LEFT TEXT ================= */}
           <div className="lg:col-span-5 text-center lg:text-left">
             <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.05] text-white">
@@ -140,27 +139,31 @@ function Fuutura() {
               Fuutura is built for friction free market access.
             </p>
 
-            <div className="mt-8 lg:mt-10 space-y-2 text-lg sm:text-xl lg:text-[22px] leading-[1.45] text-white/80">
-              <p>Everything around it exists to make market</p>
-              <p>access simple. No distractions. No unnecessary steps.</p>
-              <p>Just execution done right.</p>
+            <div className="mt-8 lg:mt-6 text-lg sm:text-xl lg:text-[22px] leading-[1.8] text-white/80">
+              <p>
+                Everything around it exists to make market
+                <br className="hidden lg:block" />
+                access simple. No distractions. No unnecessary steps.
+                <br className="hidden lg:block" />
+                Just execution done right.
+              </p>
             </div>
           </div>
 
           {/* ================= RIGHT CARDS ================= */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end">
             <div
-              className={`relative w-full ${isMobile ? "flex flex-col items-center gap-6" : ""
-                }`}
+              className={`relative w-full ${
+                isMobile ? "flex flex-col items-center gap-6" : ""
+              }`}
               style={
                 isMobile
                   ? {}
                   : {
-                    height: `${340 * scale}px`,
-                    width: `${760 * scale}px`,
-                  }
+                      height: `${340 * scale}px`,
+                      width: `${760 * scale}px`,
+                    }
               }
-            // Hover events removed as requested
             >
               {isMobile ? (
                 <>
@@ -168,16 +171,22 @@ function Fuutura() {
                     label="More Reliable"
                     imgSrc="/Images/setting.png"
                     isMobile={true}
+                    isOpen={isOpen}
+                    delay={0}
                   />
                   <StackCard
                     label="Safer"
                     imgSrc="/Images/sheildlock.png"
                     isMobile={true}
+                    isOpen={isOpen}
+                    delay={150}
                   />
                   <StackCard
                     label="Easier"
                     imgSrc="/Images/rocket.png"
                     isMobile={true}
+                    isOpen={isOpen}
+                    delay={300}
                   />
                 </>
               ) : (

@@ -35,14 +35,14 @@ function Platform() {
         <h2 className="text-[#00C2FF] text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight">
           The <span className="text-white">Platform</span>
         </h2>
-        <p className="text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
+        <p className="lg:mt-8 text-white/80 text-base md:text-xl max-w-3xl mx-auto leading-relaxed uppercase tracking-wider">
           FUUTURA Is A Web3 Terminal Built For Simple, Secure, And Reliable
           Market Access.
         </p>
       </div>
 
       {/* 2. Visual Centerpiece Container - Anchored to bottom */}
-      <div className="relative flex-1 w-full flex flex-col justify-end items-center mt-8 lg:mt-0">
+      <div className="relative flex-1 w-full flex flex-col justify-end items-center mt-4 lg:mt-8">
         {/* Background Animation - Blended from top */}
         <div
           className="absolute bottom-[-5%] transition-all duration-1000 ease-out z-10"

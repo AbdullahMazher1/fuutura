@@ -68,9 +68,11 @@ const FuuturaUsage = () => {
       {/* ===== VIDEO (DESKTOP ONLY) ===== */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110 hidden lg:block"
+        className="absolute inset-0 w-full h-full object-cover brightness-125 contrast-110"
         src="/beam.mp4"
+        autoPlay
         muted
+        loop
         playsInline
         preload="auto"
       />
@@ -141,30 +143,7 @@ const FuuturaUsage = () => {
             <div className="hidden lg:block" />
 
             {/* ===== RIGHT ===== */}
-            {/* <div
-              className="pl-0 lg:pl-12 text-center lg:text-left"
-              data-aos="fade-left"
-            >
-              {features.map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-6 justify-center lg:justify-start"
-                >
-                  <div className="relative w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] lg:w-[88px] lg:h-[88px] flex-shrink-0">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
 
-                  <h4 className="text-[18px] sm:text-[20px] lg:text-[22px] font-medium text-white/90 leading-tight">
-                    {item.title}
-                  </h4>
-                </div>
-              ))}
-            </div> */}
             <div
               className="pl-0 lg:pl-12 text-center lg:text-left mt-12"
               data-aos="fade-left"

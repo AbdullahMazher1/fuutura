@@ -15,9 +15,9 @@ const Moderan = () => {
       {/* ================= IMAGE ================= */}
       {/* Desktop version (unchanged) */}
       <img
-  src="/Images/moderan1.jpg"
-  alt=""
-  className="
+        src="/Images/moderan1.jpg"
+        alt=""
+        className="
     hidden lg:block
     absolute
     h-full
@@ -38,10 +38,10 @@ const Moderan = () => {
     [mask-image:linear-gradient(to_right,transparent_0%,black_50%,black_100%)]
     [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_25%,black_100%)]
   "
-  style={{
-    minWidth: "50%",
-  }}
-/>
+        style={{
+          minWidth: "50%",
+        }}
+      />
 
 
       {/* Mobile background image */}
