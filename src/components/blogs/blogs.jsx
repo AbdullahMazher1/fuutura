@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import ReactPaginate from 'react-paginate';
 
 // Icon components
 const CalendarIcon = () => (
@@ -868,10 +869,14 @@ The digital identity is prepared with fuutura ID which is safe and hassle-free t
 
 const categories = ["All", "Defi", "AltCoins", "Technology", "Trading", "News"];
 
+const BLOGS_PER_PAGE = 9;
+
 function Blogs() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const sectionRef = useRef(null);
 
   // Truncate description to show only first 120 characters
   const truncateDescription = (text, maxLength = 120) => {
@@ -891,8 +896,25 @@ function Blogs() {
     return matchesCategory && matchesSearch;
   });
 
+  // Pagination: slice to current page (9 per page)
+  const pageCount = Math.ceil(filteredBlogs.length / BLOGS_PER_PAGE) || 1;
+  const paginatedBlogs = filteredBlogs.slice(
+    currentPage * BLOGS_PER_PAGE,
+    (currentPage + 1) * BLOGS_PER_PAGE
+  );
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [selectedCategory, searchQuery]);
+
+  const handlePageClick = (event) => {
+    setCurrentPage(event.selected);
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <section className="relative w-full bg-black py-16 px-6 lg:px-0">
+    <section ref={sectionRef} className="relative w-full bg-black py-16 px-6 lg:px-0">
       <div className="max-w-[1400px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -952,7 +974,7 @@ function Blogs() {
 
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredBlogs.map((blog) => (
+          {paginatedBlogs.map((blog) => (
             <div
               key={blog.id}
               onClick={() => handleBlogClick(blog.id)}
@@ -1005,6 +1027,33 @@ function Blogs() {
             <p className="font-futura text-lg text-white/70">
               No articles found matching your criteria.
             </p>
+          </div>
+        )}
+
+        {/* Pagination - show only when more than 9 blogs */}
+        {filteredBlogs.length > BLOGS_PER_PAGE && (
+          <div className="mt-12 flex justify-center">
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel="Next"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={2}
+              marginPagesDisplayed={1}
+              pageCount={pageCount}
+              previousLabel="Previous"
+              renderOnZeroPageCount={null}
+              forcePage={currentPage}
+              className="flex flex-wrap items-center justify-center gap-2 font-futura list-none pl-0"
+              pageClassName=""
+              pageLinkClassName="min-w-[40px] h-10 flex items-center justify-center rounded-lg border border-white/10 bg-[#101012] text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+              activeLinkClassName="!bg-[#3A7BFF] !border-[#3A7BFF] !text-white"
+              previousClassName="mr-2"
+              nextClassName="ml-2"
+              previousLinkClassName="min-w-[40px] h-10 flex items-center justify-center rounded-lg border border-white/10 bg-[#101012] text-white/80 hover:bg-white/10 hover:text-white transition-colors px-4"
+              nextLinkClassName="min-w-[40px] h-10 flex items-center justify-center rounded-lg border border-white/10 bg-[#101012] text-white/80 hover:bg-white/10 hover:text-white transition-colors px-4"
+              breakLinkClassName="min-w-[40px] h-10 flex items-center justify-center text-white/60"
+              disabledClassName="opacity-50 pointer-events-none"
+            />
           </div>
         )}
       </div>
