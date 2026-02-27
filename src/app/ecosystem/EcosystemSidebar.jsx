@@ -36,7 +36,7 @@ const PARTICIPATION_SUB = [
 
 const OTHER_LINKS = [];
 
-export default function EcosystemSidebar() {
+export default function EcosystemSidebar({ onItemClick }) {
   const pathname = usePathname();
 
   const [dropdownOpen, setDropdownOpen] = useState(
@@ -84,6 +84,7 @@ export default function EcosystemSidebar() {
             <Link
               key={href}
               href={href}
+              onClick={() => onItemClick?.()}
               className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-left text-sm font-medium transition-colors ${
                 isActive(href) ? 'bg-[#0A7CFF]/30 text-[#00C2FF]' : 'text-white/90 hover:bg-white/10'
               }`}
@@ -102,7 +103,7 @@ export default function EcosystemSidebar() {
       className="w-[270px] h-full flex flex-col shrink-0 overflow-auto custom__scrollbar backdrop-blur-sm border-r border-white/10"
     >
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-4 pt-12 pb-6 px-6">
+      <Link href="/" onClick={() => onItemClick?.()} className="flex items-center gap-4 pt-12 pb-6 px-6">
         <img className="h-[34px]" src="/Images/side1.png" alt="Logo" />
       </Link>
 
@@ -113,6 +114,7 @@ export default function EcosystemSidebar() {
           <div className={`w-full flex items-center ${GETTING_STARTED_SUB.length > 0 ? 'justify-between' : ''} px-4 py-3 rounded-lg ${pathname === GETTING_STARTED_PAGE ? 'bg-[#0A7CFF]/30' : ''}`}>
             <Link
               href={GETTING_STARTED_PAGE}
+              onClick={() => onItemClick?.()}
               className={`flex-1 flex items-center text-left text-sm font-medium transition-colors hover:opacity-90 ${
                 pathname === GETTING_STARTED_PAGE ? 'text-[#00C2FF]' : 'text-white'
               }`}
@@ -143,6 +145,7 @@ export default function EcosystemSidebar() {
                 <Link
                   key={href}
                   href={href}
+                  onClick={() => onItemClick?.()}
                   className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-left text-sm font-medium transition-colors my-1 ${
                     isActive(href) ? 'bg-[#0A7CFF]/30 text-[#00C2FF]' : 'text-white/90 hover:bg-white/10'
                   }`}
@@ -173,6 +176,7 @@ export default function EcosystemSidebar() {
           <Link
             key={href}
             href={href}
+            onClick={() => onItemClick?.()}
             className={`flex items-center justify-between px-4 py-3 rounded-lg text-left text-white text-sm font-medium transition-colors ${
               isActive(href) ? 'bg-[#0A7CFF]/30 text-[#00C2FF]' : 'hover:bg-white/10'
             }`}

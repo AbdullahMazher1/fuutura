@@ -235,7 +235,7 @@ const EcosystemPageInner = () => {
           className="h-full w-full flex items-center justify-center bg-center bg-no-repeat bg-cover"
           style={{ backgroundImage: "url('/Images/55.png')" }}
         >
-          <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-lg px-6">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-lg px-4 sm:px-6">
             {/* Glowing block icon */}
             <div className="mb-8 flex items-center justify-center">
               <img src="/Images/ecologo.png" alt="" />
@@ -280,7 +280,7 @@ const EcosystemPageInner = () => {
                   type="button"
                   onClick={handleSendEmail}
                   disabled={!isValidEmail(email) || isSending}
-                  className={`px-9 py-2.5 rounded-full text-white font-semibold text-sm transition-colors shadow-[0_0_20px_rgba(10,124,255,0.5)] ${!isValidEmail(email) || isSending
+                  className={`px-7 sm:px-9 py-2.5 rounded-full text-white font-semibold text-sm transition-colors shadow-[0_0_20px_rgba(10,124,255,0.5)] ${!isValidEmail(email) || isSending
                     ? "bg-gray-600 cursor-not-allowed"
                     : "bg-gradient-to-r from-[#00CCFF] to-[#064A99] cursor-pointer"
                     }`}
