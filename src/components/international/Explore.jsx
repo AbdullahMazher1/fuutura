@@ -52,7 +52,7 @@ function Explore() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-24 max-w-4xl mx-auto">
         {/* Main heading */}
-        <h1 className="font-futura text-[56px] md:text-[50px] font-bold leading-tight text-white mb-6">
+        <h1 className="font-futura text-[40px] md:text-[50px] font-bold leading-tight text-white mb-6">
           EXPLORE THE <span className="text-[#00BFFF]">ECOSYSTEM</span>
         </h1>
 
