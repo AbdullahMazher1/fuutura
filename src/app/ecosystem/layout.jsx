@@ -99,7 +99,7 @@ export default function EcosystemLayout({ children }) {
         className={`fixed inset-y-0 left-0 z-50 w-[270px] transform transition-transform duration-300 
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
       >
-        <EcosystemSidebar />
+        <EcosystemSidebar onItemClick={() => setSidebarOpen(false)} />
       </div>
 
       <main className="flex-1 min-w-0 flex flex-col relative overflow-hidden h-full w-full">
