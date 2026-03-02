@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const Moderan = () => {
   const { ref, inView } = useInView({
-    threshold: 0.15,
+    threshold: 0.5,
   });
 
   return (
