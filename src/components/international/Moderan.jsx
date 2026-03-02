@@ -1,14 +1,29 @@
 "use client";
 
+import { useInView } from "react-intersection-observer";
+
 const Moderan = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.15,
+  });
+
   return (
     <section
+      ref={ref}
       className="group relative w-full lg:min-h-screen overflow-hidden"
       style={{ backgroundColor: "#00030A" }}
     >
-      {/* ================= DESKTOP GLOBE BACKGROUND ================= */}
+      {/* ================= DESKTOP GLOBE BACKGROUND (hover) ================= */}
       <div
         className="hidden lg:block absolute inset-0 bg-center bg-no-repeat bg-cover transition-all duration-[4000ms] ease-in-out opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0"
+        style={{ backgroundImage: `url('/Images/globebg.png')` }}
+      />
+
+      {/* ================= MOBILE GLOBE BACKGROUND (when section in view) ================= */}
+      <div
+        className={`lg:hidden absolute inset-0 bg-center bg-no-repeat bg-cover transition-all duration-[4000ms] ease-in-out ${
+          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
+        }`}
         style={{ backgroundImage: `url('/Images/globebg.png')` }}
       />
 
@@ -44,9 +59,11 @@ const Moderan = () => {
       />
 
 
-      {/* Mobile background image */}
+      {/* Mobile background image - fades out when section in view so globe shows */}
       <div
-        className="lg:hidden absolute inset-0 bg-cover bg-center"
+        className={`lg:hidden absolute inset-0 bg-cover bg-center transition-all duration-[4000ms] ease-in-out ${
+          inView ? "opacity-0" : "opacity-100"
+        }`}
         style={{ backgroundImage: `url('/Images/moderan1.jpg')` }}
       />
 
