@@ -33,12 +33,6 @@ function Hero() {
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
-                style={{
-                    // This creates a linear gradient mask starting transparent at the top 
-                    // and becoming fully opaque at 20% of the height.
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%)',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%)',
-                }}
             />
 
             <div className="absolute inset-0 bg-black/50 -z-10" />
@@ -109,7 +103,7 @@ function Hero() {
 
             {/* GLOBE - Positioned to be cut exactly in half */}
             <motion.div
-                className="absolute bottom-0 z-10 translate-y-1/2 pt-20"
+                className="absolute bottom-0 z-10 translate-y-1/2 pt-36"
                 initial={{ opacity: 0, y: "100%" }}
                 animate={
                     inView
@@ -121,7 +115,7 @@ function Hero() {
                 <motion.img
                     src="/Images/Earth.png"
                     alt="Earth"
-                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain opacity-60"
+                    className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] object-contain opacity-70"
                     animate={inView ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                         repeat: inView ? Infinity : 0,
