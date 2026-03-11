@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 function Trust() {
   const [isVisible, setIsVisible] = useState(false);
-  const [gifSize, setGifSize] = useState({ width: 420, height: 420 });
+  const [gifSize, setGifSize] = useState({ width: 320, height: 320 });
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -30,11 +30,11 @@ function Trust() {
       const width = window.innerWidth;
 
       if (width < 768) {
-        setGifSize({ width: 250, height: 250 });
+        setGifSize({ width: 150, height: 150 });
       } else if (width < 1024) {
-        setGifSize({ width: 320, height: 320 });
+        setGifSize({ width: 200, height: 200 });
       } else {
-        setGifSize({ width: 420, height: 420 });
+        setGifSize({ width: 320, height: 320 });
       }
     };
 
@@ -80,7 +80,7 @@ function Trust() {
 
           {/* RIGHT COLUMN */}
           <div
-            className="flex-1 flex items-center justify-center transition-all duration-[1000ms] ease-out"
+            className="flex-1 flex items-center justify-center transition-all  mt-10 duration-[1000ms] ease-out"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateX(0)" : "translateX(80px)",
@@ -95,7 +95,7 @@ function Trust() {
               <img
                 src="/Videos/trustgif.gif"
                 alt="Trust graphic"
-                className="w-full h-full object-contain"
+                className="w-[90% ] h-[90%] object-contain"
               />
             </div>
           </div>

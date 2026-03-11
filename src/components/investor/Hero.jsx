@@ -28,7 +28,7 @@ function Hero() {
             {/* Background Video */}
 
             <video
-                src="/Videos/light2.mp4"
+                src="/Videos/lightFinal01.mp4"
                 autoPlay
                 muted
                 playsInline
