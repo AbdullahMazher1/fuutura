@@ -121,7 +121,7 @@ function Hero() {
                 <motion.img
                     src="/Images/Earth.png"
                     alt="Earth"
-                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain"
+                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain opacity-80"
                     animate={inView ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                         repeat: inView ? Infinity : 0,
