@@ -193,7 +193,7 @@ function Fuutura() {
                 <>
                   <StackCard
                     width={159}
-                    height={290}
+                    height={190}
                     label="Easier"
                     imgSrc="/Images/rocket.png"
                     zIndex={isOpen ? 30 : 10}
@@ -205,7 +205,7 @@ function Fuutura() {
 
                   <StackCard
                     width={198}
-                    height={290}
+                    height={240}
                     label="Safer"
                     imgSrc="/Images/sheildlock.png"
                     zIndex={isOpen ? 20 : 20}
