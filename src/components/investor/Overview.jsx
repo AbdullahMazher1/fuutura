@@ -19,7 +19,7 @@ function Overview() {
 
     return (
         <div
-            className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat font-futura"
+            className="relative w-full bg-cover bg-center bg-no-repeat font-futura"
             style={{ backgroundImage: "url('/Images/Overview.png')" }}
         >
             <div className="absolute inset-0 bg-black/5" />

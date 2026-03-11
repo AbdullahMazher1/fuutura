@@ -54,7 +54,7 @@ const ProblemSection = () => {
                 {/* 2. Content Layer - Left Aligned */}
                 <div
                     ref={ref}
-                    className="relative z-10 w-full h-full flex flex-col lg:flex-row items-center justify-between px-12 lg:px-24 py-24 gap-16"
+                    className="relative max-w-[1400px] mx-auto z-10 w-full h-full flex flex-col lg:flex-row items-center justify-between px-12 lg:px-24 py-24 gap-16"
                 >
                     {/* Left Side: Problem Text */}
                     <div className={`flex-1 transition-all duration-1000 transform ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
