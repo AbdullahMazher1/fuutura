@@ -135,6 +135,7 @@ function Fuutura() {
         <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-12">
           {/* ================= LEFT TEXT ================= */}
           <div className="lg:col-span-5 text-center lg:text-left">
+            <img src="/Images/layer.png" alt="" className="absolute top-0 left-0  h-full" />
             <h2 className="font-futura text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[1.05] text-white">
               What <span className="text-[#00C2FF]">FUUTURA</span> Is
             </h2>
