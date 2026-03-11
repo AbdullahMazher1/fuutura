@@ -9,7 +9,11 @@ function CardShell({
   children,
   isHovered = false,
   isFirstDeck = false,
+  gradientBg = false,
 }) {
+  const innerBg = gradientBg
+    ? "linear-gradient(160deg, rgba(2, 15, 35, 0.98) 0%, rgba(0, 25, 50, 0.9) 40%, rgba(5, 30, 55, 0.85) 100%)"
+    : "radial-gradient(120% 120% at 0% 0%, rgb(3, 11, 32) 0%, rgb(1, 8, 20) 100%)";
   return (
     <div
       className={[
@@ -20,10 +24,7 @@ function CardShell({
     >
       <div
         className="h-full w-full rounded-[31px] overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(120% 120% at 0% 0%, rgb(3, 11, 32) 0%, rgb(1, 8, 20) 100%)",
-        }}
+        style={{ background: innerBg }}
       >
         {children}
       </div>
@@ -46,6 +47,8 @@ function StackCard({
   scale = 1,
   isMobile = false,
   delay = 0,
+  gradientBg = false,
+  mobileHeight = "200px",
 }) {
   const getTransform = () => {
     return `translateX(${(isOpen ? openX : closedX) * scale}px) translateY(-50%)`;
@@ -61,7 +64,7 @@ function StackCard({
       style={
         isMobile
           ? {
-              height: "200px",
+              height: mobileHeight,
               opacity: isOpen ? 1 : 0,
               transform: isOpen
                 ? "translateY(0px)"
@@ -80,6 +83,7 @@ function StackCard({
         className="h-full w-full"
         isHovered={isMobile ? true : isOpen}
         isFirstDeck={isFirstDeck}
+        gradientBg={gradientBg}
       >
         <div className="flex h-full w-full flex-col items-center justify-center gap-4 lg:gap-6 px-4">
           <img
@@ -154,7 +158,7 @@ function Fuutura() {
           <div className="lg:col-span-7 flex justify-center lg:justify-end">
             <div
               className={`relative w-full ${
-                isMobile ? "flex flex-col items-center gap-6" : ""
+                isMobile ? "flex flex-col items-center gap-8" : ""
               }`}
               style={
                 isMobile
@@ -173,6 +177,7 @@ function Fuutura() {
                     isMobile={true}
                     isOpen={isOpen}
                     delay={0}
+                    mobileHeight="200px"
                   />
                   <StackCard
                     label="Safer"
@@ -180,6 +185,7 @@ function Fuutura() {
                     isMobile={true}
                     isOpen={isOpen}
                     delay={150}
+                    mobileHeight="150px"
                   />
                   <StackCard
                     label="Easier"
@@ -187,30 +193,33 @@ function Fuutura() {
                     isMobile={true}
                     isOpen={isOpen}
                     delay={300}
+                    mobileHeight="120px"
+                    gradientBg={true}
                   />
                 </>
               ) : (
                 <>
                   <StackCard
                     width={159}
-                    height={290}
+                    height={175}
                     label="Easier"
                     imgSrc="/Images/rocket.png"
                     zIndex={isOpen ? 30 : 10}
-                    openX={-520}
-                    closedX={-200}
+                    openX={-550}
+                    closedX={-220}
                     isOpen={isOpen}
                     scale={scale}
+                    gradientBg={true}
                   />
 
                   <StackCard
                     width={198}
-                    height={290}
+                    height={220}
                     label="Safer"
                     imgSrc="/Images/sheildlock.png"
                     zIndex={isOpen ? 20 : 20}
-                    openX={-310}
-                    closedX={-140}
+                    openX={-335}
+                    closedX={-155}
                     isOpen={isOpen}
                     scale={scale}
                   />
