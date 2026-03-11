@@ -54,13 +54,13 @@ const Approach = () => {
 
                 {/* Header Section - Animates based on view */}
                 <div
-                    className={`text-center mb-20 transition-all duration-700 ease-out transform ${inView
+                    className={`text-center mb-28 transition-all duration-700 ease-out transform ${inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 -translate-y-20'
                         }`}
                 >
-                    <h2 className="font-futura text-white text-[40px] md:text-[42px] font-bold mb-6 tracking-tight">
-                        The Fuutura Approach
+                    <h2 className="font-futura text-white text-[40px] md:text-[42px] font-bold mb-3 tracking-tight">
+                        The <span className="text-[#00A3FF]">Fuutura</span> Approach
                     </h2>
                     <p className="font-futura text-white/80 text-xl max-w-2xl mx-auto leading-relaxed">
                         Fuutura brings execution, payments, and market access together into a single, unified platform.
@@ -75,7 +75,7 @@ const Approach = () => {
                             style={{
                                 transitionDelay: inView ? `${index * 200}ms` : "0ms",
                             }}
-                            className={`group relative h-[360px] w-full max-w-[380px] transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] transform ${inView
+                            className={`group relative h-[300px] w-full max-w-[320px] transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] transform ${inView
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-32"
                                 }`}
@@ -98,14 +98,14 @@ const Approach = () => {
 
                                             {/* Title */}
                                             <h3
-                                                className="text-futura text-white text-[22px] leading-[27px] font-bold capitalize mb-4"
+                                                className="font-futura text-white text-[22px] leading-[27px] font-bold capitalize mb-4"
                                             >
                                                 {card.title}
                                             </h3>
 
                                             {/* Description */}
                                             <p
-                                                className="text-futura text-white/80 text-[16px] leading-[29px]"
+                                                className="font-futura text-white/80 text-[16px] leading-[29px]"
                                             >
                                                 {card.description}
                                             </p>
