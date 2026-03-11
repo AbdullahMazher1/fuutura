@@ -178,6 +178,7 @@ function Fuutura() {
                     isOpen={isOpen}
                     delay={0}
                     mobileHeight="200px"
+                    gradientBg={true}
                   />
                   <StackCard
                     label="Safer"
@@ -194,7 +195,6 @@ function Fuutura() {
                     isOpen={isOpen}
                     delay={300}
                     mobileHeight="120px"
-                    gradientBg={true}
                   />
                 </>
               ) : (
@@ -209,7 +209,6 @@ function Fuutura() {
                     closedX={-220}
                     isOpen={isOpen}
                     scale={scale}
-                    gradientBg={true}
                   />
 
                   <StackCard
@@ -235,6 +234,7 @@ function Fuutura() {
                     isOpen={isOpen}
                     isFirstDeck={true}
                     scale={scale}
+                    gradientBg={true}
                   />
                 </>
               )}
