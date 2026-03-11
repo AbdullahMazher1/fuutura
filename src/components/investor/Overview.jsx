@@ -26,11 +26,11 @@ function Overview() {
 
             <div
                 ref={ref}
-                className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 px-6 lg:px-20 py-20 lg:py-32 items-center justify-center"
+                className="relative z-10 flex flex-col lg:flex-row gap-12 lg:gap-20 px-6 lg:px-20 py-20 lg:py-32 items-center justify-center max-w-[1300px] mx-auto"
             >
                 {/* LEFT SECTION */}
-                <div className="flex flex-col gap-6 max-w-xl text-center lg:text-left px-4 lg:px-0">
-                    <h2 className="font-futura text-3xl sm:text-4xl font-semibold text-white">
+                <div className="flex flex-col gap-12 text-center lg:text-left px-4 lg:px-0 max-w-[420px] w-full">
+                    <h2 className="font-futura text-3xl sm:text-5xl font-semibold text-white">
                         Platform Overview
                     </h2>
                     <p className="font-futura text-gray-300 leading-relaxed text-base sm:text-lg">
@@ -40,9 +40,9 @@ function Overview() {
                 </div>
 
                 {/* RIGHT SECTION (Cards) */}
-                <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
                     {/* GIF Background */}
-                    <div className="absolute left-[10%] top-[10%] inset-0 -z-10">
+                    <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] -z-10">
                         <img
                             src="/Videos/glow.gif"
                             alt="Stars Background"
@@ -60,15 +60,15 @@ function Overview() {
                         <motion.div
                             key={index}
                             style={cardSurface}
-                            className={cardBase + " mx-auto sm:mx-0"}
+                            className={cardBase + " mx-auto sm:mx-0 w-full"}
                             initial={{ opacity: 0, ...card.initial }}
                             animate={inView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                         >
-                            <h3 className="font-futura text-lg font-semibold mb-3 text-center sm:text-left">
+                            <h3 className="font-futura text-lg font-semibold mb-9 text-center">
                                 {card.title}
                             </h3>
-                            <p className="font-futura text-sm text-gray-300 leading-relaxed text-center sm:text-left">
+                            <p className="font-futura text-sm text-gray-300 leading-relaxed text-center">
                                 {card.desc}
                             </p>
                         </motion.div>
