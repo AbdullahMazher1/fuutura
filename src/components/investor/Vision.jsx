@@ -47,19 +47,19 @@ function Vision() {
             <div className="flex flex-row gap-12 mt-10 flex-wrap justify-center">
 
                 <button
-                    className="px-10 py-3 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
+                    className="shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_10_20px_rgba(0,0,0,0.3)] px-12 py-3.5 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={cardSurface}
                 >
                     Long-term relevance
                 </button>
                 <button
-                    className="px-10 py-3 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
+                    className="shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_10_20px_rgba(0,0,0,0.3)] px-12 py-3.5 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={cardSurface}
                 >
                     Measured Growth
                 </button>
                 <button
-                    className="px-10 py-3 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
+                    className="shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_10_20px_rgba(0,0,0,0.3)] px-12 py-3.5 bg-transparent border border-white/40 rounded-[8px] backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
                     style={cardSurface}
                 >
                     Clear Governance

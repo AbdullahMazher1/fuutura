@@ -20,7 +20,7 @@ function Overview() {
     return (
         <div
             className="relative w-full bg-cover bg-center bg-no-repeat font-futura"
-            style={{ backgroundImage: "url('/Images/Overview.png')" }}
+            style={{ backgroundImage: "url('/Images/OverviewBg.png')" }}
         >
             <div className="absolute inset-0 bg-black/5" />
 
@@ -54,7 +54,7 @@ function Overview() {
                     {[
                         { title: "Unified Fuutura Trade Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: -80 } },
                         { title: "Markets & Products", desc: "Access to digital assets and as we expand into regulated markets tokenized instruments. Connection to regulated markets is subject to required approvals.", initial: { x: 80, y: -80 } },
-                        { title: "Unified Fuutura Trade Layer", desc: "A single execution layer built to support multiple asset types. Designed to deliver consistency, performance, and operational simplicity.", initial: { x: -80, y: 80 } },
+                        { title: "Governance & Controls", desc: "Built-in safeguards, reporting, and oversight mechanisms.  Designed to meet compliance, audit, and risk management requirements.", initial: { x: -80, y: 80 } },
                         { title: "Transfers & Settlement", desc: "Efficient capital movement in and out of markets. Structured for operational clarity, reliability, and control.", initial: { x: 80, y: 80 } },
                     ].map((card, index) => (
                         <motion.div
@@ -68,7 +68,7 @@ function Overview() {
                             <h3 className="font-futura text-lg font-semibold mb-9 text-center">
                                 {card.title}
                             </h3>
-                            <p className="font-futura text-sm text-gray-300 leading-relaxed text-center">
+                            <p className="font-futura text-sm text-gray-300 leading-[28px] text-center">
                                 {card.desc}
                             </p>
                         </motion.div>

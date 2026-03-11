@@ -2,17 +2,13 @@ import Link from 'next/link';
 import React from 'react'
 
 function Explore() {
-    const cardSurface = {
-        background:
-            "radial-gradient(100% 60% at 20% 100%, rgba(0, 89, 112, 0.1) 0%, rgba(11, 11, 13, 0.1) 100%)",
-    };
     return (
-        <section className="relative w-full bg-black/20 flex flex-col items-center justify-start overflow-hidden bg-black text-white pt-20 pb-20">
+        <section className="relative w-full bg-black/20 flex flex-col items-center justify-start overflow-hidden bg-black text-white pt-36 pb-36">
 
             {/* 1. Background Video */}
             <video
                 autoPlay loop muted playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"
+                className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
             >
                 <source src="/Videos/Rectangle.mp4" type="video/mp4" />
             </video>

@@ -109,7 +109,7 @@ function Hero() {
 
             {/* GLOBE - Positioned to be cut exactly in half */}
             <motion.div
-                className="absolute bottom-0 z-10 translate-y-1/2 pt-40"
+                className="absolute bottom-0 z-10 translate-y-1/2 pt-20"
                 initial={{ opacity: 0, y: "100%" }}
                 animate={
                     inView
@@ -121,7 +121,7 @@ function Hero() {
                 <motion.img
                     src="/Images/Earth.png"
                     alt="Earth"
-                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain opacity-80"
+                    className="w-[500px] h-[500px] md:w-[600px] md:h-[600px] object-contain opacity-60"
                     animate={inView ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                         repeat: inView ? Infinity : 0,
