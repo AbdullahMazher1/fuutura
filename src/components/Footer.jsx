@@ -11,7 +11,7 @@ const Footer = () => {
               Home
             </Link>
             <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/roadmap.html">
-              RoadMap
+              Roadmap
             </Link>
             {/* <Link className="text-white max-w-max text-sm hover:text-[#569FFF] transition-colors" href="/press-section">
               Press Section
