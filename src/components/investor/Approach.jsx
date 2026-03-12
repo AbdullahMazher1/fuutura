@@ -3,9 +3,8 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Approach = () => {
-    // Trigger animation when 20% of the section is visible
     const { ref, inView } = useInView({
-        threshold: 0.2, // 20% in view
+        threshold: 0.2,
         triggerOnce: false,
     });
 
@@ -27,13 +26,11 @@ const Approach = () => {
         },
     ];
 
-
     return (
         <section
             ref={ref}
             className="relative w-full min-h-screen bg-black flex items-center justify-center overflow-hidden"
         >
-            {/* --- BACKGROUND LAYER --- */}
             <div className="absolute inset-0 z-0">
                 <img
                     src="/Images/Approach.png"
@@ -49,26 +46,24 @@ const Approach = () => {
                 />
             </div>
 
-            {/* --- CONTENT LAYER --- */}
             <div className="relative z-10 w-full max-w-7xl px-6 py-24 flex flex-col items-center">
 
-                {/* Header Section - Animates based on view */}
                 <div
-                    className={`text-center mb-28 transition-all duration-700 ease-out transform ${inView
+                    className={`text-center mb-16 md:mb-28 transition-all duration-700 ease-out transform ${inView
                         ? 'opacity-100 translate-y-0'
                         : 'opacity-0 -translate-y-20'
                         }`}
                 >
-                    <h2 className="font-futura text-white text-[40px] md:text-[42px] font-bold mb-3 tracking-tight">
+                    <h2 className="font-futura text-white text-[32px] md:text-[42px] font-bold mb-3 tracking-tight">
                         The <span className="text-[#00A3FF]">Fuutura</span> Approach
                     </h2>
-                    <p className="font-futura text-white/80 text-xl max-w-2xl mx-auto leading-relaxed">
+                    <p className="font-futura text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                         Fuutura brings execution, payments, and market access together into a single, unified platform.
                     </p>
                 </div>
 
-                {/* Cards Grid Container */}
-                <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-stretch">
+                {/* --- FIX: Added items-center to ensure mobile centering --- */}
+                <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-center md:items-stretch">
                     {cards.map((card, index) => (
                         <div
                             key={index}
@@ -81,45 +76,28 @@ const Approach = () => {
                                 }`}
                         >
                             <div className="h-full w-full transition-transform duration-500 ease-out cursor-pointer hover:-translate-y-5">
-
                                 <div className="relative h-full w-full rounded-[12px] overflow-hidden">
-
-                                    {/* Background Image */}
                                     <img
                                         src={card.image}
                                         alt={card.title}
                                         className="absolute inset-0 w-full h-full object-cover"
                                     />
 
-                                    {/* Content */}
                                     <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-10">
-
-                                        <div className="flex flex-col items-center gap-[24px] max-w-[280px]">
-
-                                            {/* Title */}
-                                            <h3
-                                                className="font-futura text-white text-[22px] leading-[27px] font-bold capitalize mb-4"
-                                            >
+                                        <div className="flex flex-col items-center gap-[16px] md:gap-[24px] max-w-[280px]">
+                                            <h3 className="font-futura text-white text-[20px] md:text-[22px] leading-[27px] font-bold capitalize">
                                                 {card.title}
                                             </h3>
-
-                                            {/* Description */}
-                                            <p
-                                                className="font-futura text-white/80 text-[16px] leading-[29px]"
-                                            >
+                                            <p className="font-futura text-white/80 text-[14px] md:text-[16px] leading-[24px] md:leading-[29px]">
                                                 {card.description}
                                             </p>
-
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

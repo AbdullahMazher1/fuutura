@@ -26,7 +26,7 @@ const ProblemSection = () => {
                     <img
                         src="/Images/secondInvestor.png"
                         alt="Background"
-                        className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity"
+                        className="absolute inset-0 w-full h-full object-cover"
                         style={{
                             transform: 'scale(1.15)',
                             transformOrigin: 'center'

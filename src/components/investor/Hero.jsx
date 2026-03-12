@@ -89,7 +89,7 @@ function Hero() {
 
 
             {/* TITLE */}
-            <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 mt-12 leading-tight z-10 relative">
+            <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 md:mt-8 mt-40 leading-tight z-10 relative">
                 Market <span className="text-[#00A3FF]">infrastructure</span> Build For
                 Scale, <br />
                 Oversight, And{" "}
