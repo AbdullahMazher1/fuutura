@@ -3,21 +3,27 @@ import React from 'react'
 
 function Explore() {
     return (
-        <section className="relative w-full bg-black/20 flex flex-col items-center justify-start overflow-hidden bg-black text-white pt-36 pb-36">
+        <section className="relative w-full flex flex-col items-center justify-start overflow-hidden bg-black text-white pt-36 pb-36">
 
             {/* 1. Background Video */}
             <video
                 autoPlay loop muted playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-10 z-0"
+                className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
             >
                 <source src="/Videos/Rectangle.mp4" type="video/mp4" />
             </video>
-            <div>
-                <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight z-10 relative">
+
+            {/* --- BLACK OVERLAY LAYER --- */}
+            {/* Adjust opacity (bg-black/40, bg-black/60, etc.) to make it more or less dull */}
+            <div className="absolute inset-0 bg-black/70 z-[1] pointer-events-none" />
+
+            <div className="relative z-10 text-center">
+                <h2 className="font-futura text-white text-[30px] md:text-[38px] font-bold mb-6 leading-tight">
                     EXPLORE THE <span className="text-[#00A3FF]">ECOSYSTEM</span>
                 </h2>
             </div>
-            <div className='mt-20'>
+
+            <div className='mt-20 relative z-10'>
                 <Link
                     href={'/ecosystem'}
                     className="px-10 py-3 bg-transparent backdrop-blur-md transition-all duration-300 font-futura text-lg text-white hover:shadow-[0_0_20px_rgba(10,124,255,0.4)] active:scale-95"
